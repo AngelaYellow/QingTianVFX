@@ -1,0 +1,47 @@
+{
+  "completed": true,
+  "duration": 269.747,
+  "wallSeconds": 269.86279800000011,
+  "audioClipLength": 269.747223,
+  "sampleRate": 48000,
+  "realtimeFeatures": true,
+  "renderedFrames": 7969,
+  "minFrameSeconds": 0.007901998,
+  "maxFrameSeconds": 4.156245,
+  "maxAudioSampleVsDspSeconds": 0.0213333331,
+  "endMasterGain": 0.0,
+  "anchors": [
+    {
+      "chapter": 1,
+      "exactTime": 56.8,
+      "sampledFrameTime": 56.817333333333409,
+      "frameOvershoot": 0.01733333333341136,
+      "maxParameterError": 0.0,
+      "rawRms": 0.96352905
+    },
+    {
+      "chapter": 2,
+      "exactTime": 93.61,
+      "sampledFrameTime": 93.617333333333363,
+      "frameOvershoot": 0.0073333333333636119,
+      "maxParameterError": 0.0,
+      "rawRms": 0.978755832
+    },
+    {
+      "chapter": 3,
+      "exactTime": 155.41,
+      "sampledFrameTime": 155.42000000000007,
+      "frameOvershoot": 0.01000000000007617,
+      "maxParameterError": 0.0,
+      "rawRms": 0.997567
+    },
+    {
+      "chapter": 4,
+      "exactTime": 264.05,
+      "sampledFrameTime": 264.07066666666663,
+      "frameOvershoot": 0.020666666666613764,
+      "maxParameterError": 0.0,
+      "rawRms": 0.999372542
+    }
+  ]
+}

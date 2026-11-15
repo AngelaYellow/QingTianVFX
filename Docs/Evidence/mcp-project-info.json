@@ -1,0 +1,8 @@
+[
+  {
+    "uri": "mcpforunity://project/info",
+    "mimeType": "text/plain",
+    "meta": null,
+    "text": "{\"success\":true,\"message\":\"Retrieved project info.\",\"error\":null,\"data\":{\"projectRoot\":\"D:/Works/智能交互设计/QingTianVFX\",\"projectName\":\"QingTianVFX\",\"unityVersion\":\"6000.3.28f1\",\"platform\":\"StandaloneWindows64\",\"assetsPath\":\"D:/Works/智能交互设计/QingTianVFX/Assets\"},\"hint\":null}"
+  }
+]

@@ -1,0 +1,1 @@
+{"name":"QingTian.EditModeTests","references":["QingTian.Runtime","Unity.Newtonsoft.Json"],"includePlatforms":["Editor"],"optionalUnityReferences":["TestAssemblies"],"autoReferenced":false}

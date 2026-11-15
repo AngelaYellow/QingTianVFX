@@ -1,0 +1,14 @@
+{
+  "unity": "6000.3.28f1",
+  "projectPath": "D:\\Works\\智能交互设计\\QingTianVFX",
+  "source": "Unity installed URP official template 17.0.14, packages aligned to 17.3.0",
+  "pipeline": "UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset",
+  "qualityPipeline": "PC_RPAsset",
+  "scene": "Assets/QingTian/Scenes/M1_ParameterPerformance.unity",
+  "audioImported": true,
+  "audioSamples": 12947868,
+  "originalSongTracked": false,
+  "particles": 0,
+  "background": "black",
+  "targetFps": 30
+}

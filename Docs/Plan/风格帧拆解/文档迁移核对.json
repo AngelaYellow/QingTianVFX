@@ -1,0 +1,98 @@
+{
+  "verified_date": "2026-11-16",
+  "revision": "1.2",
+  "scope": "仅方案文档迁移、链接与附件一致性检查；不是Unity实现、粒子视觉或性能验收",
+  "source_plan": "D:\\Works\\智能交互设计\\cross-sensory-live-music\\experiments\\experiment-v2\\06_Unity还原",
+  "target_plan": "Docs/Plan",
+  "local_link_count": 54,
+  "failed_local_links": [],
+  "attachment_hashes": [
+    {
+      "name": "八图总览.png",
+      "sha256": "372a1dd8719e414c6fa895c97ad0d47a9fdf882c605cd6011628a6fa9da14e5b",
+      "matches_source": true
+    },
+    {
+      "name": "测量结果.json",
+      "sha256": "2ea4e9fcfb9b82f822abc10d192e9feaf0c641fa816cec0b028e117365793fea",
+      "matches_source": true
+    },
+    {
+      "name": "关键状态提案.json",
+      "sha256": "799fc19c42dcf47024e0790c2c8b8cb77b8fcfb5c5dd4a3752c10a9350582a50",
+      "matches_source": true
+    },
+    {
+      "name": "C1_测量图.png",
+      "sha256": "33f4be16e4a35ce930fe41a6e81ae6749c2141a4965f422a7d0073d7698d5aa1",
+      "matches_source": true
+    },
+    {
+      "name": "C1_分层标注.png",
+      "sha256": "1a76e978f860636f236e38daa593a05f4536e3a5fe718d2b5bea13fc5694cc34",
+      "matches_source": true
+    },
+    {
+      "name": "C2_测量图.png",
+      "sha256": "f25d2054f853f7fb7fe97c600981166f4bbe74222fe4f25135b654b813adc396",
+      "matches_source": true
+    },
+    {
+      "name": "C2_分层标注.png",
+      "sha256": "14401c239f498a78c3968c091f9800ef1e6cf099041f065d273edd410aa5ac4d",
+      "matches_source": true
+    },
+    {
+      "name": "C3_测量图.png",
+      "sha256": "b324a660badc26f00260264a3eadfebbd086b717694d7088dca41b7dc0b49a6a",
+      "matches_source": true
+    },
+    {
+      "name": "C3_分层标注.png",
+      "sha256": "0b9a9c5ec969681ad780fb9166c24fe4f5ab1222304940b9f492ed9adf194f69",
+      "matches_source": true
+    },
+    {
+      "name": "C4_测量图.png",
+      "sha256": "e70764804bd6f2503a846d61cdaea7baf834eb2533dd15226e8abc7a001e2a1e",
+      "matches_source": true
+    },
+    {
+      "name": "C4_分层标注.png",
+      "sha256": "d2846a26a917a72235fdff8e818aa14b2bfff98aaf757ab57988b59c0c821ee9",
+      "matches_source": true
+    }
+  ],
+  "preset_contract_check": [
+    {
+      "chapter": "C1",
+      "fixed_time_s": 56.8,
+      "parameter_count": 51,
+      "missing_from_contract": []
+    },
+    {
+      "chapter": "C2",
+      "fixed_time_s": 93.61,
+      "parameter_count": 51,
+      "missing_from_contract": []
+    },
+    {
+      "chapter": "C3",
+      "fixed_time_s": 155.41,
+      "parameter_count": 51,
+      "missing_from_contract": []
+    },
+    {
+      "chapter": "C4",
+      "fixed_time_s": 264.05,
+      "parameter_count": 51,
+      "missing_from_contract": []
+    }
+  ],
+  "preserved_parameter_data": "关键状态提案.json和测量结果.json按字节复制，未改变参数名、范围及四组数值",
+  "omitted_files": [
+    "测量方法.py：依赖原归档路径及字体，未迁移；原路径在正文说明",
+    "旧交付核对.json：旧版本检查记录未复制"
+  ],
+  "implementation_status": "只以工程根DEVELOPMENT.md为准，本文档核查不构成M1通过证据"
+}

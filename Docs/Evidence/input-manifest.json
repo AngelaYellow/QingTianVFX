@@ -1,0 +1,14 @@
+{
+  "source_sha256": "0c1a866751042dae234794a45736c52c13a89994da9fccea838cc91ede2d8511",
+  "duration": 269.74720833333333,
+  "parameter_count": 52,
+  "layer_count": 6,
+  "feature_frames": 13488,
+  "beat_count": 308,
+  "references": {
+    "C1.png": "3e7f8d5c3ec81f8cc5f2c22f35e98e056d921e6ca84bf2dad72c92197a314375",
+    "C2.png": "02c58fb930698ca3bc3ae0b74a39b7f304141ff111682a814c0875ef0326557a",
+    "C3.png": "8326fb052e428bd3dfc446b5be629c2442d0417b4b0aced46ca9f313bd3bda71",
+    "C4.png": "ad32bdb03e8f8ed297038f47ea2cb37a0c52586ef1626651b3bfb7ba0507c39f"
+  }
+}

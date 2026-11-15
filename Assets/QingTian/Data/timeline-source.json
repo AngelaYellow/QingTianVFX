@@ -1,0 +1,1724 @@
+{
+  "version": "1.1",
+  "duration": 269.74720833333333,
+  "source_sha256": "0c1a866751042dae234794a45736c52c13a89994da9fccea838cc91ede2d8511",
+  "method": "v1声学特征复用+htdemucs人声分离+faster-whisper small CPU int8中文转录+公开歌词字符序列匹配",
+  "structure_model": "fallback; All-In-One导入失败，未运行SongFormer",
+  "lyric_public_to_local_offset_median": -0.34,
+  "confidence_note": "启发式分值，低于0.65优先人工核对；不代表校准概率或人耳确认",
+  "chapters": [
+    {
+      "id": "C1",
+      "start": 0.0,
+      "end": 85.12
+    },
+    {
+      "id": "C2",
+      "start": 85.12,
+      "end": 141.827
+    },
+    {
+      "id": "C3",
+      "start": 141.827,
+      "end": 182.7
+    },
+    {
+      "id": "C4",
+      "start": 182.7,
+      "end": 269.74720833333333
+    }
+  ],
+  "form_sections": [
+    {
+      "id": "F1",
+      "label": "前奏",
+      "start": 0.0,
+      "end": 29.27,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    },
+    {
+      "id": "F2",
+      "label": "主歌",
+      "start": 29.27,
+      "end": 55.69,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    },
+    {
+      "id": "F3",
+      "label": "预副歌1",
+      "start": 55.69,
+      "end": 85.12,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    },
+    {
+      "id": "F4",
+      "label": "副歌1",
+      "start": 85.12,
+      "end": 141.827,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    },
+    {
+      "id": "F5",
+      "label": "间奏/吉他solo候选",
+      "start": 141.827,
+      "end": 154.2,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    },
+    {
+      "id": "F6",
+      "label": "预副歌2",
+      "start": 154.2,
+      "end": 182.7,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    },
+    {
+      "id": "F7",
+      "label": "副歌2",
+      "start": 182.7,
+      "end": 237.47,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    },
+    {
+      "id": "F8",
+      "label": "压缩副歌重述",
+      "start": 237.47,
+      "end": 265.69,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    },
+    {
+      "id": "F9",
+      "label": "尾奏",
+      "start": 265.69,
+      "end": 269.747,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    }
+  ],
+  "bridge": {
+    "detected": false,
+    "note": "未识别独立桥段，不为补齐类别虚构；末段暂标压缩副歌重述"
+  },
+  "lyric_units": [
+    {
+      "id": "L01",
+      "start": 29.27,
+      "end": 31.07,
+      "confidence": 0.35,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "match_coverage": 0.167,
+      "public_prior_start": 29.26,
+      "chapter_id": "C1",
+      "form_id": "F2",
+      "成形程度": "成形",
+      "意象转述": "童年花影",
+      "人声活动": {
+        "rms_dbfs_median": -18.54,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L02",
+      "start": 31.69,
+      "end": 34.09,
+      "confidence": 0.35,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "match_coverage": 0.25,
+      "public_prior_start": 32.71,
+      "chapter_id": "C1",
+      "form_id": "F2",
+      "成形程度": "半成形",
+      "意象转述": "记忆漂浮",
+      "人声活动": {
+        "rms_dbfs_median": -19.08,
+        "energy_active_ratio": 0.95,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L03",
+      "start": 35.21,
+      "end": 37.01,
+      "confidence": 0.35,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "match_coverage": 0.167,
+      "public_prior_start": 36.24,
+      "chapter_id": "C1",
+      "form_id": "F2",
+      "成形程度": "半成形",
+      "意象转述": "童年摇摆",
+      "人声活动": {
+        "rms_dbfs_median": -20.12,
+        "energy_active_ratio": 0.889,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L04",
+      "start": 38.73,
+      "end": 41.43,
+      "confidence": 0.35,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "match_coverage": 0.444,
+      "public_prior_start": 39.75,
+      "chapter_id": "C1",
+      "form_id": "F2",
+      "成形程度": "半成形",
+      "意象转述": "旧时延续",
+      "人声活动": {
+        "rms_dbfs_median": -19.81,
+        "energy_active_ratio": 0.926,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L05",
+      "start": 41.89,
+      "end": 44.88999999999999,
+      "confidence": 0.35,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "match_coverage": 0.0,
+      "public_prior_start": 42.91,
+      "chapter_id": "C1",
+      "form_id": "F2",
+      "成形程度": "半成形",
+      "意象转述": "旋律唱名一",
+      "人声活动": {
+        "rms_dbfs_median": -23.62,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L06",
+      "start": 44.91,
+      "end": 48.83,
+      "confidence": 0.35,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "match_coverage": 0.0,
+      "public_prior_start": 45.93,
+      "chapter_id": "C1",
+      "form_id": "F2",
+      "成形程度": "半成形",
+      "意象转述": "旋律唱名二",
+      "人声活动": {
+        "rms_dbfs_median": -26.44,
+        "energy_active_ratio": 0.995,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L07",
+      "start": 48.85,
+      "end": 51.25,
+      "confidence": 0.35,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "match_coverage": 0.0,
+      "public_prior_start": 49.87,
+      "chapter_id": "C1",
+      "form_id": "F2",
+      "成形程度": "半成形",
+      "意象转述": "回望天空",
+      "人声活动": {
+        "rms_dbfs_median": -25.61,
+        "energy_active_ratio": 0.867,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L08",
+      "start": 52.17,
+      "end": 54.87,
+      "confidence": 0.35,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "match_coverage": 0.0,
+      "public_prior_start": 53.2,
+      "chapter_id": "C1",
+      "form_id": "F2",
+      "成形程度": "半成形",
+      "意象转述": "花瓣试落",
+      "人声活动": {
+        "rms_dbfs_median": -18.11,
+        "energy_active_ratio": 0.978,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L09",
+      "start": 55.69,
+      "end": 57.79,
+      "confidence": 0.35,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "match_coverage": 0.0,
+      "public_prior_start": 56.72,
+      "chapter_id": "C1",
+      "form_id": "F3",
+      "成形程度": "成形",
+      "意象转述": "共同旧日",
+      "人声活动": {
+        "rms_dbfs_median": -19.0,
+        "energy_active_ratio": 0.943,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L10",
+      "start": 57.81,
+      "end": 59.61,
+      "confidence": 0.35,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "match_coverage": 0.333,
+      "public_prior_start": 58.83,
+      "chapter_id": "C1",
+      "form_id": "F3",
+      "成形程度": "半成形",
+      "意象转述": "落瓣记忆",
+      "人声活动": {
+        "rms_dbfs_median": -18.14,
+        "energy_active_ratio": 0.922,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L11",
+      "start": 60.9,
+      "end": 61.86,
+      "confidence": 0.691,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.5,
+      "public_prior_start": 60.6,
+      "chapter_id": "C1",
+      "form_id": "F3",
+      "成形程度": "半成形",
+      "意象转述": "旧日空间",
+      "人声活动": {
+        "rms_dbfs_median": -18.47,
+        "energy_active_ratio": 0.854,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L12",
+      "start": 62.06,
+      "end": 63.8,
+      "confidence": 0.927,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 1.0,
+      "public_prior_start": 62.32,
+      "chapter_id": "C1",
+      "form_id": "F3",
+      "成形程度": "半成形",
+      "意象转述": "视线缺席",
+      "人声活动": {
+        "rms_dbfs_median": -18.71,
+        "energy_active_ratio": 0.931,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L13",
+      "start": 64.42,
+      "end": 64.77000000000001,
+      "confidence": 0.55,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.667,
+      "public_prior_start": 64.12,
+      "chapter_id": "C1",
+      "form_id": "F3",
+      "成形程度": "半成形",
+      "意象转述": "消逝雨天",
+      "人声活动": {
+        "rms_dbfs_median": -17.74,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L14",
+      "start": 64.79,
+      "end": 66.89,
+      "confidence": 0.35,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "match_coverage": 0.286,
+      "public_prior_start": 65.81,
+      "chapter_id": "C1",
+      "form_id": "F3",
+      "成形程度": "半成形",
+      "意象转述": "愿重历雨",
+      "人声活动": {
+        "rms_dbfs_median": -17.31,
+        "energy_active_ratio": 0.962,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L15",
+      "start": 69.94,
+      "end": 73.8,
+      "confidence": 0.832,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.833,
+      "public_prior_start": 69.99,
+      "chapter_id": "C1",
+      "form_id": "F3",
+      "成形程度": "半成形",
+      "意象转述": "失去与勇气",
+      "人声活动": {
+        "rms_dbfs_median": -17.64,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L16",
+      "start": 75.6,
+      "end": 77.72,
+      "confidence": 0.778,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.667,
+      "public_prior_start": 76.12,
+      "chapter_id": "C1",
+      "form_id": "F3",
+      "成形程度": "半成形",
+      "意象转述": "再次询问",
+      "人声活动": {
+        "rms_dbfs_median": -20.03,
+        "energy_active_ratio": 0.896,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L17",
+      "start": 77.72,
+      "end": 81.78,
+      "confidence": 0.821,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.75,
+      "public_prior_start": 77.97,
+      "chapter_id": "C1",
+      "form_id": "F3",
+      "成形程度": "半成形",
+      "意象转述": "等待或离开",
+      "人声活动": {
+        "rms_dbfs_median": -18.82,
+        "energy_active_ratio": 0.995,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L18",
+      "start": 85.12,
+      "end": 90.0,
+      "confidence": 0.785,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.727,
+      "public_prior_start": 84.91,
+      "chapter_id": "C2",
+      "form_id": "F4",
+      "成形程度": "成形",
+      "意象转述": "风中牵手",
+      "人声活动": {
+        "rms_dbfs_median": -16.71,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L19",
+      "start": 90.0,
+      "end": 97.22,
+      "confidence": 0.825,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.769,
+      "public_prior_start": 90.45,
+      "chapter_id": "C2",
+      "form_id": "F4",
+      "成形程度": "成形",
+      "意象转述": "雨幕遮挡",
+      "人声活动": {
+        "rms_dbfs_median": -16.77,
+        "energy_active_ratio": 0.981,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L20",
+      "start": 99.14,
+      "end": 104.0,
+      "confidence": 0.907,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.909,
+      "public_prior_start": 98.88,
+      "chapter_id": "C2",
+      "form_id": "F4",
+      "成形程度": "成形",
+      "意象转述": "盼望靠近",
+      "人声活动": {
+        "rms_dbfs_median": -16.39,
+        "energy_active_ratio": 0.979,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L21",
+      "start": 104.64,
+      "end": 111.52,
+      "confidence": 0.856,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.812,
+      "public_prior_start": 105.44,
+      "chapter_id": "C2",
+      "form_id": "F4",
+      "成形程度": "半成形",
+      "意象转述": "等待天晴",
+      "人声活动": {
+        "rms_dbfs_median": -16.55,
+        "energy_active_ratio": 0.997,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L22",
+      "start": 113.1,
+      "end": 118.02,
+      "confidence": 0.895,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.909,
+      "public_prior_start": 112.87,
+      "chapter_id": "C2",
+      "form_id": "F4",
+      "成形程度": "成形",
+      "意象转述": "长久相伴",
+      "人声活动": {
+        "rms_dbfs_median": -15.65,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L23",
+      "start": 118.02,
+      "end": 125.42,
+      "confidence": 0.854,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.846,
+      "public_prior_start": 118.53999999999999,
+      "chapter_id": "C2",
+      "form_id": "F4",
+      "成形程度": "成形",
+      "意象转述": "风把距离拉远",
+      "人声活动": {
+        "rms_dbfs_median": -16.29,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L24",
+      "start": 127.2,
+      "end": 131.64,
+      "confidence": 0.859,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.818,
+      "public_prior_start": 126.94,
+      "chapter_id": "C2",
+      "form_id": "F4",
+      "成形程度": "半成形",
+      "意象转述": "愿多相伴",
+      "人声活动": {
+        "rms_dbfs_median": -15.53,
+        "energy_active_ratio": 0.982,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L25",
+      "start": 133.74,
+      "end": 140.5,
+      "confidence": 0.821,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.8,
+      "public_prior_start": 133.5,
+      "chapter_id": "C2",
+      "form_id": "F4",
+      "成形程度": "成形",
+      "意象转述": "最后分别",
+      "人声活动": {
+        "rms_dbfs_median": -17.58,
+        "energy_active_ratio": 0.982,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L26",
+      "start": 154.2,
+      "end": 156.62,
+      "confidence": 0.793,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.75,
+      "public_prior_start": 154.9,
+      "chapter_id": "C3",
+      "form_id": "F6",
+      "成形程度": "成形",
+      "意象转述": "共同旧日",
+      "人声活动": {
+        "rms_dbfs_median": -21.15,
+        "energy_active_ratio": 0.835,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L27",
+      "start": 157.04,
+      "end": 158.42,
+      "confidence": 0.874,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.833,
+      "public_prior_start": 156.88,
+      "chapter_id": "C3",
+      "form_id": "F6",
+      "成形程度": "半成形",
+      "意象转述": "落瓣记忆",
+      "人声活动": {
+        "rms_dbfs_median": -20.3,
+        "energy_active_ratio": 0.986,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L28",
+      "start": 158.98,
+      "end": 159.94,
+      "confidence": 0.725,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.5,
+      "public_prior_start": 158.66,
+      "chapter_id": "C3",
+      "form_id": "F6",
+      "成形程度": "半成形",
+      "意象转述": "旧日空间",
+      "人声活动": {
+        "rms_dbfs_median": -19.38,
+        "energy_active_ratio": 0.938,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L29",
+      "start": 160.1,
+      "end": 161.10999999999999,
+      "confidence": 0.55,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 1.0,
+      "public_prior_start": 160.39,
+      "chapter_id": "C3",
+      "form_id": "F6",
+      "成形程度": "半成形",
+      "意象转述": "视线缺席",
+      "人声活动": {
+        "rms_dbfs_median": -21.01,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L30",
+      "start": 161.13,
+      "end": 162.82999999999998,
+      "confidence": 0.35,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "match_coverage": 0.333,
+      "public_prior_start": 162.15,
+      "chapter_id": "C3",
+      "form_id": "F6",
+      "成形程度": "半成形",
+      "意象转述": "消逝雨天",
+      "人声活动": {
+        "rms_dbfs_median": -17.29,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L31",
+      "start": 162.85,
+      "end": 164.95,
+      "confidence": 0.35,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "match_coverage": 0.143,
+      "public_prior_start": 163.87,
+      "chapter_id": "C3",
+      "form_id": "F6",
+      "成形程度": "半成形",
+      "意象转述": "愿重历雨",
+      "人声活动": {
+        "rms_dbfs_median": -16.67,
+        "energy_active_ratio": 0.99,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L32",
+      "start": 167.94,
+      "end": 171.88,
+      "confidence": 0.821,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.75,
+      "public_prior_start": 168,
+      "chapter_id": "C3",
+      "form_id": "F6",
+      "成形程度": "半成形",
+      "意象转述": "失去与勇气",
+      "人声活动": {
+        "rms_dbfs_median": -17.16,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L33",
+      "start": 173.86,
+      "end": 175.29,
+      "confidence": 0.645,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.5,
+      "public_prior_start": 174.15,
+      "chapter_id": "C3",
+      "form_id": "F6",
+      "成形程度": "半成形",
+      "意象转述": "再次询问",
+      "人声活动": {
+        "rms_dbfs_median": -14.71,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L34",
+      "start": 175.54,
+      "end": 180.36,
+      "confidence": 0.942,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 1.0,
+      "public_prior_start": 176.03,
+      "chapter_id": "C3",
+      "form_id": "F6",
+      "成形程度": "半成形",
+      "意象转述": "等待或离开",
+      "人声活动": {
+        "rms_dbfs_median": -18.16,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L35",
+      "start": 182.7,
+      "end": 188.04,
+      "confidence": 0.752,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.636,
+      "public_prior_start": 182.92,
+      "chapter_id": "C4",
+      "form_id": "F7",
+      "成形程度": "成形",
+      "意象转述": "风中牵手",
+      "人声活动": {
+        "rms_dbfs_median": -15.83,
+        "energy_active_ratio": 0.978,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L36",
+      "start": 190.68,
+      "end": 195.12,
+      "confidence": 0.6,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.538,
+      "public_prior_start": 188.49,
+      "chapter_id": "C4",
+      "form_id": "F7",
+      "成形程度": "成形",
+      "意象转述": "雨幕遮挡",
+      "人声活动": {
+        "rms_dbfs_median": -17.14,
+        "energy_active_ratio": 0.995,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L37",
+      "start": 196.28,
+      "end": 202.78,
+      "confidence": 0.938,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 1.0,
+      "public_prior_start": 196.94,
+      "chapter_id": "C4",
+      "form_id": "F7",
+      "成形程度": "成形",
+      "意象转述": "盼望靠近",
+      "人声活动": {
+        "rms_dbfs_median": -16.33,
+        "energy_active_ratio": 0.902,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L38",
+      "start": 202.78,
+      "end": 210.2,
+      "confidence": 0.861,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.812,
+      "public_prior_start": 203.43,
+      "chapter_id": "C4",
+      "form_id": "F7",
+      "成形程度": "半成形",
+      "意象转述": "等待天晴",
+      "人声活动": {
+        "rms_dbfs_median": -16.02,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L39",
+      "start": 210.2,
+      "end": 216.09,
+      "confidence": 0.55,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 1.0,
+      "public_prior_start": 210.87,
+      "chapter_id": "C4",
+      "form_id": "F7",
+      "成形程度": "成形",
+      "意象转述": "长久相伴",
+      "人声活动": {
+        "rms_dbfs_median": -16.2,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L40",
+      "start": 216.11,
+      "end": 219.71,
+      "confidence": 0.35,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "match_coverage": 0.417,
+      "public_prior_start": 217.14,
+      "chapter_id": "C4",
+      "form_id": "F7",
+      "成形程度": "成形",
+      "意象转述": "距离拉远",
+      "人声活动": {
+        "rms_dbfs_median": -15.84,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L41",
+      "start": 224.46,
+      "end": 229.76,
+      "confidence": 0.881,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.909,
+      "public_prior_start": 224.88,
+      "chapter_id": "C4",
+      "form_id": "F7",
+      "成形程度": "半成形",
+      "意象转述": "愿多相伴",
+      "人声活动": {
+        "rms_dbfs_median": -15.61,
+        "energy_active_ratio": 0.962,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L42",
+      "start": 231.8,
+      "end": 237.45,
+      "confidence": 0.55,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.8,
+      "public_prior_start": 231.42000000000002,
+      "chapter_id": "C4",
+      "form_id": "F7",
+      "成形程度": "成形",
+      "意象转述": "最后分别",
+      "人声活动": {
+        "rms_dbfs_median": -17.33,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L43",
+      "start": 237.47,
+      "end": 240.77,
+      "confidence": 0.35,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "match_coverage": 0.455,
+      "public_prior_start": 238.49,
+      "chapter_id": "C4",
+      "form_id": "F8",
+      "成形程度": "成形",
+      "意象转述": "风中牵手重述",
+      "人声活动": {
+        "rms_dbfs_median": -17.19,
+        "energy_active_ratio": 0.892,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L44",
+      "start": 241.6,
+      "end": 245.08,
+      "confidence": 0.768,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.615,
+      "public_prior_start": 241.97,
+      "chapter_id": "C4",
+      "form_id": "F8",
+      "成形程度": "成形",
+      "意象转述": "雨幕重述",
+      "人声活动": {
+        "rms_dbfs_median": -22.9,
+        "energy_active_ratio": 0.937,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L45",
+      "start": 245.08,
+      "end": 248.56,
+      "confidence": 0.945,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 1.0,
+      "public_prior_start": 245.65,
+      "chapter_id": "C4",
+      "form_id": "F8",
+      "成形程度": "半成形",
+      "意象转述": "靠近重述",
+      "人声活动": {
+        "rms_dbfs_median": -21.93,
+        "energy_active_ratio": 0.96,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L46",
+      "start": 248.56,
+      "end": 252.38,
+      "confidence": 0.911,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.933,
+      "public_prior_start": 249.07,
+      "chapter_id": "C4",
+      "form_id": "F8",
+      "成形程度": "半成形",
+      "意象转述": "晴天愿望重述",
+      "人声活动": {
+        "rms_dbfs_median": -24.24,
+        "energy_active_ratio": 0.942,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L47",
+      "start": 252.38,
+      "end": 255.56,
+      "confidence": 0.929,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 1.0,
+      "public_prior_start": 252.92,
+      "chapter_id": "C4",
+      "form_id": "F8",
+      "成形程度": "成形",
+      "意象转述": "长久相伴重述",
+      "人声活动": {
+        "rms_dbfs_median": -21.75,
+        "energy_active_ratio": 0.95,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L48",
+      "start": 255.56,
+      "end": 259.04,
+      "confidence": 0.834,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.769,
+      "public_prior_start": 255.91,
+      "chapter_id": "C4",
+      "form_id": "F8",
+      "成形程度": "成形",
+      "意象转述": "距离重述",
+      "人声活动": {
+        "rms_dbfs_median": -23.29,
+        "energy_active_ratio": 0.96,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L49",
+      "start": 259.04,
+      "end": 262.56,
+      "confidence": 0.901,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.909,
+      "public_prior_start": 259.38,
+      "chapter_id": "C4",
+      "form_id": "F8",
+      "成形程度": "半成形",
+      "意象转述": "相伴重述",
+      "人声活动": {
+        "rms_dbfs_median": -23.02,
+        "energy_active_ratio": 0.932,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    },
+    {
+      "id": "L50",
+      "start": 262.56,
+      "end": 265.54,
+      "confidence": 0.832,
+      "confidence_kind": "启发式匹配质量，非校准概率",
+      "alignment_method": "公开句序列与人声Whisper字符锚点匹配",
+      "match_coverage": 0.786,
+      "public_prior_start": 262.86,
+      "chapter_id": "C4",
+      "form_id": "F8",
+      "成形程度": "成形",
+      "意象转述": "分别余音",
+      "人声活动": {
+        "rms_dbfs_median": -21.53,
+        "energy_active_ratio": 0.973,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差",
+        "是否演唱估计": "主要活动"
+      }
+    }
+  ],
+  "dispersal_events": [
+    {
+      "start": 0.0,
+      "end": 29.27,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -77.96,
+        "energy_active_ratio": 0.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 31.07,
+      "end": 31.69,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -19.17,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 34.09,
+      "end": 35.21,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -17.7,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 37.01,
+      "end": 38.73,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -18.69,
+        "energy_active_ratio": 0.93,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 41.43,
+      "end": 41.89,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -17.41,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 51.25,
+      "end": 52.17,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -17.2,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 54.87,
+      "end": 55.69,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -18.95,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 59.61,
+      "end": 60.9,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -19.44,
+        "energy_active_ratio": 0.923,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 61.86,
+      "end": 62.06,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -18.61,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 63.8,
+      "end": 64.42,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -19.73,
+        "energy_active_ratio": 0.968,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 66.89,
+      "end": 69.94,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -17.38,
+        "energy_active_ratio": 0.83,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 73.8,
+      "end": 75.6,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -18.55,
+        "energy_active_ratio": 0.744,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 81.78,
+      "end": 85.12,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -26.87,
+        "energy_active_ratio": 0.683,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 97.22,
+      "end": 99.14,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -23.87,
+        "energy_active_ratio": 0.656,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 104.0,
+      "end": 104.64,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -15.94,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 111.52,
+      "end": 113.1,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -17.38,
+        "energy_active_ratio": 0.949,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 125.42,
+      "end": 127.2,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -25.88,
+        "energy_active_ratio": 0.854,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 131.64,
+      "end": 133.74,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -16.22,
+        "energy_active_ratio": 0.943,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 140.5,
+      "end": 154.2,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -78.17,
+        "energy_active_ratio": 0.152,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 156.62,
+      "end": 157.04,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -22.03,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 158.42,
+      "end": 158.98,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -22.81,
+        "energy_active_ratio": 0.929,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 164.95,
+      "end": 167.94,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -18.24,
+        "energy_active_ratio": 0.88,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 171.88,
+      "end": 173.86,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -16.99,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 175.29,
+      "end": 175.54,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -15.65,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 180.36,
+      "end": 182.7,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -18.99,
+        "energy_active_ratio": 0.872,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 188.04,
+      "end": 190.68,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -17.46,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 195.12,
+      "end": 196.28,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -19.08,
+        "energy_active_ratio": 0.793,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 219.71,
+      "end": 224.46,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -16.69,
+        "energy_active_ratio": 0.979,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 229.76,
+      "end": 231.8,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -15.75,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 240.77,
+      "end": 241.6,
+      "成形程度": "流散",
+      "type": "句间/器乐窗口",
+      "note": "歌词单元间空档；实际是否有尾音以人声活动比例核对",
+      "人声活动": {
+        "rms_dbfs_median": -20.13,
+        "energy_active_ratio": 1.0,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    },
+    {
+      "start": 265.54,
+      "end": 269.74720833333333,
+      "成形程度": "流散",
+      "type": "尾声窗口",
+      "人声活动": {
+        "rms_dbfs_median": -85.08,
+        "energy_active_ratio": 0.114,
+        "gate_dbfs": -46.0,
+        "caveat": "分离轨能量门限活动比例；伴奏泄漏或气声可能造成误差"
+      }
+    }
+  ],
+  "tempo_candidates": [
+    {
+      "label_bpm": 136,
+      "measured_bpm": 135.99917763157896,
+      "audio": "01_时间骨架/本地音频/速度核对_136BPM.mp3",
+      "click_count": 616,
+      "phase": "136候选原节拍帧；68取同一序列隔一拍",
+      "playback_speed_changed": false
+    },
+    {
+      "label_bpm": 68,
+      "measured_bpm": 67.99958881578948,
+      "audio": "01_时间骨架/本地音频/速度核对_68BPM.mp3",
+      "click_count": 308,
+      "phase": "136候选原节拍帧；68取同一序列隔一拍",
+      "playback_speed_changed": false
+    }
+  ],
+  "manual_review": [
+    {
+      "id": "L01",
+      "start": 29.27,
+      "end": 31.07,
+      "reason": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "confidence": 0.35
+    },
+    {
+      "id": "L02",
+      "start": 31.69,
+      "end": 34.09,
+      "reason": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "confidence": 0.35
+    },
+    {
+      "id": "L03",
+      "start": 35.21,
+      "end": 37.01,
+      "reason": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "confidence": 0.35
+    },
+    {
+      "id": "L04",
+      "start": 38.73,
+      "end": 41.43,
+      "reason": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "confidence": 0.35
+    },
+    {
+      "id": "L05",
+      "start": 41.89,
+      "end": 44.88999999999999,
+      "reason": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "confidence": 0.35
+    },
+    {
+      "id": "L06",
+      "start": 44.91,
+      "end": 48.83,
+      "reason": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "confidence": 0.35
+    },
+    {
+      "id": "L07",
+      "start": 48.85,
+      "end": 51.25,
+      "reason": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "confidence": 0.35
+    },
+    {
+      "id": "L08",
+      "start": 52.17,
+      "end": 54.87,
+      "reason": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "confidence": 0.35
+    },
+    {
+      "id": "L09",
+      "start": 55.69,
+      "end": 57.79,
+      "reason": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "confidence": 0.35
+    },
+    {
+      "id": "L10",
+      "start": 57.81,
+      "end": 59.61,
+      "reason": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "confidence": 0.35
+    },
+    {
+      "id": "L13",
+      "start": 64.42,
+      "end": 64.77000000000001,
+      "reason": "公开句序列与人声Whisper字符锚点匹配",
+      "confidence": 0.55
+    },
+    {
+      "id": "L14",
+      "start": 64.79,
+      "end": 66.89,
+      "reason": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "confidence": 0.35
+    },
+    {
+      "id": "L29",
+      "start": 160.1,
+      "end": 161.10999999999999,
+      "reason": "公开句序列与人声Whisper字符锚点匹配",
+      "confidence": 0.55
+    },
+    {
+      "id": "L30",
+      "start": 161.13,
+      "end": 162.82999999999998,
+      "reason": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "confidence": 0.35
+    },
+    {
+      "id": "L31",
+      "start": 162.85,
+      "end": 164.95,
+      "reason": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "confidence": 0.35
+    },
+    {
+      "id": "L33",
+      "start": 173.86,
+      "end": 175.29,
+      "reason": "公开句序列与人声Whisper字符锚点匹配",
+      "confidence": 0.645
+    },
+    {
+      "id": "L36",
+      "start": 190.68,
+      "end": 195.12,
+      "reason": "公开句序列与人声Whisper字符锚点匹配",
+      "confidence": 0.6
+    },
+    {
+      "id": "L39",
+      "start": 210.2,
+      "end": 216.09,
+      "reason": "公开句序列与人声Whisper字符锚点匹配",
+      "confidence": 0.55
+    },
+    {
+      "id": "L40",
+      "start": 216.11,
+      "end": 219.71,
+      "reason": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "confidence": 0.35
+    },
+    {
+      "id": "L42",
+      "start": 231.8,
+      "end": 237.45,
+      "reason": "公开句序列与人声Whisper字符锚点匹配",
+      "confidence": 0.55
+    },
+    {
+      "id": "L43",
+      "start": 237.47,
+      "end": 240.77,
+      "reason": "公开LRC+本地锚点中位偏移+人声能量（低置信度回退）",
+      "confidence": 0.35
+    }
+  ],
+  "asr_limit": "tiny初稿漏段；small权重最终成功缓存，音频读取兼容问题改用本地16kHz数组解决；关闭静音跳过，唱名、气声和重复歌词仍须人工核对"
+}

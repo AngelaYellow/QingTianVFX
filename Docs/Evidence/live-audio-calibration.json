@@ -1,0 +1,30 @@
+{
+  "method": "p97 of full real-time Unity AudioSource.GetOutputData/GetSpectrumData; pitch 1, target 30fps, channel 0",
+  "columns": [
+    "rawRms",
+    "rawLow",
+    "rawHigh",
+    "rawFlux"
+  ],
+  "normalization": [
+    0.3857706573678354,
+    0.28885132774714095,
+    0.09510528463935143,
+    2.1184408418912404
+  ],
+  "sampleCount": 7969,
+  "timeRange": [
+    0.0,
+    269.7453333333334
+  ],
+  "outputSampleRate": 48000,
+  "window": "BlackmanHarris",
+  "spectrumSize": 2048,
+  "rawClippedFractionAtP97": [
+    0.030116702221106788,
+    0.030116702221106788,
+    0.030116702221106788,
+    0.030116702221106788
+  ],
+  "note": "Fixed per-song calibration, not automatic per-frame gain. Recalibrate if FFT size/output sample rate or musical source changes."
+}

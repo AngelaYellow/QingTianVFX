@@ -1,0 +1,558 @@
+{
+  "C1": {
+    "candidate_time_s": 56.8,
+    "status": "提案，非已实现；中心/黑隙是条件测量，其余是人工初值",
+    "parameters": {
+      "LightCenterA": [
+        0.26025679027923404,
+        0.33059895852422183
+      ],
+      "LightCenterB": [
+        0.46649010342624725,
+        0.4635583783723632
+      ],
+      "LightScaleA": [
+        0.26,
+        0.2
+      ],
+      "LightScaleB": [
+        0.3,
+        0.22
+      ],
+      "LightColorA": "#D1CEFA",
+      "LightColorB": "#BCE8F0",
+      "LightGainA": 1.05,
+      "LightGainB": 1.15,
+      "MistTargetCount": 48,
+      "MistSize": 0.22,
+      "MistOpacity": 0.14,
+      "FlowSpeed": 0.045,
+      "FiberTargetCount": 128,
+      "FiberWidth": 0.0008,
+      "FiberBend": 0.75,
+      "NoiseAmp": 0.006,
+      "DustTargetCount": 6000,
+      "DustSize": [
+        0.0006,
+        0.0015
+      ],
+      "DustGain": 1.1,
+      "BokehTargetCount": 40,
+      "BokehSize": [
+        0.018,
+        0.06
+      ],
+      "BokehGain": 0.32,
+      "FlowerCenter": [
+        0.795,
+        0.155
+      ],
+      "FlowerRadius": 0.065,
+      "FlowerForm": 0.85,
+      "FlowerBreak": 0.3,
+      "FlowerTargetCount": 900,
+      "FlowerSoftness": 0.9,
+      "RainTargetCount": 0,
+      "RainLength": 0.018,
+      "RainWidth": 0.0006,
+      "RainAngle": 48,
+      "RainSpeed": 0.16,
+      "GapLength": 0.45,
+      "DepthSpread": 0.7,
+      "SoftFraction": 0.65,
+      "BloomIntensity": 0.65,
+      "NoiseFrequency": 6,
+      "GapCenter": [
+        0.5,
+        0.5
+      ],
+      "GapWidth": 0.0,
+      "GapNormalAngle": 0,
+      "GapStrength": 0,
+      "FocusDepth": 0.5,
+      "FlowA0": [
+        0,
+        0.1,
+        0.5
+      ],
+      "FlowA1": [
+        0.25,
+        0.65,
+        0.5
+      ],
+      "FlowA2": [
+        0.65,
+        0.95,
+        0.5
+      ],
+      "FlowA3": [
+        1.05,
+        0.28,
+        0.5
+      ],
+      "FlowB0": [
+        0.05,
+        0.65,
+        0.75
+      ],
+      "FlowB1": [
+        0.4,
+        0.22,
+        0.6
+      ],
+      "FlowB2": [
+        0.65,
+        0.17,
+        0.75
+      ],
+      "FlowB3": [
+        1.05,
+        0.9,
+        0.82
+      ]
+    },
+    "layer_depths": {
+      "Mist": {
+        "LayerDepth": 0.72,
+        "LayerDepthJitter": 0.16
+      },
+      "Fibers": {
+        "LayerDepth": 0.5,
+        "LayerDepthJitter": 0.08
+      },
+      "Dust": {
+        "LayerDepth": 0.48,
+        "LayerDepthJitter": 0.2
+      },
+      "Bokeh": {
+        "LayerDepth": 0.15,
+        "LayerDepthJitter": 0.1
+      },
+      "Flower": {
+        "LayerDepth": 0.85,
+        "LayerDepthJitter": 0.04
+      },
+      "Rain": {
+        "LayerDepth": 0.6,
+        "LayerDepthJitter": 0.18
+      }
+    }
+  },
+  "C2": {
+    "candidate_time_s": 93.61,
+    "status": "提案，非已实现；中心/黑隙是条件测量，其余是人工初值",
+    "parameters": {
+      "LightCenterA": [
+        0.2523467735501256,
+        0.7530766275937906
+      ],
+      "LightCenterB": [
+        0.8386795234153708,
+        0.2349032409002875
+      ],
+      "LightScaleA": [
+        0.36,
+        0.25
+      ],
+      "LightScaleB": [
+        0.32,
+        0.25
+      ],
+      "LightColorA": "#E2BCD7",
+      "LightColorB": "#B7E6E8",
+      "LightGainA": 1.0,
+      "LightGainB": 1.1,
+      "MistTargetCount": 32,
+      "MistSize": 0.24,
+      "MistOpacity": 0.12,
+      "FlowSpeed": 0.055,
+      "FiberTargetCount": 80,
+      "FiberWidth": 0.00065,
+      "FiberBend": 0.5,
+      "NoiseAmp": 0.004,
+      "DustTargetCount": 4200,
+      "DustSize": [
+        0.0005,
+        0.0013
+      ],
+      "DustGain": 0.95,
+      "BokehTargetCount": 28,
+      "BokehSize": [
+        0.015,
+        0.045
+      ],
+      "BokehGain": 0.22,
+      "FlowerCenter": [
+        0.1,
+        0.405
+      ],
+      "FlowerRadius": 0.075,
+      "FlowerForm": 0.3,
+      "FlowerBreak": 0.65,
+      "FlowerTargetCount": 420,
+      "FlowerSoftness": 0.35,
+      "RainTargetCount": 120,
+      "RainLength": 0.02,
+      "RainWidth": 0.0005,
+      "RainAngle": 48,
+      "RainSpeed": 0.18,
+      "GapLength": 0.85,
+      "DepthSpread": 0.65,
+      "SoftFraction": 0.6,
+      "BloomIntensity": 0.45,
+      "NoiseFrequency": 6,
+      "GapCenter": [
+        0.5842111099738544,
+        0.4597904907252678
+      ],
+      "GapWidth": 0.1584744689870298,
+      "GapNormalAngle": -55,
+      "GapStrength": 1,
+      "FocusDepth": 0.5,
+      "FlowA0": [
+        0,
+        0.35,
+        0.5
+      ],
+      "FlowA1": [
+        0.3,
+        0.28,
+        0.5
+      ],
+      "FlowA2": [
+        0.5,
+        0.95,
+        0.6
+      ],
+      "FlowA3": [
+        0.85,
+        1.05,
+        0.7
+      ],
+      "FlowB0": [
+        0.35,
+        -0.1,
+        0.8
+      ],
+      "FlowB1": [
+        0.65,
+        0.3,
+        0.65
+      ],
+      "FlowB2": [
+        0.85,
+        0.6,
+        0.65
+      ],
+      "FlowB3": [
+        1.05,
+        0.22,
+        0.6
+      ]
+    },
+    "layer_depths": {
+      "Mist": {
+        "LayerDepth": 0.72,
+        "LayerDepthJitter": 0.16
+      },
+      "Fibers": {
+        "LayerDepth": 0.5,
+        "LayerDepthJitter": 0.08
+      },
+      "Dust": {
+        "LayerDepth": 0.48,
+        "LayerDepthJitter": 0.2
+      },
+      "Bokeh": {
+        "LayerDepth": 0.15,
+        "LayerDepthJitter": 0.1
+      },
+      "Flower": {
+        "LayerDepth": 0.52,
+        "LayerDepthJitter": 0.04
+      },
+      "Rain": {
+        "LayerDepth": 0.6,
+        "LayerDepthJitter": 0.18
+      }
+    }
+  },
+  "C3": {
+    "candidate_time_s": 155.41,
+    "status": "提案，非已实现；中心/黑隙是条件测量，其余是人工初值",
+    "parameters": {
+      "LightCenterA": [
+        0.2479269286715239,
+        0.4075851424352759
+      ],
+      "LightCenterB": [
+        0.7430871494154111,
+        0.6013833368718207
+      ],
+      "LightScaleA": [
+        0.33,
+        0.24
+      ],
+      "LightScaleB": [
+        0.36,
+        0.25
+      ],
+      "LightColorA": "#DEC8E1",
+      "LightColorB": "#B6DFE9",
+      "LightGainA": 1.05,
+      "LightGainB": 1.0,
+      "MistTargetCount": 40,
+      "MistSize": 0.23,
+      "MistOpacity": 0.12,
+      "FlowSpeed": 0.035,
+      "FiberTargetCount": 96,
+      "FiberWidth": 0.00065,
+      "FiberBend": 0.85,
+      "NoiseAmp": 0.003,
+      "DustTargetCount": 5200,
+      "DustSize": [
+        0.0005,
+        0.0014
+      ],
+      "DustGain": 1.0,
+      "BokehTargetCount": 32,
+      "BokehSize": [
+        0.015,
+        0.045
+      ],
+      "BokehGain": 0.25,
+      "FlowerCenter": [
+        0.82,
+        0.225
+      ],
+      "FlowerRadius": 0.05,
+      "FlowerForm": 0.8,
+      "FlowerBreak": 0.35,
+      "FlowerTargetCount": 700,
+      "FlowerSoftness": 0.95,
+      "RainTargetCount": 0,
+      "RainLength": 0.018,
+      "RainWidth": 0.0005,
+      "RainAngle": 48,
+      "RainSpeed": 0.16,
+      "GapLength": 0.28,
+      "DepthSpread": 0.75,
+      "SoftFraction": 0.6,
+      "BloomIntensity": 0.35,
+      "NoiseFrequency": 6,
+      "GapCenter": [
+        0.49884937053348877,
+        0.5057923774659949
+      ],
+      "GapWidth": 0.006337879507803773,
+      "GapNormalAngle": 60,
+      "GapStrength": 1,
+      "FocusDepth": 0.5,
+      "FlowA0": [
+        0,
+        0.06,
+        0.5
+      ],
+      "FlowA1": [
+        0.35,
+        0.5,
+        0.5
+      ],
+      "FlowA2": [
+        0.64,
+        0.64,
+        0.6
+      ],
+      "FlowA3": [
+        0.57,
+        0.2,
+        0.65
+      ],
+      "FlowB0": [
+        1.05,
+        0.72,
+        0.65
+      ],
+      "FlowB1": [
+        0.7,
+        0.7,
+        0.6
+      ],
+      "FlowB2": [
+        0.22,
+        0.7,
+        0.55
+      ],
+      "FlowB3": [
+        0.51,
+        0.48,
+        0.5
+      ]
+    },
+    "layer_depths": {
+      "Mist": {
+        "LayerDepth": 0.72,
+        "LayerDepthJitter": 0.16
+      },
+      "Fibers": {
+        "LayerDepth": 0.5,
+        "LayerDepthJitter": 0.08
+      },
+      "Dust": {
+        "LayerDepth": 0.48,
+        "LayerDepthJitter": 0.2
+      },
+      "Bokeh": {
+        "LayerDepth": 0.15,
+        "LayerDepthJitter": 0.1
+      },
+      "Flower": {
+        "LayerDepth": 0.85,
+        "LayerDepthJitter": 0.04
+      },
+      "Rain": {
+        "LayerDepth": 0.6,
+        "LayerDepthJitter": 0.18
+      }
+    }
+  },
+  "C4": {
+    "candidate_time_s": 264.05,
+    "status": "提案，非已实现；中心/黑隙是条件测量，其余是人工初值",
+    "parameters": {
+      "LightCenterA": [
+        0.16416890083852534,
+        0.8274542969643625
+      ],
+      "LightCenterB": [
+        0.8166749230990625,
+        0.5288117032264266
+      ],
+      "LightScaleA": [
+        0.3,
+        0.22
+      ],
+      "LightScaleB": [
+        0.29,
+        0.24
+      ],
+      "LightColorA": "#D9BCD6",
+      "LightColorB": "#AED6DE",
+      "LightGainA": 0.75,
+      "LightGainB": 0.95,
+      "MistTargetCount": 24,
+      "MistSize": 0.25,
+      "MistOpacity": 0.09,
+      "FlowSpeed": 0.025,
+      "FiberTargetCount": 64,
+      "FiberWidth": 0.0006,
+      "FiberBend": 0.4,
+      "NoiseAmp": 0.004,
+      "DustTargetCount": 2200,
+      "DustSize": [
+        0.0005,
+        0.0012
+      ],
+      "DustGain": 0.7,
+      "BokehTargetCount": 20,
+      "BokehSize": [
+        0.015,
+        0.05
+      ],
+      "BokehGain": 0.18,
+      "FlowerCenter": [
+        0.15,
+        0.445
+      ],
+      "FlowerRadius": 0.085,
+      "FlowerForm": 0.22,
+      "FlowerBreak": 0.78,
+      "FlowerTargetCount": 280,
+      "FlowerSoftness": 0.35,
+      "RainTargetCount": 0,
+      "RainLength": 0.018,
+      "RainWidth": 0.0005,
+      "RainAngle": 48,
+      "RainSpeed": 0.16,
+      "GapLength": 1.1,
+      "DepthSpread": 0.65,
+      "SoftFraction": 0.55,
+      "BloomIntensity": 0.3,
+      "NoiseFrequency": 6,
+      "GapCenter": [
+        0.4325120024931713,
+        0.7046375302896364
+      ],
+      "GapWidth": 0.1708096416473914,
+      "GapNormalAngle": -15,
+      "GapStrength": 1,
+      "FocusDepth": 0.5,
+      "FlowA0": [
+        0,
+        0.55,
+        0.6
+      ],
+      "FlowA1": [
+        0.3,
+        0.9,
+        0.5
+      ],
+      "FlowA2": [
+        0.45,
+        0.9,
+        0.5
+      ],
+      "FlowA3": [
+        0.68,
+        0.55,
+        0.5
+      ],
+      "FlowB0": [
+        0.6,
+        0.6,
+        0.7
+      ],
+      "FlowB1": [
+        0.8,
+        0.55,
+        0.65
+      ],
+      "FlowB2": [
+        0.94,
+        0.45,
+        0.8
+      ],
+      "FlowB3": [
+        1.05,
+        0.15,
+        0.8
+      ]
+    },
+    "layer_depths": {
+      "Mist": {
+        "LayerDepth": 0.72,
+        "LayerDepthJitter": 0.16
+      },
+      "Fibers": {
+        "LayerDepth": 0.5,
+        "LayerDepthJitter": 0.08
+      },
+      "Dust": {
+        "LayerDepth": 0.48,
+        "LayerDepthJitter": 0.2
+      },
+      "Bokeh": {
+        "LayerDepth": 0.15,
+        "LayerDepthJitter": 0.1
+      },
+      "Flower": {
+        "LayerDepth": 0.5,
+        "LayerDepthJitter": 0.04
+      },
+      "Rain": {
+        "LayerDepth": 0.6,
+        "LayerDepthJitter": 0.18
+      }
+    }
+  }
+}

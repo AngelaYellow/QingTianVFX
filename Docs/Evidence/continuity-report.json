@@ -1,0 +1,40 @@
+{
+  "generatedBy": "QingTian.ScoreModel (same C# evaluator as runtime)",
+  "featureMode": "deterministic cached features; runtime defaults to LIVE",
+  "sampleRate": 120,
+  "rows": 32375,
+  "parameterNames": 52,
+  "scalarComponents": 82,
+  "checkedEventCount": 402,
+  "epsilonSeconds": 1E-06,
+  "maximumNormalizedAcrossEventDifference": 6.2584877E-06,
+  "worstParameter": "FlowerForm",
+  "worstTime": 160.1944671201814,
+  "anchors": [
+    {
+      "time": 56.8,
+      "maximumAbsoluteError": 0.0,
+      "inputRms": 1.0,
+      "freedom": 0.0
+    },
+    {
+      "time": 93.61,
+      "maximumAbsoluteError": 0.0,
+      "inputRms": 1.0,
+      "freedom": 0.0
+    },
+    {
+      "time": 155.41,
+      "maximumAbsoluteError": 0.0,
+      "inputRms": 1.0,
+      "freedom": 0.0
+    },
+    {
+      "time": 264.05,
+      "maximumAbsoluteError": 0.0,
+      "inputRms": 1.0,
+      "freedom": 0.0
+    }
+  ],
+  "interpretation": "Dense sampling and epsilon tests support C0 continuity. Discrete chapter/lyric labels are intentionally excluded; real-time audio variations are not claimed identical to cached curves."
+}

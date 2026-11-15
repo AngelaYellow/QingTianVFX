@@ -1,0 +1,39 @@
+{
+  "source_sha256": "0c1a866751042dae234794a45736c52c13a89994da9fccea838cc91ede2d8511",
+  "duration_s": 269.74720833333333,
+  "source_sample_rate": 96000,
+  "unity_sample_rate": 48000,
+  "phase_candidates": [
+    {
+      "phase": 0,
+      "first_beat_seconds": 0.0,
+      "valid_samples": 294,
+      "mean_accent": 1.116012325759142,
+      "median_accent": 1.185215726882422,
+      "chapter_mean_accent": [
+        1.0974430094087007,
+        1.111136938475496,
+        1.173878315895146,
+        1.1078694109022997
+      ]
+    },
+    {
+      "phase": 1,
+      "first_beat_seconds": 0.44117913832199546,
+      "valid_samples": 294,
+      "mean_accent": 0.694460243797489,
+      "median_accent": 0.496509514153495,
+      "chapter_mean_accent": [
+        0.7168066501065357,
+        0.7064840477446312,
+        0.677908598070906,
+        0.6735016941952451
+      ]
+    }
+  ],
+  "selected_phase": 0,
+  "bpm": 67.99958881578948,
+  "beat_count": 308,
+  "score_definition": "0.60 low-band RMS + 0.25 positive low-band attack + 0.15 positive spectral flux; local maximum [-70,+100]ms; exclude first8s and after265.54s",
+  "caveat": "Acoustic preference between two phases, not a verified downbeat annotation. User listening pending."
+}

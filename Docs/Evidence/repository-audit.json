@@ -1,0 +1,79 @@
+{
+  "candidateFileCount": 930,
+  "candidateTotalMiB": 61.86,
+  "largestFiles": [
+    {
+      "path": "Docs/Evidence/parameters-120hz.csv.gz",
+      "MiB": 27.676
+    },
+    {
+      "path": "Docs/Plan/风格帧拆解/八图总览.png",
+      "MiB": 3.599
+    },
+    {
+      "path": "Docs/Plan/风格帧拆解/C1_分层标注.png",
+      "MiB": 2.029
+    },
+    {
+      "path": "Assets/QingTian/ReferenceFrames/C1.png",
+      "MiB": 2.026
+    },
+    {
+      "path": "Assets/QingTian/ReferenceFrames/C3.png",
+      "MiB": 1.915
+    },
+    {
+      "path": "Docs/Plan/风格帧拆解/C3_分层标注.png",
+      "MiB": 1.899
+    },
+    {
+      "path": "Docs/Plan/风格帧拆解/C2_分层标注.png",
+      "MiB": 1.754
+    },
+    {
+      "path": "Assets/QingTian/ReferenceFrames/C2.png",
+      "MiB": 1.732
+    },
+    {
+      "path": "Assets/QingTian/Data/audio-features.json",
+      "MiB": 1.697
+    },
+    {
+      "path": "Docs/Evidence/全部参数热图.png",
+      "MiB": 1.584
+    },
+    {
+      "path": "Assets/QingTian/ReferenceFrames/C4.png",
+      "MiB": 1.532
+    },
+    {
+      "path": "Docs/Plan/风格帧拆解/C4_分层标注.png",
+      "MiB": 1.525
+    }
+  ],
+  "violations": [],
+  "brokenLocalLinks": [],
+  "originalAudioIgnored": true,
+  "lfsDecision": "No file above 50 MiB; standard Git for this initial revision, revisit LFS for later large textures/recordings.",
+  "implementationAndDataSha256": {
+    "Assets/QingTian/Data/audio-features.json": "af014ee0820ce6cba93f6474da58d2516a948a12319b04693c7de25225b76d12",
+    "Assets/QingTian/Data/audio-live-normalization.json": "36db5d1c56ec9a5a925549a7fa585f2f050eb3f7aec4eb9e406b756871c69583",
+    "Assets/QingTian/Data/beats136-source.json": "523916c7e1f3c1aaa061b468e12e38b3e5f61d37d2516821eb7cd2f284e9c8ef",
+    "Assets/QingTian/Data/beats68.json": "9092dc08a445a6eb2e1cd4f764881600641f0fea0a49158bbe1210cf09638c0d",
+    "Assets/QingTian/Data/parameter-contract.json": "a29fd2095087cb41e9e4a375a98c28890c2cef6a753bef913cd3f7721079ade1",
+    "Assets/QingTian/Data/style-presets-source.json": "5005d6a071859eb4dd64c696569e138f54742a5e617d7215122df7b3eac7c31b",
+    "Assets/QingTian/Data/timeline-source.json": "894cbb89bcbc97b137e663588efc71699c758cfb4f14c60ebb66edadca90e108",
+    "Assets/QingTian/Data/timeline.json": "664dfe825319dd76029e61c5e1e0f4457352d27f6c8c7df51494a01384b83491",
+    "Assets/QingTian/Editor/EvidenceActions.cs": "edb75f19f4fb23ef21efec2f2f3a0059ba7f9311f86e81e222d60ed9e7237087",
+    "Assets/QingTian/Editor/McpBootstrap.cs": "f69f9f0d3a4480f8ba1fcc62645b972bd3c5b8e1892547f9aa17e4a98f915ed2",
+    "Assets/QingTian/Editor/QingTianSetup.cs": "4c3ae9c8f95f53d1b828c50a42812cb86a2c93be961edce2bfbfccd33b1cb326",
+    "Assets/QingTian/Runtime/QingTian.Runtime.asmdef": "e53af75b88f4f197df0d480450580ff33153e945743dd7b02c1d0fece4d53eff",
+    "Assets/QingTian/Runtime/QingTianPlayer.cs": "6a666279b1ee68af853e5f670f730096efb8dce5116d7f96c23956677633eabf",
+    "Assets/QingTian/Runtime/ScoreModel.cs": "1d0ac03fbe57c0b6328bd535e3dd4201835e30ca22e2f3e1ee54807f6e228693",
+    "Assets/QingTian/Runtime/VfxParameterBridge.cs": "db3ec9f1f90d50b6a0652b9869a9862f1cf0edd183d5301270e8b9ddb7a30348",
+    "Assets/QingTian/Tests/EditMode/QingTian.EditModeTests.asmdef": "75584860cb476fa3f64a5b8541eb3fd47771db318cc3dbfa329df013b2b27d14",
+    "Assets/QingTian/Tests/EditMode/ScoreTests.cs": "b94cb42c15fce02548e3f9d56b4db7bb60a4c16276cc9f06b09ab4f959915a6d",
+    "Assets/QingTian/Tests/PlayMode/PlaybackTests.cs": "d2ff087d5600499b5da634f77982e835e5cc7c477e78220f9950852ec196c952",
+    "Assets/QingTian/Tests/PlayMode/QingTian.PlayModeTests.asmdef": "d9b17f2cdff681e4c768bbeed11f48d916df5cd5fac19f71b6c0c15280f1e6b9"
+  }
+}

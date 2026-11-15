@@ -1,0 +1,11 @@
+{
+  "isError": false,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"success\":true,\"message\":\"Retrieved active scene information.\",\"data\":{\"name\":\"M1_ParameterPerformance\",\"path\":\"Assets/QingTian/Scenes/M1_ParameterPerformance.unity\",\"buildIndex\":0,\"isDirty\":false,\"isLoaded\":true,\"rootCount\":2}}",
+      "annotations": null,
+      "meta": null
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 
 独立 Unity 6.3 URP 工程。当前里程碑是**没有粒子、整曲音乐连续驱动参数**。VFX Graph 已安装，后续 M2 才开始手动搭图和视觉还原。每次开发先读 [DEVELOPMENT.md](DEVELOPMENT.md)，它记录最终状态、测试证据和待确认事项。
 
+公开仓库：[AngelaYellow/QingTianVFX](https://github.com/AngelaYellow/QingTianVFX)。原曲及含原曲的核对音频仅保存在本机。
+
 ## 醒来后，按这个顺序验收
 
 1. 双击根目录 **打开工程.cmd**，或在 Unity Hub 添加本目录，用 **6000.3.28f1** 打开。
@@ -21,6 +23,7 @@
 - [连续性报告](Docs/Evidence/continuity-report.json)：52 个视觉参数名、82 个标量分量，包含关键时刻精确误差与章/句/节拍边界检查。
 - [整曲实播报告](Docs/Evidence/full-song-playback.json)：真实 DSP 时间、音频样本时钟偏差、渲染帧与四锚点越过记录。普通帧可能跨过指定小数秒；精确锚点求值和帧采样偏差分别记录，不假称每个关键时刻都落在显示器刷新时刻。
 - [命令行测试汇总](Docs/Evidence/cli-test-summary.json) 与 EditMode / PlayMode XML。
+- [编辑器窗口截图](Docs/Evidence/M1_editor_window.png)、[本机18秒实播录屏](LocalEvidence/M1_editor_live.mp4)。录屏无声，听音乐请用Unity现场或68 BPM核对音频；录屏不在公开仓库中。
 - [运行时参数合同](Docs/参数合同.md)、[技术报告1.2](Docs/Plan/技术报告.md)、[脚手架方案1.2](Docs/Plan/脚手架方案.md)、[风格帧拆解1.2](Docs/Plan/风格帧拆解.md)。
 
 ## 重复运行测试与导出

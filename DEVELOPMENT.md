@@ -6,7 +6,7 @@
 
 最终在 Windows Unity 编辑器中播放完整《晴天》，VFX Graph 粒子按章节慢变、歌词聚散、节拍和音量运动，经过四张风格帧的视觉状态；以后再做 iPhone（Metal/ARKit）、AR 和手套。
 
-本轮只做基础：独立新工程、工程规范、M1 无粒子的参数演出。**工程和M1已完成：16项命令行测试通过，校准后整曲实播完成，曲线、截图与18秒录屏已保存；当前正在完成公开仓库审计与推送。** M1没有任何粒子效果，后续从M2开始手搭VFX Graph；不能将参考图叠加当作实时粒子还原。
+本轮只做基础：独立新工程、工程规范、M1 无粒子的参数演出。**本轮已完成：16项命令行测试通过，校准后整曲实播完成，曲线、截图与18秒录屏已保存，公开仓库已创建并推送。** 仓库：[AngelaYellow/QingTianVFX](https://github.com/AngelaYellow/QingTianVFX)。M1没有任何粒子效果，后续从M2开始手搭VFX Graph；不能将参考图叠加当作实时粒子还原。
 
 ## 2. 已确定决定
 
@@ -88,8 +88,9 @@
 | 全曲参数曲线与连续性报告 | 完成 | [总览](Docs/Evidence/整曲参数曲线.png)、[锚点局部](Docs/Evidence/四锚点局部曲线.png)、[82分量热图](Docs/Evidence/全部参数热图.png)、[连续性JSON](Docs/Evidence/continuity-report.json) |
 | 风格帧切换与透明度对照 | 完成 | PlayMode测试；[C1](Docs/Evidence/M1_C1_overlay.png)、[C2](Docs/Evidence/M1_C2_overlay.png)、[C3](Docs/Evidence/M1_C3_overlay.png)、[C4](Docs/Evidence/M1_C4_overlay.png) |
 | 编辑器截图与短录屏 | 完成 | [实时面板](Docs/Evidence/M1_live_panel.png)、[编辑器窗口](Docs/Evidence/M1_editor_window.png)；本地LocalEvidence/M1_editor_live.mp4，18秒、1440×920、无声 |
-| GitHub公开仓库/原曲排除审计 | 本地审计通过，推送中 | [公开审计](Docs/Evidence/repository-audit.json)：930个候选文件、约61.86MiB，无音频/录屏/缓存/疑似凭据、无坏链；最大文件27.676MiB，本轮不需LFS |
+| GitHub公开仓库/原曲排除审计 | 完成 | [公开仓库](https://github.com/AngelaYellow/QingTianVFX)、[远端核验](Docs/Evidence/github-verification.json)；[公开审计](Docs/Evidence/repository-audit.json)无音频/录屏/缓存/疑似凭据、无坏链，最大文件27.676MiB，本轮不需LFS |
 | README醒后验收入口 | 完成 | [README](README.md)、打开工程.cmd、运行测试.cmd |
+| 重启后验收入口 | 完成 | [启动场景回读](Docs/Evidence/startup-check.json)：M1已加载且无未保存改动；[最终控制台回读](Docs/Evidence/editor-console-final.json)无错误记录 |
 
 最终实播：0→269.747秒正常结束，MasterGain=0，8057帧，墙钟269.884秒（含100ms排程）。中位帧间隔33.334ms、p95 37.933ms、p99 43.287ms、最大146.902ms；这是含窗口移动/截图/录屏的本机Editor观测，不是未来粒子或iPhone的性能保证。音频样本时间与DSP最大差21.333ms。四个锚点精确求值的参数误差均0，显示帧跨越偏差分别38.667 / 7.333 / 10.000 / 42.000ms。审计锚点字段rawRms记录的是实测归一化Rms01，未归一化幅值另见live-audio-measurements。
 
@@ -128,6 +129,7 @@ MCP：Coplay10.3.0嵌入包，仅监听127.0.0.1:8082；本机服务 `../.unity-
 - 2026-11-16：CLI测试恢复空场景，启动入口增加显式打开已保存M1场景；不依赖编辑器上次布局。
 - 2026-11-16：窗口级GDI捕获在当前显卡上产生白帧，改为观察到的Unity物理边界捕获；移动Unity避开悬浮层，最终录屏只含Unity，失败捕获已清理。
 - 2026-11-16：除API与PlayMode测试外，实际点击C3对照按钮并拖动透明度0.65→0，已观察到参考图切换和回到纯黑窗口。
+- 2026-11-16：公开仓库已创建，首个实现提交65daac3已由远端main回读核实，GitHub API确认private=false。原曲及本地录屏均被忽略；本次最大跟踪文件27.676MiB，暂不启用LFS。
 
 ## 9. 待用户确认
 
@@ -142,4 +144,4 @@ MCP：Coplay10.3.0嵌入包，仅监听127.0.0.1:8082；本机服务 `../.unity-
 
 ### 2026-11-16 — 新工程与M1验收
 
-建立独立URP工程、VFX依赖、MCP连接和目录规范；升级迁移三方案1.2。导入四帧、时间线、52参数合同、68节拍与本地音源；实现DSP时钟、连续三层参数、精确锚点、实时音频和叠图工具。完整校准与最终实播均完成，16项CLI测试通过；保存全曲曲线、4锚点截图、编辑器窗口截图和18秒真实无声录屏。公开仓库审计与推送正在收尾。
+建立独立URP工程、VFX依赖、MCP连接和目录规范；升级迁移三方案1.2。导入四帧、时间线、52参数合同、68节拍与本地音源；实现DSP时钟、连续三层参数、精确锚点、实时音频和叠图工具。完整校准与最终实播均完成，16项CLI测试通过；保存全曲曲线、4锚点截图、编辑器窗口截图和18秒真实无声录屏。公开仓库审计与推送完成，重启编辑器已自动打开M1场景，留在停止播放状态供用户验收。

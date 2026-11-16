@@ -1,8 +1,8 @@
 {
   "scene": "Assets/QingTian/Scenes/M2_MistAndLights.unity",
   "graphCreatedByAssistant": false,
-  "graph": null,
-  "binding": "等待用户创建并绑定 VFX Graph",
+  "graph": "Assets/QingTian/VFX/M2_Mist.vfx",
+  "binding": "图中尚无已暴露的 Vector3 LightCenterAWorld",
   "preview": {
     "width": 1280,
     "height": 720,

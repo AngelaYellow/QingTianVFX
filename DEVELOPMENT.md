@@ -8,7 +8,7 @@
 
 M1基础阶段已完成：独立工程、工程规范、无粒子参数演出，16项命令行测试通过，校准后整曲实播及曲线/截图/录屏已归档。仓库：[AngelaYellow/QingTianVFX](https://github.com/AngelaYellow/QingTianVFX)。
 
-**当前阶段M2：柔光雾与两处光，正在合作搭建，尚未达到视觉验收。** 用户亲手搭VFX Graph；助手负责节点图以外的相机、黑背景、Bloom、坐标换算、贴图、HLSL、桥与场景。每次只给用户一小步，收到截图再继续。首个关卡是一个光点跟随LightCenterA；通过后才扩展成粉/青两团雾。M1原场景必须保留；参考叠图不能算实时粒子还原。
+**当前阶段M2：柔光雾与两处光，正在合作搭建，尚未达到视觉验收。** 用户亲手搭VFX Graph；助手负责节点图以外的相机、黑背景、Bloom、坐标换算、贴图、HLSL、桥与场景。按用户最新要求，每次可以教3个明确步骤，收到截图再继续。首个关卡是一个光点跟随LightCenterA；通过后才扩展成粉/青两团雾。M1原场景必须保留；参考叠图不能算实时粒子还原。
 
 ## 2. 已确定决定
 
@@ -108,9 +108,9 @@ M1基础阶段已完成：独立工程、工程规范、无粒子参数演出，
 - 总预算：雾固定64槽、可见24–48片，A/B共用，不能每团各64。管道阶段先只做1粒子。
 - 桥输出：保留LightCenterA/B原始Vector2；图外将左上原点变为Unity视口的左下原点，再投影输出Vector3 `LightCenterAWorld` / `LightCenterBWorld`。图须采用World模拟空间。C1的A约(-4.2621,1.6940,0)。
 - 测试：新增6项投影测试，EditMode 20/20通过（含原14项），PlayMode原2项全部通过，共22/22。均通过当前Unity MCP实际运行。首次PlayMode运行因播放器被停止而中断，未记录断言失败；保留[中断记录](Docs/Evidence/M2/playmode-interrupted.json)，随后完整重跑[2/2通过](Docs/Evidence/M2/playmode-mcp.json)。测试临时关闭域重载的设置已恢复。
-- [准备回读](Docs/Evidence/M2/setup.json)、[EditMode结果](Docs/Evidence/M2/editmode-mcp.json)、[合作搭建记录](Docs/M2搭建记录.md)。当前Graph为null，尚无手搭节点或真实渲染光点；不把C#坐标测试当GPU管道打通。
+- [准备回读](Docs/Evidence/M2/setup.json)、[EditMode结果](Docs/Evidence/M2/editmode-mcp.json)、[合作搭建记录](Docs/M2搭建记录.md)。用户已从Minimal System创建并打开`M2_Mist.vfx`，截图确认四个空Context及模板连线。助手已将该图绑定到`VFX_Mist`，[引用回读](Docs/Evidence/M2/graph-binding.json)正确；尚无暴露属性LightCenterAWorld，尚未验证真实光点，不把引用绑定当GPU管道打通。
 - 待后续完成：单点跟随验收 → 两光软雾与轻呼吸 → 整曲审阅 → 四锚点叠图截图 → 雾开/关与Bloom开/关同条件性能比较。当前没有雾层性能数字。
-- 图外准备已保存本地Git检查点；最后一次编译完成，[控制台错误回读](Docs/Evidence/M2/final-console.json)为0条。编辑器停在M2、场景无未保存改动，Project已选中VFX目录，等待用户创建图。
+- 图外准备已保存本地Git检查点；[控制台错误回读](Docs/Evidence/M2/final-console.json)为0条。当前停在M2手搭图阶段，等待本轮三个设置步骤的截图确认。
 
 ## 7. 如何运行和测试
 
@@ -154,7 +154,7 @@ M2入口：菜单 `QingTian/M2/1 - Prepare or open M2 scene`，已有M2时只打
 
 ## 9. 待用户确认
 
-- M2合作停点：用户创建`Assets/QingTian/VFX/M2_Mist.vfx`，使用内置Minimal System模板，打开后截图；尚未收到节点结构截图，下一步根据实际界面配置单粒子。
+- M2合作停点：图已创建并绑定；本轮指导Spawn加Single Burst（Count=1、Delay=0），Initialize Capacity=1与World空间，Bounds改Manual、Center=(0,0,0)、Size=(20,12,4)。这些设置尚未收到完成截图，不能算已实现。
 - 睡醒后复听68 BPM核对音频，确认重拍感；自动声学判断不能替代主观节奏判断。
 - 时间骨架仍有21句低置信度；本轮保持既定时间线并显示置信度，不把它标为逐句听审通过。
 - 四个锚点暂按用户确定值执行，未来视觉审阅后可以修改。
@@ -163,6 +163,10 @@ M2入口：菜单 `QingTian/M2/1 - Prepare or open M2 scene`，已有M2时只打
 - 自有代码和风格帧暂未另行授权开源许可证；公开仓库不等于放弃素材权利。若希望统一MIT等许可证再决定，第三方许可证已保留。
 
 ## 10. 变更日志
+
+### 2026-11-16 — M2第1步，用户建图与场景引用
+
+用户完成Minimal System模板创建、命名M2_Mist并打开，提供[节点图截图](Docs/Evidence/M2/user_01_minimal.png)，同时将教学节奏改为每轮3步骤。助手通过MCP仅绑定VisualEffect资产引用并保存M2场景，没有编辑节点。回读引用正确，控制台0错误；未改C#及M1场景，本轮未重复跑上一轮已通过的22项测试。下一轮验收Single Burst、单容量、World和Manual包围盒配置。
 
 ### 2026-11-16 — M2第0步，图外准备
 

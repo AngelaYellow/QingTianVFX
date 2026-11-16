@@ -1,0 +1,11 @@
+{
+  "isError": false,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"success\":true,\"message\":\"Code executed successfully.\",\"data\":{\"result\":{\"project\":\"D:/Works/智能交互设计/QingTianVFX/Assets\",\"scene\":\"Assets/QingTian/Scenes/M2_MistAndLights.unity\",\"graph\":\"Assets/QingTian/VFX/M2_Mist.vfx\",\"status\":\"图中尚无已暴露的 Vector3 LightCenterAWorld\",\"player\":\"QingTian · M2 Controller\",\"camera\":\"Main Camera\"},\"compiler\":\"codedom\"}}",
+      "annotations": null,
+      "meta": null
+    }
+  ]
+}

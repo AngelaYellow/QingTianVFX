@@ -110,8 +110,9 @@ M1基础阶段已完成：独立工程、工程规范、无粒子参数演出，
 - 桥输出：保留LightCenterA/B原始Vector2；图外将左上原点变为Unity视口的左下原点，再投影输出Vector3 `LightCenterAWorld` / `LightCenterBWorld`。图须采用World模拟空间。C1的A约(-4.2621,1.6940,0)。
 - 测试：新增6项投影测试，EditMode 20/20通过（含原14项），PlayMode原2项全部通过，共22/22。均通过当前Unity MCP实际运行。首次PlayMode运行因播放器被停止而中断，未记录断言失败；保留[中断记录](Docs/Evidence/M2/playmode-interrupted.json)，随后完整重跑[2/2通过](Docs/Evidence/M2/playmode-mcp.json)。测试临时关闭域重载的设置已恢复。
 - [准备回读](Docs/Evidence/M2/setup.json)、[EditMode结果](Docs/Evidence/M2/editmode-mcp.json)、[合作搭建记录](Docs/M2搭建记录.md)。用户已从Minimal System创建并打开`M2_Mist.vfx`，截图确认四个空Context及模板连线。助手已将该图绑定到`VFX_Mist`，[引用回读](Docs/Evidence/M2/graph-binding.json)正确；尚无暴露属性LightCenterAWorld，尚未验证真实光点，不把引用绑定当GPU管道打通。
+- 用户第2张截图及保存的图文件确认：Single Burst Count=1、Delay=0；Capacity=1、World；Manual Bounds中心0、Size=(20,12,4)。[截图](Docs/Evidence/M2/user_02_spawn_bounds.png)。助手新增128×128白RGB/径向透明度软圆点贴图`Assets/QingTian/Textures/M2/SoftDisc.png`，已导入；[导入回读](Docs/Evidence/M2/soft-disc-import.json)。未替用户添加或修改节点。
 - 待后续完成：单点跟随验收 → 两光软雾与轻呼吸 → 整曲审阅 → 四锚点叠图截图 → 雾开/关与Bloom开/关同条件性能比较。当前没有雾层性能数字。
-- 图外准备已保存本地Git检查点；[控制台错误回读](Docs/Evidence/M2/final-console.json)为0条。当前停在M2手搭图阶段，等待本轮三个设置步骤的截图确认。
+- 图外准备及用户已保存的建图进度有本地Git检查点。当前等待“暴露位置属性→Update连接Position→单点尺寸与贴图”的完成截图；尚未验证GPU端移动。
 
 ## 7. 如何运行和测试
 
@@ -155,7 +156,7 @@ M2入口：菜单 `QingTian/M2/1 - Prepare or open M2 scene`，已有M2时只打
 
 ## 9. 待用户确认
 
-- M2合作停点：图已创建并绑定；本轮指导Spawn加Single Burst（Count=1、Delay=0），Initialize Capacity=1与World空间，Bounds改Manual、Center=(0,0,0)、Size=(20,12,4)。这些设置尚未收到完成截图，不能算已实现。
+- M2合作停点：Spawn/容量/坐标/Bounds已确认。下一组3步：创建Exposed Vector3 `LightCenterAWorld`，连到Update内的Set Position；Initialize添加Set Size=0.3；Output Main Texture选择SoftDisc（后两项合为“单点外观”一步）。等截图确认再实播。0.3是可读性验证尺寸，不是最终雾尺寸。首锚点前中心基准恒定，因此应通过四锚点定位和70–90秒段测试移动，不能仅看开头几秒判断桥失效。
 - 睡醒后复听68 BPM核对音频，确认重拍感；自动声学判断不能替代主观节奏判断。
 - 时间骨架仍有21句低置信度；本轮保持既定时间线并显示置信度，不把它标为逐句听审通过。
 - 四个锚点暂按用户确定值执行，未来视觉审阅后可以修改。
@@ -164,6 +165,10 @@ M2入口：菜单 `QingTian/M2/1 - Prepare or open M2 scene`，已有M2时只打
 - 自有代码和风格帧暂未另行授权开源许可证；公开仓库不等于放弃素材权利。若希望统一MIT等许可证再决定，第三方许可证已保留。
 
 ## 10. 变更日志
+
+### 2026-11-16 — M2第2步，单粒子基础设置确认
+
+用户完成Single Burst、单容量、World及Manual Bounds，并提供截图；磁盘图文件也已匹配。生成可复现软圆点素材，Unity导入设置为Default Texture2D、Uncompressed、Clamp、Bilinear、无Mip、白RGB/输入alpha、sRGB关闭。未改运行时代码或M1场景，不重复跑此前22项测试；下一轮验证实际GPU属性写入与渲染。
 
 ### 2026-11-16 — M2教学方式补充
 

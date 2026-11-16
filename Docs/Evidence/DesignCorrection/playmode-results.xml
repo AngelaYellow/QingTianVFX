@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="2" result="Passed" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-16 11:04:17Z" end-time="2026-11-16 11:04:22Z" duration="4.474694">
+  <test-suite type="TestSuite" id="1010" name="QingTianVFX" fullname="QingTianVFX" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-16 11:04:17Z" end-time="2026-11-16 11:04:22Z" duration="4.474694" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1004" name="QingTian.PlayModeTests.dll" fullname="D:/Works/智能交互设计/QingTianVFX/Library/ScriptAssemblies/QingTian.PlayModeTests.dll" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-16 11:04:17Z" end-time="2026-11-16 11:04:22Z" duration="4.466265" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="45264" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1005" name="QingTian" fullname="QingTian" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-16 11:04:17Z" end-time="2026-11-16 11:04:22Z" duration="4.465445" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1006" name="Tests" fullname="QingTian.Tests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-16 11:04:17Z" end-time="2026-11-16 11:04:22Z" duration="4.465006" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1001" name="PlaybackTests" fullname="QingTian.Tests.PlaybackTests" classname="QingTian.Tests.PlaybackTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-16 11:04:17Z" end-time="2026-11-16 11:04:22Z" duration="4.463748" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1003" name="AllOverlayFramesAndExactPreviewWork" fullname="QingTian.Tests.PlaybackTests.AllOverlayFramesAndExactPreviewWork" methodname="AllOverlayFramesAndExactPreviewWork" classname="QingTian.Tests.PlaybackTests" runstate="Runnable" seed="2026148290" result="Passed" start-time="2026-11-16 11:04:17Z" end-time="2026-11-16 11:04:18Z" duration="0.703589" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1002" name="RealAudioClockPauseResumeSeekAndReplay" fullname="QingTian.Tests.PlaybackTests.RealAudioClockPauseResumeSeekAndReplay" methodname="RealAudioClockPauseResumeSeekAndReplay" classname="QingTian.Tests.PlaybackTests" runstate="Runnable" seed="264134967" result="Passed" start-time="2026-11-16 11:04:18Z" end-time="2026-11-16 11:04:22Z" duration="3.747182" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[<b><color=#2EA3FF>MCP-FOR-UNITY</color></b>: [TestRunnerNoThrottle] Restored Interaction Mode after test run.
+Saving results to: C:/Users/Angela/AppData/LocalLow/AngelaYellow/QingTianVFX\TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

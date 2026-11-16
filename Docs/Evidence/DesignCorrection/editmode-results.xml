@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="27" result="Passed" total="27" passed="27" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-16 11:03:50Z" end-time="2026-11-16 11:03:57Z" duration="6.9453439">
+  <test-suite type="TestSuite" id="1000" name="QingTianVFX" fullname="QingTianVFX" runstate="Runnable" testcasecount="27" result="Passed" start-time="2026-11-16 11:03:50Z" end-time="2026-11-16 11:03:57Z" duration="6.945344" total="27" passed="27" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1035" name="QingTian.EditModeTests.dll" fullname="D:/Works/智能交互设计/QingTianVFX/Library/ScriptAssemblies/QingTian.EditModeTests.dll" runstate="Runnable" testcasecount="27" result="Passed" start-time="2026-11-16 11:03:50Z" end-time="2026-11-16 11:03:57Z" duration="6.935459" total="27" passed="27" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="67968" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1036" name="QingTian" fullname="QingTian" runstate="Runnable" testcasecount="27" result="Passed" start-time="2026-11-16 11:03:50Z" end-time="2026-11-16 11:03:57Z" duration="6.934764" total="27" passed="27" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1037" name="Tests" fullname="QingTian.Tests" runstate="Runnable" testcasecount="27" result="Passed" start-time="2026-11-16 11:03:50Z" end-time="2026-11-16 11:03:57Z" duration="6.934341" total="27" passed="27" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1003" name="MistMotionTests" fullname="QingTian.Tests.MistMotionTests" classname="QingTian.Tests.MistMotionTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-16 11:03:50Z" end-time="2026-11-16 11:03:51Z" duration="0.119294" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1004" name="AnchorCountsDivideAcrossTwoLightsAndZeroFadesAll" fullname="QingTian.Tests.MistMotionTests.AnchorCountsDivideAcrossTwoLightsAndZeroFadesAll" methodname="AnchorCountsDivideAcrossTwoLightsAndZeroFadesAll" classname="QingTian.Tests.MistMotionTests" runstate="Runnable" seed="1296196186" result="Passed" start-time="2026-11-16 11:03:50Z" end-time="2026-11-16 11:03:51Z" duration="0.051695" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1008" name="EntirePhaseRangeHasFiniteBoundedPositionsScalesAndOpacity" fullname="QingTian.Tests.MistMotionTests.EntirePhaseRangeHasFiniteBoundedPositionsScalesAndOpacity" methodname="EntirePhaseRangeHasFiniteBoundedPositionsScalesAndOpacity" classname="QingTian.Tests.MistMotionTests" runstate="Runnable" seed="212289017" result="Passed" start-time="2026-11-16 11:03:51Z" end-time="2026-11-16 11:03:51Z" duration="0.035118" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1005" name="OppositePairsKeepTheCloudCenteredDuringFlow" fullname="QingTian.Tests.MistMotionTests.OppositePairsKeepTheCloudCenteredDuringFlow" methodname="OppositePairsKeepTheCloudCenteredDuringFlow" classname="QingTian.Tests.MistMotionTests" runstate="Runnable" seed="772000006" result="Passed" start-time="2026-11-16 11:03:51Z" end-time="2026-11-16 11:03:51Z" duration="0.004653" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1006" name="SeekingAndPausingReproducePositionsWithoutSimulationHistory" fullname="QingTian.Tests.MistMotionTests.SeekingAndPausingReproducePositionsWithoutSimulationHistory" methodname="SeekingAndPausingReproducePositionsWithoutSimulationHistory" classname="QingTian.Tests.MistMotionTests" runstate="Runnable" seed="514655817" result="Passed" start-time="2026-11-16 11:03:51Z" end-time="2026-11-16 11:03:51Z" duration="0.004777" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1007" name="TinyTimeAndCountChangesDoNotPopAtIntegerBoundaries" fullname="QingTian.Tests.MistMotionTests.TinyTimeAndCountChangesDoNotPopAtIntegerBoundaries" methodname="TinyTimeAndCountChangesDoNotPopAtIntegerBoundaries" classname="QingTian.Tests.MistMotionTests" runstate="Runnable" seed="940678724" result="Passed" start-time="2026-11-16 11:03:51Z" end-time="2026-11-16 11:03:51Z" duration="0.001132" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1009" name="ProjectionTests" fullname="QingTian.Tests.ProjectionTests" classname="QingTian.Tests.ProjectionTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-11-16 11:03:51Z" end-time="2026-11-16 11:03:51Z" duration="0.454404" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="ParameterizedMethod" id="1015" name="BothAnchorCentersProjectBackToTheirReferenceImageCoordinates" fullname="QingTian.Tests.ProjectionTests.BothAnchorCentersProjectBackToTheirReferenceImageCoordinates" classname="QingTian.Tests.ProjectionTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-16 11:03:51Z" end-time="2026-11-16 11:03:51Z" duration="0.441488" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1011" name="BothAnchorCentersProjectBackToTheirReferenceImageCoordinates(0)" fullname="QingTian.Tests.ProjectionTests.BothAnchorCentersProjectBackToTheirReferenceImageCoordinates(0)" methodname="BothAnchorCentersProjectBackToTheirReferenceImageCoordinates" classname="QingTian.Tests.ProjectionTests" runstate="Runnable" seed="623657424" result="Passed" start-time="2026-11-16 11:03:51Z" end-time="2026-11-16 11:03:51Z" duration="0.208272" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1012" name="BothAnchorCentersProjectBackToTheirReferenceImageCoordinates(1)" fullname="QingTian.Tests.ProjectionTests.BothAnchorCentersProjectBackToTheirReferenceImageCoordinates(1)" methodname="BothAnchorCentersProjectBackToTheirReferenceImageCoordinates" classname="QingTian.Tests.ProjectionTests" runstate="Runnable" seed="1429300166" result="Passed" start-time="2026-11-16 11:03:51Z" end-time="2026-11-16 11:03:51Z" duration="0.075793" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1013" name="BothAnchorCentersProjectBackToTheirReferenceImageCoordinates(2)" fullname="QingTian.Tests.ProjectionTests.BothAnchorCentersProjectBackToTheirReferenceImageCoordinates(2)" methodname="BothAnchorCentersProjectBackToTheirReferenceImageCoordinates" classname="QingTian.Tests.ProjectionTests" runstate="Runnable" seed="148076082" result="Passed" start-time="2026-11-16 11:03:51Z" end-time="2026-11-16 11:03:51Z" duration="0.083628" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1014" name="BothAnchorCentersProjectBackToTheirReferenceImageCoordinates(3)" fullname="QingTian.Tests.ProjectionTests.BothAnchorCentersProjectBackToTheirReferenceImageCoordinates(3)" methodname="BothAnchorCentersProjectBackToTheirReferenceImageCoordinates" classname="QingTian.Tests.ProjectionTests" runstate="Runnable" seed="783968133" result="Passed" start-time="2026-11-16 11:03:51Z" end-time="2026-11-16 11:03:51Z" duration="0.072259" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1018" name="EnvelopeSizeRespectsRotatedCameraAndPerspectivePlaneDistance" fullname="QingTian.Tests.ProjectionTests.EnvelopeSizeRespectsRotatedCameraAndPerspectivePlaneDistance" methodname="EnvelopeSizeRespectsRotatedCameraAndPerspectivePlaneDistance" classname="QingTian.Tests.ProjectionTests" runstate="Runnable" seed="803962474" result="Passed" start-time="2026-11-16 11:03:51Z" end-time="2026-11-16 11:03:51Z" duration="0.002818" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1017" name="EnvelopeSizeUsesFrameWidthAndHeightSeparately" fullname="QingTian.Tests.ProjectionTests.EnvelopeSizeUsesFrameWidthAndHeightSeparately" methodname="EnvelopeSizeUsesFrameWidthAndHeightSeparately" classname="QingTian.Tests.ProjectionTests" runstate="Runnable" seed="232961136" result="Passed" start-time="2026-11-16 11:03:51Z" end-time="2026-11-16 11:03:51Z" duration="0.001282" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1010" name="ImageTopLeftAndBottomRightReachCorrectCameraCorners" fullname="QingTian.Tests.ProjectionTests.ImageTopLeftAndBottomRightReachCorrectCameraCorners" methodname="ImageTopLeftAndBottomRightReachCorrectCameraCorners" classname="QingTian.Tests.ProjectionTests" runstate="Runnable" seed="484762915" result="Passed" start-time="2026-11-16 11:03:51Z" end-time="2026-11-16 11:03:51Z" duration="0.001859" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1016" name="ProjectionUsesCameraOrientationAndAspectInsteadOfScreenPixels" fullname="QingTian.Tests.ProjectionTests.ProjectionUsesCameraOrientationAndAspectInsteadOfScreenPixels" methodname="ProjectionUsesCameraOrientationAndAspectInsteadOfScreenPixels" classname="QingTian.Tests.ProjectionTests" runstate="Runnable" seed="791905620" result="Passed" start-time="2026-11-16 11:03:51Z" end-time="2026-11-16 11:03:51Z" duration="0.003322" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1019" name="ScoreTests" fullname="QingTian.Tests.ScoreTests" classname="QingTian.Tests.ScoreTests" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-11-16 11:03:51Z" end-time="2026-11-16 11:03:57Z" duration="6.358589" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1030" name="AllMusicalBoundariesAreContinuous" fullname="QingTian.Tests.ScoreTests.AllMusicalBoundariesAreContinuous" methodname="AllMusicalBoundariesAreContinuous" classname="QingTian.Tests.ScoreTests" runstate="Runnable" seed="1525002692" result="Passed" start-time="2026-11-16 11:03:51Z" end-time="2026-11-16 11:03:51Z" duration="0.124057" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1029" name="AllParametersStayFiniteAndInRangeAcrossWholeSong" fullname="QingTian.Tests.ScoreTests.AllParametersStayFiniteAndInRangeAcrossWholeSong" methodname="AllParametersStayFiniteAndInRangeAcrossWholeSong" classname="QingTian.Tests.ScoreTests" runstate="Runnable" seed="339903164" result="Passed" start-time="2026-11-16 11:03:51Z" end-time="2026-11-16 11:03:57Z" duration="6.137548" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1023" name="ChapterAndLyricLabelsAdvanceAtDeclaredBoundaries" fullname="QingTian.Tests.ScoreTests.ChapterAndLyricLabelsAdvanceAtDeclaredBoundaries" methodname="ChapterAndLyricLabelsAdvanceAtDeclaredBoundaries" classname="QingTian.Tests.ScoreTests" runstate="Runnable" seed="666931985" result="Passed" start-time="2026-11-16 11:03:57Z" end-time="2026-11-16 11:03:57Z" duration="0.000711" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1028" name="EveryAnchorExactlyEqualsPresetDespiteAudioExtreme" fullname="QingTian.Tests.ScoreTests.EveryAnchorExactlyEqualsPresetDespiteAudioExtreme" classname="QingTian.Tests.ScoreTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-16 11:03:57Z" end-time="2026-11-16 11:03:57Z" duration="0.006627" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1024" name="EveryAnchorExactlyEqualsPresetDespiteAudioExtreme(0)" fullname="QingTian.Tests.ScoreTests.EveryAnchorExactlyEqualsPresetDespiteAudioExtreme(0)" methodname="EveryAnchorExactlyEqualsPresetDespiteAudioExtreme" classname="QingTian.Tests.ScoreTests" runstate="Runnable" seed="1549571947" result="Passed" start-time="2026-11-16 11:03:57Z" end-time="2026-11-16 11:03:57Z" duration="0.001518" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1025" name="EveryAnchorExactlyEqualsPresetDespiteAudioExtreme(1)" fullname="QingTian.Tests.ScoreTests.EveryAnchorExactlyEqualsPresetDespiteAudioExtreme(1)" methodname="EveryAnchorExactlyEqualsPresetDespiteAudioExtreme" classname="QingTian.Tests.ScoreTests" runstate="Runnable" seed="518329026" result="Passed" start-time="2026-11-16 11:03:57Z" end-time="2026-11-16 11:03:57Z" duration="0.001264" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1026" name="EveryAnchorExactlyEqualsPresetDespiteAudioExtreme(2)" fullname="QingTian.Tests.ScoreTests.EveryAnchorExactlyEqualsPresetDespiteAudioExtreme(2)" methodname="EveryAnchorExactlyEqualsPresetDespiteAudioExtreme" classname="QingTian.Tests.ScoreTests" runstate="Runnable" seed="902295386" result="Passed" start-time="2026-11-16 11:03:57Z" end-time="2026-11-16 11:03:57Z" duration="0.000929" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1027" name="EveryAnchorExactlyEqualsPresetDespiteAudioExtreme(3)" fullname="QingTian.Tests.ScoreTests.EveryAnchorExactlyEqualsPresetDespiteAudioExtreme(3)" methodname="EveryAnchorExactlyEqualsPresetDespiteAudioExtreme" classname="QingTian.Tests.ScoreTests" runstate="Runnable" seed="1387105304" result="Passed" start-time="2026-11-16 11:03:57Z" end-time="2026-11-16 11:03:57Z" duration="0.000922" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1033" name="FormationLabelsChangePhraseStrengthWithoutBoundaryJumps" fullname="QingTian.Tests.ScoreTests.FormationLabelsChangePhraseStrengthWithoutBoundaryJumps" methodname="FormationLabelsChangePhraseStrengthWithoutBoundaryJumps" classname="QingTian.Tests.ScoreTests" runstate="Runnable" seed="1477659847" result="Passed" start-time="2026-11-16 11:03:57Z" end-time="2026-11-16 11:03:57Z" duration="0.000361" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1034" name="HalfTimeBeatsAreSortedAndApproximately68Bpm" fullname="QingTian.Tests.ScoreTests.HalfTimeBeatsAreSortedAndApproximately68Bpm" methodname="HalfTimeBeatsAreSortedAndApproximately68Bpm" classname="QingTian.Tests.ScoreTests" runstate="Runnable" seed="468827074" result="Passed" start-time="2026-11-16 11:03:57Z" end-time="2026-11-16 11:03:57Z" duration="0.014511" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1032" name="InvalidAudioInputIsSanitizedAndOutroFadesToBlack" fullname="QingTian.Tests.ScoreTests.InvalidAudioInputIsSanitizedAndOutroFadesToBlack" methodname="InvalidAudioInputIsSanitizedAndOutroFadesToBlack" classname="QingTian.Tests.ScoreTests" runstate="Runnable" seed="1844899897" result="Passed" start-time="2026-11-16 11:03:57Z" end-time="2026-11-16 11:03:57Z" duration="0.000658" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1021" name="PauseResumeHasNoWallTimeDrift" fullname="QingTian.Tests.ScoreTests.PauseResumeHasNoWallTimeDrift" methodname="PauseResumeHasNoWallTimeDrift" classname="QingTian.Tests.ScoreTests" runstate="Runnable" seed="246804140" result="Passed" start-time="2026-11-16 11:03:57Z" end-time="2026-11-16 11:03:57Z" duration="0.000677" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1031" name="RandomSeekingReturnsSameParametersAndFlowPhase" fullname="QingTian.Tests.ScoreTests.RandomSeekingReturnsSameParametersAndFlowPhase" methodname="RandomSeekingReturnsSameParametersAndFlowPhase" classname="QingTian.Tests.ScoreTests" runstate="Runnable" seed="1428682879" result="Passed" start-time="2026-11-16 11:03:57Z" end-time="2026-11-16 11:03:57Z" duration="0.001218" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1020" name="ScheduledClockStartsAtZeroAndClampsAtSongEnd" fullname="QingTian.Tests.ScoreTests.ScheduledClockStartsAtZeroAndClampsAtSongEnd" methodname="ScheduledClockStartsAtZeroAndClampsAtSongEnd" classname="QingTian.Tests.ScoreTests" runstate="Runnable" seed="2117202486" result="Passed" start-time="2026-11-16 11:03:57Z" end-time="2026-11-16 11:03:57Z" duration="0.000617" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1022" name="SeekWorksPlayingPausedAndAtEndAndReplayResets" fullname="QingTian.Tests.ScoreTests.SeekWorksPlayingPausedAndAtEndAndReplayResets" methodname="SeekWorksPlayingPausedAndAtEndAndReplayResets" classname="QingTian.Tests.ScoreTests" runstate="Runnable" seed="1613052154" result="Passed" start-time="2026-11-16 11:03:57Z" end-time="2026-11-16 11:03:57Z" duration="0.000324" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[<b><color=#2EA3FF>MCP-FOR-UNITY</color></b>: [TestRunnerNoThrottle] Restored Interaction Mode after test run.
+Saving results to: C:/Users/Angela/AppData/LocalLow/AngelaYellow/QingTianVFX\TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

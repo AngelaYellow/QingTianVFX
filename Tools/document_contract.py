@@ -14,6 +14,7 @@ def driver(n):
     if n=='RainSpeed':return '章节基准 + 低频'
     return '章节/锚点连续插值'
 lines=['# 运行时参数合同 1.2','','本表由 `Tools/document_contract.py` 从 [parameter-contract.json](../Assets/QingTian/Data/parameter-contract.json) 自动生成。实现与最终决定以 [DEVELOPMENT.md](../DEVELOPMENT.md) 为准。',
+'','> 2026-11-16：本表描述当前仍保留的旧M1运行时，供回归核对。下文的首尾保持、锚点插值、0.85秒压零和小幅调制不再是M2的设计目标；新视觉以DEVELOPMENT第0节为准。迁移项与参数语义扩展见 [M1旧设计审计与形体运动迁移](M1旧设计审计与形体运动迁移.md)。新形体动作端口尚未实施，不能把本表当成新行为已完成。',
 '','52个视觉参数名 / 82个标量分量；另有6层深度配置和9个原始/编排信号。C1–C4锚点分别为56.80 / 93.61 / 155.41 / 264.05秒。',
 '','## 类型、单位和输出边界','','- 名称大小写必须一致；VFX Blackboard属性需勾选Exposed。所有TargetCount都是Float目标数，M2通过存活率/固定池处理；不要逐帧重设图容量。',
 '- Center、Scale、Gap、宽度/尺寸均沿用风格帧的0–1屏幕归一化坐标。参考图原点左上，x向右、y向下；M2将y翻转并投影到世界平面。角度单位为度；运动速度/深度为设计归一化单位，不能当作已经测得的米/秒。',

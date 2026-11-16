@@ -1,0 +1,13 @@
+{
+  "scope": "web-baseline",
+  "motionShaBefore": "c547882a5ef653a345088dc331b5ffd36813d431ddb865e92cacced9131467f6",
+  "motionShaAfter": "c547882a5ef653a345088dc331b5ffd36813d431ddb865e92cacced9131467f6",
+  "exitCode": 0,
+  "counts": {
+    "tests": "14",
+    "pass": "14",
+    "fail": "0",
+    "skipped": "0"
+  },
+  "commit": "5eaf0fa4a165a17be584073737ab9e009f249699"
+}

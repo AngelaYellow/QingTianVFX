@@ -1,0 +1,132 @@
+TAP version 13
+# Subtest: all four anchors cross the reference composition with no camera offset
+not ok 1 - all four anchors cross the reference composition with no camera offset
+  ---
+  duration_ms: 7.4944
+  type: 'test'
+  location: 'D:\\Works\\智能交互设计\\QingTianVFX\\WebDemo\\tools\\motion.test.mjs:7:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+
+      assert(Math.abs(v)<1e-12)
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Works/%E6%99%BA%E8%83%BD%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/QingTianVFX/WebDemo/tools/motion.test.mjs:7:185)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1106:25)
+    Test.start (node:internal/test_runner/test:1003:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)
+  ...
+# Subtest: anchors are crossed without an ease-to-rest interval
+ok 2 - anchors are crossed without an ease-to-rest interval
+  ---
+  duration_ms: 1.3493
+  type: 'test'
+  ...
+# Subtest: chorus has larger displacement and faster phase than verse for identical audio
+ok 3 - chorus has larger displacement and faster phase than verse for identical audio
+  ---
+  duration_ms: 2.4956
+  type: 'test'
+  ...
+# Subtest: audio off removes impulses and greatly reduces body displacement
+not ok 4 - audio off removes impulses and greatly reduces body displacement
+  ---
+  duration_ms: 0.7649
+  type: 'test'
+  location: 'D:\\Works\\智能交互设计\\QingTianVFX\\WebDemo\\tools\\motion.test.mjs:10:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+
+      assert(on.amplitude>off.amplitude*10)
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///D:/Works/%E6%99%BA%E8%83%BD%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/QingTianVFX/WebDemo/tools/motion.test.mjs:10:212)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1106:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+    Test.postRun (node:internal/test_runner/test:1235:19)
+    Test.run (node:internal/test_runner/test:1163:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:788:7)
+  ...
+# Subtest: beat response rises quickly then releases with inertia
+ok 5 - beat response rises quickly then releases with inertia
+  ---
+  duration_ms: 0.281
+  type: 'test'
+  ...
+# Subtest: all 52 contract properties / 82 components are exact at all anchors under arbitrary audio
+ok 6 - all 52 contract properties / 82 components are exact at all anchors under arbitrary audio
+  ---
+  duration_ms: 2.7252
+  type: 'test'
+  ...
+# Subtest: whole score finite and inside contract bounds
+ok 7 - whole score finite and inside contract bounds
+  ---
+  duration_ms: 225.7229
+  type: 'test'
+  ...
+# Subtest: chapter boundaries change label without changing layout abruptly
+ok 8 - chapter boundaries change label without changing layout abruptly
+  ---
+  duration_ms: 0.4287
+  type: 'test'
+  ...
+# Subtest: anchor neighbourhood continuous; raw audio remains nonzero
+ok 9 - anchor neighbourhood continuous; raw audio remains nonzero
+  ---
+  duration_ms: 0.5931
+  type: 'test'
+  ...
+# Subtest: real input changes fast layer while slow layout stays fixed
+ok 10 - real input changes fast layer while slow layout stays fixed
+  ---
+  duration_ms: 0.3311
+  type: 'test'
+  ...
+# Subtest: phrase envelopes and beat pulse use original timing; intro and ending fade
+ok 11 - phrase envelopes and beat pulse use original timing; intro and ending fade
+  ---
+  duration_ms: 0.2593
+  type: 'test'
+  ...
+# Subtest: flow is integrated, deterministic and monotonic over every seek
+ok 12 - flow is integrated, deterministic and monotonic over every seek
+  ---
+  duration_ms: 81.8399
+  type: 'test'
+  ...
+# Subtest: sanitized timeline has no sung lyric text
+ok 13 - sanitized timeline has no sung lyric text
+  ---
+  duration_ms: 0.2978
+  type: 'test'
+  ...
+# Subtest: audio A/B disables fast inputs while preserving slow and phrase layers
+ok 14 - audio A/B disables fast inputs while preserving slow and phrase layers
+  ---
+  duration_ms: 0.5309
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 12
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 503.6808

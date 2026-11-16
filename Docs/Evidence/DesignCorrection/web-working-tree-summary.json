@@ -1,0 +1,14 @@
+{
+  "scope": "web-working-tree",
+  "motionShaBefore": "a74e3fb2fb0f820f6ff6f8b5b65e7f46f7db0c4a0a670d982df6f3789f73e683",
+  "motionShaAfter": "a74e3fb2fb0f820f6ff6f8b5b65e7f46f7db0c4a0a670d982df6f3789f73e683",
+  "exitCode": 1,
+  "counts": {
+    "tests": "14",
+    "pass": "12",
+    "fail": "2",
+    "skipped": "0"
+  },
+  "note": "Concurrent in-progress Web work; no files or assertions changed by this design audit. This is not a confirmed Unity migration source.",
+  "reportFormatting": "Trailing spaces on blank lines trimmed; assertion text and results unchanged. Raw console output retained in ignored Logs."
+}

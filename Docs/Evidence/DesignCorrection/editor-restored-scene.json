@@ -1,0 +1,11 @@
+{
+  "isError": false,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"success\":true,\"message\":\"Retrieved active scene information.\",\"data\":{\"name\":\"M2_MistAndLights\",\"path\":\"Assets/QingTian/Scenes/M2_MistAndLights.unity\",\"buildIndex\":-1,\"isDirty\":false,\"isLoaded\":true,\"rootCount\":6}}",
+      "annotations": null,
+      "meta": null
+    }
+  ]
+}

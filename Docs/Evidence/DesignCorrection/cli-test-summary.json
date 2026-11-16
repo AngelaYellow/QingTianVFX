@@ -1,0 +1,26 @@
+{
+  "unity": "D:\\Works\\Unity\\Editors\\6000.3.28f1\\Editor\\Unity.exe",
+  "ranAtUnix": 1794827063.5513206,
+  "suites": [
+    {
+      "suite": "EditMode",
+      "exitCode": 0,
+      "result": "Passed",
+      "total": 27,
+      "passed": 27,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 41.72010135650635
+    },
+    {
+      "suite": "PlayMode",
+      "exitCode": 0,
+      "result": "Passed",
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 24.134300708770752
+    }
+  ]
+}

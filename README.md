@@ -1,6 +1,6 @@
 # QingTianVFX ·《晴天》M1 参数演出
 
-独立 Unity 6.3 URP 工程。M1“没有粒子、整曲音乐连续驱动参数”已完成；当前正在合作搭M2，用户已看到两团VFX光，接下来接入流动雾。每次开发先读 [DEVELOPMENT.md](DEVELOPMENT.md)，它记录最终状态、测试证据和待确认事项。
+独立 Unity 6.3 URP 工程。M1“没有粒子、整曲音乐连续驱动参数”已完成；当前正在合作搭M2，用户已看到两团VFX光。2026-11-16修正：先让主体持续流动、伸展和变形，再叠雾片细节；四张风格帧只是经过的瞬间。新版[教学方案](Docs/M2形体运动教学方案.md)与[M1迁移清单](Docs/M1旧设计审计与形体运动迁移.md)已写好，运行时动作尚未迁移，Unity以用户确认后的Web动作剧本为准。每次开发先读 [DEVELOPMENT.md](DEVELOPMENT.md)，它记录最终状态、测试证据和待确认事项。
 
 公开仓库：[AngelaYellow/QingTianVFX](https://github.com/AngelaYellow/QingTianVFX)。原曲及含原曲的核对音频仅保存在本机。
 

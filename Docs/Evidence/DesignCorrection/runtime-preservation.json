@@ -1,0 +1,54 @@
+{
+  "files": [
+    {
+      "sha256": "1D0AC03FBE57C0B6328BD535E3DD4201835E30CA22E2F3E1EE54807F6E228693",
+      "path": "Assets/QingTian/Runtime/ScoreModel.cs",
+      "afterSha256": "1D0AC03FBE57C0B6328BD535E3DD4201835E30CA22E2F3E1EE54807F6E228693",
+      "unchanged": true
+    },
+    {
+      "sha256": "836E0A53A4AB7ADE130C312EB3145104250483FC75D5635A1A70E665F1274C6E",
+      "path": "Assets/QingTian/Runtime/QingTianPlayer.cs",
+      "afterSha256": "836E0A53A4AB7ADE130C312EB3145104250483FC75D5635A1A70E665F1274C6E",
+      "unchanged": true
+    },
+    {
+      "sha256": "A29FD2095087CB41E9E4A375A98C28890C2CEF6A753BEF913CD3F7721079ADE1",
+      "path": "Assets/QingTian/Data/parameter-contract.json",
+      "afterSha256": "A29FD2095087CB41E9E4A375A98C28890C2CEF6A753BEF913CD3F7721079ADE1",
+      "unchanged": true
+    },
+    {
+      "sha256": "F4AD1B09254FE8ECBDF8D92926DAFB2E765A9123A96E558741CDEC16F7776090",
+      "path": "Assets/QingTian/Scenes/M1_ParameterPerformance.unity",
+      "afterSha256": "F4AD1B09254FE8ECBDF8D92926DAFB2E765A9123A96E558741CDEC16F7776090",
+      "unchanged": true
+    },
+    {
+      "sha256": "B3DE3B32A4E7E7E40F9B86A873D34F7B3C2F2D22FE42DA551066AF675F877745",
+      "path": "Assets/QingTian/Scenes/M2_MistAndLights.unity",
+      "afterSha256": "B3DE3B32A4E7E7E40F9B86A873D34F7B3C2F2D22FE42DA551066AF675F877745",
+      "unchanged": true
+    },
+    {
+      "sha256": "5B8E51B9B2FFE3E0637260D4326992897DF80B3EBAC041EE0289979AE998A178",
+      "path": "Assets/QingTian/VFX/M2_Mist.vfx",
+      "afterSha256": "45D99498784955254CB837AC1223882F0728C9A2F796EF1ADDD42CBAA1A5C535",
+      "unchanged": false,
+      "note": "Unity SaveAssets persisted user-authored pending graph work; assistant did not edit graph topology."
+    },
+    {
+      "sha256": "12976E8914DA32B4B386612B14601F014EFAB36D11F4B23FE1FF0A90C80871F9",
+      "path": "Assets/QingTian/Shaders/M2/MistMotion.hlsl",
+      "afterSha256": "12976E8914DA32B4B386612B14601F014EFAB36D11F4B23FE1FF0A90C80871F9",
+      "unchanged": true
+    },
+    {
+      "sha256": "04FCDB2810147A389B3D5FF5100B9E1C201B63CD1596F05CE542198E46921D94",
+      "path": "ProjectSettings/EditorSettings.asset",
+      "afterSha256": "04FCDB2810147A389B3D5FF5100B9E1C201B63CD1596F05CE542198E46921D94",
+      "unchanged": true
+    }
+  ],
+  "runtimeMigrationImplemented": false
+}

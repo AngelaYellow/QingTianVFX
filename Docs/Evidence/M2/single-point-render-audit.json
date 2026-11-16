@@ -1,0 +1,110 @@
+{
+  "samples": [
+    {
+      "time": 56.8,
+      "expectedUV": [
+        0.2602568,
+        0.33059895
+      ],
+      "measuredUV": [
+        0.2602560169330283,
+        0.33059870201251629
+      ],
+      "centroidErrorPixels": 0.0010144683060678299,
+      "bridgeWorldError": 0.0,
+      "alive": 1,
+      "nonblackPixels": 328
+    },
+    {
+      "time": 70.0,
+      "expectedUV": [
+        0.2582898,
+        0.435655922
+      ],
+      "measuredUV": [
+        0.2582888834009,
+        0.43565399707251007
+      ],
+      "centroidErrorPixels": 0.0018273237699220374,
+      "bridgeWorldError": 0.0,
+      "alive": 1,
+      "nonblackPixels": 335
+    },
+    {
+      "time": 80.0,
+      "expectedUV": [
+        0.254455447,
+        0.6404513
+      ],
+      "measuredUV": [
+        0.25445483265027263,
+        0.640448923339981
+      ],
+      "centroidErrorPixels": 0.0018912337498820332,
+      "bridgeWorldError": 0.0,
+      "alive": 1,
+      "nonblackPixels": 332
+    },
+    {
+      "time": 90.0,
+      "expectedUV": [
+        0.252410859,
+        0.7496548
+      ],
+      "measuredUV": [
+        0.25241045193039174,
+        0.749654209458603
+      ],
+      "centroidErrorPixels": 0.00068601684698549694,
+      "bridgeWorldError": 0.0,
+      "alive": 1,
+      "nonblackPixels": 330
+    },
+    {
+      "time": 93.61,
+      "expectedUV": [
+        0.252346784,
+        0.7530766
+      ],
+      "measuredUV": [
+        0.25234778980107031,
+        0.75307506489029541
+      ],
+      "centroidErrorPixels": 0.0017030003575358914,
+      "bridgeWorldError": 0.0,
+      "alive": 1,
+      "nonblackPixels": 330
+    },
+    {
+      "time": 155.41,
+      "expectedUV": [
+        0.247926936,
+        0.407585144
+      ],
+      "measuredUV": [
+        0.24792551519974726,
+        0.40758731239340307
+      ],
+      "centroidErrorPixels": 0.002396393147577842,
+      "bridgeWorldError": 0.0,
+      "alive": 1,
+      "nonblackPixels": 335
+    },
+    {
+      "time": 264.05,
+      "expectedUV": [
+        0.1641689,
+        0.827454269
+      ],
+      "measuredUV": [
+        0.16416914003044109,
+        0.82745311178758718
+      ],
+      "centroidErrorPixels": 0.000890544131328258,
+      "bridgeWorldError": 0.0,
+      "alive": 1,
+      "nonblackPixels": 331
+    }
+  ],
+  "method": "Paused sample, wait 4 simulation frames, read actual 1280x720 VFX render texture, brightness-weighted centroid. Not a full-song continuity or performance test."
+}

@@ -65,6 +65,7 @@ namespace QingTian.Editor
             var bridge = root.AddComponent<VfxParameterBridge>();
             bridge.player = player; bridge.target = vfx; bridge.projectionCamera = cam;
             bridge.layerIndex = 0; bridge.planeDistance = 10;
+            ConfigureDisplay(player);
             EditorSceneManager.SaveScene(scene);
             AssetDatabase.SaveAssets();
             Selection.activeObject = AssetDatabase.LoadAssetAtPath<DefaultAsset>("Assets/QingTian/VFX");
@@ -85,6 +86,38 @@ namespace QingTian.Editor
             EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
             EditorSceneManager.SaveScene(SceneManager.GetActiveScene());
             WriteSetupEvidence();
+        }
+
+        [MenuItem("QingTian/M2/3 - Repair display and enable presentation view")]
+        public static void RepairDisplay()
+        {
+            if (EditorApplication.isPlaying || SceneManager.GetActiveScene().path != ScenePath)
+                throw new InvalidOperationException("Open M2 in Edit Mode first.");
+            ConfigureDisplay(UnityEngine.Object.FindFirstObjectByType<QingTianPlayer>());
+            EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
+            EditorSceneManager.SaveScene(SceneManager.GetActiveScene());
+        }
+
+        static void ConfigureDisplay(QingTianPlayer player)
+        {
+            // The VFX camera renders into an RT. Give Display 1 a black background camera
+            // so Unity does not draw its 'No cameras rendering' overlay over our IMGUI view.
+            var displayObject = GameObject.Find("M2_Display");
+            if (displayObject == null) { displayObject = new GameObject("M2_Display"); Undo.RegisterCreatedObjectUndo(displayObject, "Add M2 display camera"); }
+            var display = displayObject.GetComponent<Camera>();
+            if (display == null) display = Undo.AddComponent<Camera>(displayObject);
+            Undo.RecordObject(display, "Configure M2 display camera");
+            display.enabled = true; display.targetTexture = null; display.targetDisplay = 0;
+            display.clearFlags = CameraClearFlags.SolidColor; display.backgroundColor = Color.black;
+            display.cullingMask = 0; display.depth = -100; display.allowHDR = false; display.allowMSAA = false;
+            display.useOcclusionCulling = false;
+            var additional = display.GetUniversalAdditionalCameraData();
+            additional.renderPostProcessing = false; additional.renderShadows = false;
+            additional.requiresColorOption = CameraOverrideOption.Off;
+            additional.requiresDepthOption = CameraOverrideOption.Off;
+            Undo.RecordObject(player, "Enable M2 presentation view");
+            player.presentationView = true;
+            EditorUtility.SetDirty(player); EditorUtility.SetDirty(display); EditorUtility.SetDirty(additional);
         }
 
         public static void WriteSetupEvidence()

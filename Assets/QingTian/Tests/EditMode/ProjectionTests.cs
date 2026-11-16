@@ -8,13 +8,16 @@ namespace QingTian.Tests
     {
         GameObject owner;
         Camera camera;
+        RenderTexture target;
         [SetUp] public void CreateCamera()
         {
             owner = new GameObject("Projection test camera"); camera = owner.AddComponent<Camera>();
+            // Match M2's fixed render surface; a floating Game View size can round viewport pixels.
+            target = new RenderTexture(1280, 720, 0); camera.targetTexture = target;
             camera.orthographic = true; camera.orthographicSize = 5; camera.aspect = 16f / 9f;
             owner.transform.position = new Vector3(0, 0, -10);
         }
-        [TearDown] public void CleanUp() { Object.DestroyImmediate(owner); }
+        [TearDown] public void CleanUp() { Object.DestroyImmediate(owner); Object.DestroyImmediate(target); }
         [Test] public void ImageTopLeftAndBottomRightReachCorrectCameraCorners()
         {
             var topLeft = VfxParameterBridge.ToWorld(camera, Vector2.zero, 10);

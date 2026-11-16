@@ -17,6 +17,8 @@ namespace QingTian
         public bool useCachedFeatures;
         [Tooltip("M2 optional camera output. Leave empty to retain the original M1 preview.")]
         public RenderTexture performancePreview;
+        [Tooltip("M2 only: show the camera image without the debug panel. F toggles this during playback.")]
+        public bool presentationView;
         public string stageLabel = "M1 参数演出";
         public string evidenceSubfolder = "";
         public ScoreModel Model { get; private set; }
@@ -201,11 +203,21 @@ namespace QingTian
         void OnGUI()
         {
             if (Model == null) return; EnsureStyles();
+            HandlePlaybackKeys();
+            if (performancePreview != null && presentationView)
+            {
+                GUI.matrix = Matrix4x4.identity;
+                Box(new Rect(0, 0, Screen.width, Screen.height), Color.black);
+                GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), performancePreview, ScaleMode.ScaleToFit, false);
+                return;
+            }
             float scale = Mathf.Min(Screen.width / 1920f, Screen.height / 1080f);
             GUI.matrix = Matrix4x4.TRS(new Vector3((Screen.width - 1920 * scale) / 2, (Screen.height - 1080 * scale) / 2), Quaternion.identity, Vector3.one * scale);
             Box(new Rect(0, 0, 1920, 1080), new Color(.025f, .033f, .045f));
             Text(38, 25, 900, "晴天 / QINGTIAN     " + stageLabel, title);
-            Text(1270, 35, 620, "UNITY 6.3 · URP · 30 FPS目标 · " + (performancePreview == null ? "无粒子" : "VFX GRAPH"), small);
+            Text(performancePreview == null ? 1270 : 1060, 35, 550, "UNITY 6.3 · URP · 30 FPS目标 · " + (performancePreview == null ? "无粒子" : "VFX GRAPH"), small);
+            if (performancePreview != null && GUI.Button(new Rect(1610, 24, 270, 42), "纯画面 / 返回面板：F", button))
+            { presentationView = true; GUIUtility.keyboardControl = 0; }
             Text(40, 80, 900, ChapterNames[Frame.ChapterIndex] + "     " + SongTime.ToString("F3") + " / 269.747 s");
             Text(1030, 80, 850, Status + (useCachedFeatures ? " [离线特征复核模式]" : " [LIVE]"), small);
             if (GUI.Button(new Rect(40, 124, 120, 38), Clock.State == PlaybackState.Playing ? "暂停" : "播放", button)) { if (Clock.State == PlaybackState.Playing) Pause(); else Play(); }
@@ -257,13 +269,18 @@ namespace QingTian
             Text(4, row * 54 + 10, 940, "逐层附加输出：LayerDepth / LayerDepthJitter（非音频信号）", small);
             for (int i = 0; i < Model.Contract.layers.Length; i++) Text(4, row * 54 + 45 + i * 38, 940, Model.Contract.layers[i].layer + "     " + Frame.LayerDepth[i].ToString("F3") + " / " + Frame.LayerDepthJitter[i].ToString("F3"), small);
             GUI.EndScrollView();
+            GUI.matrix = Matrix4x4.identity;
+        }
+        void HandlePlaybackKeys()
+        {
             if (Event.current.type == EventType.KeyDown && GUIUtility.keyboardControl == 0)
             {
+                if (performancePreview != null && Event.current.keyCode == KeyCode.F) { presentationView = !presentationView; Event.current.Use(); }
+                if (performancePreview != null && Event.current.keyCode == KeyCode.Escape) { presentationView = false; Event.current.Use(); }
                 if (Event.current.keyCode == KeyCode.Space) { if (Clock.State == PlaybackState.Playing) Pause(); else Play(); Event.current.Use(); }
                 if (Event.current.keyCode == KeyCode.R) { Replay(); Event.current.Use(); }
                 if (Event.current.keyCode >= KeyCode.Alpha1 && Event.current.keyCode <= KeyCode.Alpha4) { JumpToAnchor((int)Event.current.keyCode - (int)KeyCode.Alpha1); Event.current.Use(); }
             }
-            GUI.matrix = Matrix4x4.identity;
         }
         void DrawValues(float x, float y, float[] values, ParameterSpec p)
         {

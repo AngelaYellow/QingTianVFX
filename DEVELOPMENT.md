@@ -38,7 +38,7 @@ M1基础阶段已完成：独立工程、工程规范、无粒子参数演出，
 |---|---|
 | [ScoreModel.cs](Assets/QingTian/Runtime/ScoreModel.cs) | 纯数据SongClock、JSON模型、连续求值、FlowPhase预积分；测试和曲线直接复用同一演算器 |
 | [QingTianPlayer.cs](Assets/QingTian/Runtime/QingTianPlayer.cs) | AudioSource/DSP排程、暂停/恢复/seek/重播、实时分析、IMGUI面板、对照图、整曲审计 |
-| [VfxParameterBridge.cs](Assets/QingTian/Runtime/VfxParameterBridge.cs) | 按合同类型写VisualEffect；M2增加LightCenterAWorld/BWorld投影输出，原合同Vector2不改；真实图连接待用户完成 |
+| [VfxParameterBridge.cs](Assets/QingTian/Runtime/VfxParameterBridge.cs) | 按合同类型写VisualEffect；M2增加LightCenterAWorld/BWorld投影输出，原合同Vector2不改；A单点已从实际GPU渲染核验，B待搭 |
 | [M2Setup.cs](Assets/QingTian/Editor/M2Setup.cs) | 首次复制M1为独立M2，准备相机/RT/Bloom/空VisualEffect与桥；已有M2时仅打开，避免覆盖手工结果 |
 | [QingTianSetup.cs](Assets/QingTian/Editor/QingTianSetup.cs) | 打开/重建M1、导入设置、完整参数导出、Game视图入口 |
 | [EvidenceActions.cs](Assets/QingTian/Editor/EvidenceActions.cs) | 实际截图、四锚点截图、干净重播、保存后退出以跑CLI测试 |
@@ -109,10 +109,12 @@ M1基础阶段已完成：独立工程、工程规范、无粒子参数演出，
 - 总预算：雾固定64槽、可见24–48片，A/B共用，不能每团各64。管道阶段先只做1粒子。
 - 桥输出：保留LightCenterA/B原始Vector2；图外将左上原点变为Unity视口的左下原点，再投影输出Vector3 `LightCenterAWorld` / `LightCenterBWorld`。图须采用World模拟空间。C1的A约(-4.2621,1.6940,0)。
 - 测试：新增6项投影测试，EditMode 20/20通过（含原14项），PlayMode原2项全部通过，共22/22。均通过当前Unity MCP实际运行。首次PlayMode运行因播放器被停止而中断，未记录断言失败；保留[中断记录](Docs/Evidence/M2/playmode-interrupted.json)，随后完整重跑[2/2通过](Docs/Evidence/M2/playmode-mcp.json)。测试临时关闭域重载的设置已恢复。
-- [准备回读](Docs/Evidence/M2/setup.json)、[EditMode结果](Docs/Evidence/M2/editmode-mcp.json)、[合作搭建记录](Docs/M2搭建记录.md)。用户已从Minimal System创建并打开`M2_Mist.vfx`，截图确认四个空Context及模板连线。助手已将该图绑定到`VFX_Mist`，[引用回读](Docs/Evidence/M2/graph-binding.json)正确；尚无暴露属性LightCenterAWorld，尚未验证真实光点，不把引用绑定当GPU管道打通。
+- [准备回读](Docs/Evidence/M2/setup.json)、[EditMode结果](Docs/Evidence/M2/editmode-mcp.json)、[合作搭建记录](Docs/M2搭建记录.md)。用户从Minimal System创建`M2_Mist.vfx`，助手将其绑定到`VFX_Mist`，[引用回读](Docs/Evidence/M2/graph-binding.json)正确；这些早期准备记录不代表当时已经完成GPU验证，最新实际验证见下。
 - 用户第2张截图及保存的图文件确认：Single Burst Count=1、Delay=0；Capacity=1、World；Manual Bounds中心0、Size=(20,12,4)。[截图](Docs/Evidence/M2/user_02_spawn_bounds.png)。助手新增128×128白RGB/径向透明度软圆点贴图`Assets/QingTian/Textures/M2/SoftDisc.png`，已导入；[导入回读](Docs/Evidence/M2/soft-disc-import.json)。未替用户添加或修改节点。
-- 待后续完成：单点跟随验收 → 两光软雾与轻呼吸 → 整曲审阅 → 四锚点叠图截图 → 雾开/关与Bloom开/关同条件性能比较。当前没有雾层性能数字。
-- 图外准备及用户已保存的建图进度有本地Git检查点。用户报告下一组完成后，已只读核实保存的图：Exposed Vector3 `LightCenterAWorld`整组输出连接Update内Set Position；Initialize内Set Size=0.3；Output引用SoftDisc且保持Alpha。当前进入实播三步：显示单点、四锚点定位、70–90秒连续移动；尚未验证GPU端实际渲染与移动。
+- 待后续完成：A颜色连接 → 两光软雾与轻呼吸 → 整曲审阅 → 四锚点叠图截图 → 雾开/关与Bloom开/关同条件性能比较。当前没有雾层性能数字。
+- 用户单点管道已通过：保存图有Exposed Vector3 `LightCenterAWorld`→Update Set Position、Initialize Set Size=0.3、SoftDisc/Alpha。用户实播反馈可以继续，并提供[单点截图](Docs/Evidence/M2/user_03_single_point_display_issue.png)。助手进一步读取真实1280×720渲染贴图，四锚点及70/80/90秒共7样本均1个存活粒子；位置桥误差0，亮度加权像素中心最大误差0.0024px。[实际渲染审计](Docs/Evidence/M2/single-point-render-audit.json)。这是暂停定位采样，不冒充完整连续演出或性能测试。
+- 显示修复：M2专用`M2_Display`相机只输出Display 1黑底，cullingMask=0，无阴影/后处理/额外AudioListener，消除RT相机没有直接输出屏幕时的“No cameras rendering”。`presentationView`默认在M2开启，按原16:9适配Game窗口，仅显示实时RT；F切调试面板，Esc也可返回。调试面板保留叠图和参数，纯画面不叠参考图。真实键盘已验证双向切换，[截图](Docs/Evidence/M2/M2_editor_clean_display_fixed.png)、[调试模式](Docs/Evidence/M2/M2_editor_debug_display_fixed.png)、[切换记录](Docs/Evidence/M2/display-toggle-check.json)。M1保持原行为。
+- 最新回归：EditMode20/20、PlayMode2/2均通过，[EditMode](Docs/Evidence/M2/display-editmode-tests.json)、[PlayMode](Docs/Evidence/M2/display-playmode-tests.json)。首次EditMode的2项投影测试受到当前Game窗口尺寸取整影响；保留[失败记录](Docs/Evidence/M2/display-editmode-initial-failure.json)，测试夹具改用与M2一致的1280×720 RenderTexture，未放宽断言容差，未改运行时投影算法。域重载设置恢复原值，M1场景SHA未变；本轮用户VFX图SHA前后相同。
 
 ## 7. 如何运行和测试
 
@@ -132,8 +134,12 @@ MCP：Coplay10.3.0嵌入包，仅监听127.0.0.1:8082；本机服务 `../.unity-
 
 M2入口：菜单 `QingTian/M2/1 - Prepare or open M2 scene`，已有M2时只打开。用户创建图后由助手执行 `QingTian/M2/2 - Bind user-created M2 graph`；绑定工具只引用已有图，不创建节点。M2播放与截图证据输出`Docs/Evidence/M2`，不会覆盖M1实播证据。原根目录启动脚本仍默认M1。
 
+M2画面模式：Play默认纯画面，先点击Game黑色区域取得焦点，F切换参数面板，Esc返回参数面板；面板右上也有纯画面按钮。空格暂停/继续、R重播、1–4定位在纯画面仍可用。参考图只在调试面板显示，纯画面始终只显示实时粒子。需要修复显示相机时，在Edit Mode执行`QingTian/M2/3 - Repair display and enable presentation view`，只更新M2显示相关配置。
+
 ## 8. 决定记录
 
+- 2026-11-16 / M2显示：用户反馈预览小且中央提示遮挡。保留固定RT、相机投影和原调试布局，新增可切换纯画面与独立Display黑底相机，不修改VFX节点和M1场景。相机targetTexture非空时输出到贴图而非屏幕，依据[Unity Camera.targetTexture](https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Camera-targetTexture.html)；纯画面采用[ScaleToFit](https://docs.unity3d.com/6000.3/Documentation/ScriptReference/ScaleMode.ScaleToFit.html)保留宽高比。额外显示相机开销未来计入M2同条件性能测试，此处不宣称零开销。
+- 2026-11-16 / M2验证：浮动Game窗口会影响无目标贴图的测试相机投影，表现为边界偏差约0.01144世界单位；测试改用1280×720固定RT后20项通过。未改业务算法或放宽阈值。窗口事件注入在Unity未聚焦时未触发F，改为实际聚焦Game并发送原生按键，双向切换通过；屏幕坐标截图曾命中别的前台窗口，已删除该无效文件，最终证据使用选定Unity窗口的捕获。
 - 2026-11-16 / M2：按用户的新合作规则推进；使用独立M2场景，禁止重建手搭图。M1播放器仅增加可选RT预览、阶段文字和证据子目录；空值保留原M1行为。
 - 2026-11-16 / M2：使用C#完成标准相机投影，先以派生Vector3端口降低新手连线负担；原LightCenterA/B合同不改，复杂形态HLSL等单点管道通过后再加。
 - 2026-11-16 / M2：雾和亮芯合用64槽预算；优先基础Unlit Quad与普通透明混合，不引入HDRP体积输出、GPU事件或真DOF。17.3官方说明URP/移动VFX尚有支持边界，因此此处只限制功能路线，不能承诺未测iPhone已经兼容。依据：[官方系统要求](https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@17.3/manual/System-Requirements.html)。
@@ -156,7 +162,7 @@ M2入口：菜单 `QingTian/M2/1 - Prepare or open M2 scene`，已有M2时只打
 
 ## 9. 待用户确认
 
-- M2合作停点：单点图的暴露属性、Update连线、0.3尺寸和SoftDisc引用已从用户保存的资产核实。下一组3步为Play模式显示单点（叠图透明度归零）、依次点击上方“锚点 C1–C4”核对位置、定位约70秒并用面板“播放”观察至90秒。等Game画面与观察反馈，不能把静态连线核实当成GPU移动验收；没有增加新节点。下方“风格帧对照 C1–C4”只切图片，不改变歌曲时间。0.3仍是临时验证尺寸，开头56.8秒前中心基准恒定。
+- M2合作停点：单点显示/位置已核验，当前M2已退出播放并打开用户图。下一组由用户亲手做：创建Exposed Color `LightColorA`（默认白、alpha1）→连接Update内普通Set Color→Initialize现有Set Size从0.3改为1以便观察颜色。尺寸1仅为颜色检查临时值，正式雾尺寸后续按合同投影。等待用户连线截图及播放颜色反馈，尚未创建这些节点。接下来再扩展两处光与雾，不修改预算。
 - 睡醒后复听68 BPM核对音频，确认重拍感；自动声学判断不能替代主观节奏判断。
 - 时间骨架仍有21句低置信度；本轮保持既定时间线并显示置信度，不把它标为逐句听审通过。
 - 四个锚点暂按用户确定值执行，未来视觉审阅后可以修改。
@@ -165,6 +171,10 @@ M2入口：菜单 `QingTian/M2/1 - Prepare or open M2 scene`，已有M2时只打
 - 自有代码和风格帧暂未另行授权开源许可证；公开仓库不等于放弃素材权利。若希望统一MIT等许可证再决定，第三方许可证已保留。
 
 ## 10. 变更日志
+
+### 2026-11-16 — M2单点实播核验与显示修复
+
+归档用户首次单点播放图。修复RT预览上“No cameras rendering”提示，新增M2纯画面/F切换、独立黑底显示相机；保留调试面板、参考图及原M1行为。实际键盘验证切换，采集两模式编辑器截图。回读7个真实GPU渲染样本的位置，通过单点管道关卡；不宣称完成雾或整曲视觉验收。20项EditMode和2项PlayMode通过，记录并修复测试相机依赖Game视图尺寸的问题。本轮未改用户VFX图；已返回M2 Edit Mode，下一组指导A颜色连接和临时放大。
 
 ### 2026-11-16 — M2第3步，位置输入与单点外观完成
 

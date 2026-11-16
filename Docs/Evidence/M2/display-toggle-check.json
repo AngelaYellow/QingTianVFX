@@ -1,0 +1,11 @@
+{
+  "method": "Native Windows keyboard after clicking the Game view",
+  "verified": true,
+  "timeAtCheck": 56.8,
+  "centralNoCameraOverlayAbsent": true,
+  "notes": "EditorWindow.SendEvent and QueueGameViewInputEvent did not toggle while Unity was not the foreground work surface; native key input verified both directions.",
+  "transitions": [
+    "presentation -> F -> debug",
+    "debug -> F -> presentation"
+  ]
+}

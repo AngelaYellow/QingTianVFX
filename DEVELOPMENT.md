@@ -6,12 +6,14 @@
 
 最终在 Windows Unity 编辑器中播放完整《晴天》，VFX Graph 粒子按章节慢变、歌词聚散、节拍和音量运动，经过四张风格帧的视觉状态；以后再做 iPhone（Metal/ARKit）、AR 和手套。
 
-本轮只做基础：独立新工程、工程规范、M1 无粒子的参数演出。**本轮已完成：16项命令行测试通过，校准后整曲实播完成，曲线、截图与18秒录屏已保存，公开仓库已创建并推送。** 仓库：[AngelaYellow/QingTianVFX](https://github.com/AngelaYellow/QingTianVFX)。M1没有任何粒子效果，后续从M2开始手搭VFX Graph；不能将参考图叠加当作实时粒子还原。
+M1基础阶段已完成：独立工程、工程规范、无粒子参数演出，16项命令行测试通过，校准后整曲实播及曲线/截图/录屏已归档。仓库：[AngelaYellow/QingTianVFX](https://github.com/AngelaYellow/QingTianVFX)。
+
+**当前阶段M2：柔光雾与两处光，正在合作搭建，尚未达到视觉验收。** 用户亲手搭VFX Graph；助手负责节点图以外的相机、黑背景、Bloom、坐标换算、贴图、HLSL、桥与场景。每次只给用户一小步，收到截图再继续。首个关卡是一个光点跟随LightCenterA；通过后才扩展成粉/青两团雾。M1原场景必须保留；参考叠图不能算实时粒子还原。
 
 ## 2. 已确定决定
 
 - 新工程 `D:/Works/智能交互设计/QingTianVFX`；不以 UnityMusicVisuals 为资源或配置基线。
-- Unity 6000.3.28f1、URP / VFX Graph 17.3.0；粒子阶段必须使用 VFX Graph，本轮无粒子。
+- Unity 6000.3.28f1、URP / VFX Graph 17.3.0；粒子必须使用 VFX Graph，M1保持无粒子，M2只实现雾与两光。
 - Windows 编辑器先完成整曲与风格帧级视觉；未来 iPhone 使用 Metal/ARKit。
 - 暗幕方案、纯黑背景，先按30fps考虑。
 - 名义68 BPM取现有约136 BPM序列第0、2、4…个点（phase0）。保留原检测时刻的细微浮动，音源pitch=1，不拉伸音乐。已生成本地核对音频。
@@ -19,7 +21,7 @@
 - M1在关键时刻的最终视觉参数必须精确等于该帧预设；时钟/音频原始信号另列，不伪造它们。
 - 手套接口本轮不做。
 - 创建公开GitHub仓库并推送；原曲、衍生含原曲音频、含原曲录屏不进入公开仓库。无权限则完成本地仓库并写明用户操作。
-- 用户授权独立完成基础工作；遇到选择按合理方案推进，并记录“待用户确认”，不等待用户答复。
+- M1曾授权独立完成；M2改为用户在场合作，节点图由用户搭、逐步截图确认。助手自主完成图外准备，常规实现决定记录依据。
 
 ## 3. 架构与数据流
 
@@ -35,7 +37,8 @@
 |---|---|
 | [ScoreModel.cs](Assets/QingTian/Runtime/ScoreModel.cs) | 纯数据SongClock、JSON模型、连续求值、FlowPhase预积分；测试和曲线直接复用同一演算器 |
 | [QingTianPlayer.cs](Assets/QingTian/Runtime/QingTianPlayer.cs) | AudioSource/DSP排程、暂停/恢复/seek/重播、实时分析、IMGUI面板、对照图、整曲审计 |
-| [VfxParameterBridge.cs](Assets/QingTian/Runtime/VfxParameterBridge.cs) | 可选M2适配器，按合同类型写VisualEffect；已编译，M1场景没有VisualEffect或桥实例，真实图绑定留待M2 |
+| [VfxParameterBridge.cs](Assets/QingTian/Runtime/VfxParameterBridge.cs) | 按合同类型写VisualEffect；M2增加LightCenterAWorld/BWorld投影输出，原合同Vector2不改；真实图连接待用户完成 |
+| [M2Setup.cs](Assets/QingTian/Editor/M2Setup.cs) | 首次复制M1为独立M2，准备相机/RT/Bloom/空VisualEffect与桥；已有M2时仅打开，避免覆盖手工结果 |
 | [QingTianSetup.cs](Assets/QingTian/Editor/QingTianSetup.cs) | 打开/重建M1、导入设置、完整参数导出、Game视图入口 |
 | [EvidenceActions.cs](Assets/QingTian/Editor/EvidenceActions.cs) | 实际截图、四锚点截图、干净重播、保存后退出以跑CLI测试 |
 | [McpBootstrap.cs](Assets/QingTian/Editor/McpBootstrap.cs) | 编辑器就绪后连接本工程MCP；batch模式不自动连接 |
@@ -96,7 +99,17 @@
 
 连续性：同一C#演算器120Hz全曲加精确锚点共32375行，52名/82分量；402个章界/句界/节拍/锚点事件两侧±1微秒检查，最大合同范围归一化差约9.66×10^-6。离散标签不参与连续性判定。全量slow/mid/fast/final列在parameters-120hz.csv.gz；曲线使用离线参考特征，不能冒充实时逐点记录。数学结构与测试支持连续性，不仅依赖图片肉眼判断。
 
-后续顺序：M2雾/两光 → M3光纤/星尘 → M4花形/雨/黑隙与四章视觉 → Windows整曲视觉验收 → iPhone/AR/手套。本轮止于M1。
+后续顺序：M2雾/两光 → M3分步搭光纤、星尘与光斑 → M4分步搭花形、雨与黑隙 → 全层虚实/Bloom统一 → Windows整曲视觉验收 → iPhone/AR/手套。
+
+### M2当前状态（按实际搭建持续更新）
+
+- 独立场景：[M2_MistAndLights.unity](Assets/QingTian/Scenes/M2_MistAndLights.unity)。M1场景文件未改，SHA-256仍为`f4ad1b09254fe8ecbdf8d92926dafb2e765a9123a96e558741cdec16f7776090`。
+- 图外准备完成：固定1280×720 HDR相机输出接入原调试面板；正交相机Size=5、z=-10，映射平面距相机10。纯黑背景，独立Volume启用Bloom，强度0.35/阈值1/Scatter0.65，关闭高质量过滤，并覆盖关闭管线模板继承的Neutral色调映射和暗角；亮度仍待光点和雾实际校准。
+- 总预算：雾固定64槽、可见24–48片，A/B共用，不能每团各64。管道阶段先只做1粒子。
+- 桥输出：保留LightCenterA/B原始Vector2；图外将左上原点变为Unity视口的左下原点，再投影输出Vector3 `LightCenterAWorld` / `LightCenterBWorld`。图须采用World模拟空间。C1的A约(-4.2621,1.6940,0)。
+- 测试：新增6项投影测试，EditMode 20/20通过（含原14项），PlayMode原2项全部通过，共22/22。均通过当前Unity MCP实际运行。首次PlayMode运行因播放器被停止而中断，未记录断言失败；保留[中断记录](Docs/Evidence/M2/playmode-interrupted.json)，随后完整重跑[2/2通过](Docs/Evidence/M2/playmode-mcp.json)。测试临时关闭域重载的设置已恢复。
+- [准备回读](Docs/Evidence/M2/setup.json)、[EditMode结果](Docs/Evidence/M2/editmode-mcp.json)、[合作搭建记录](Docs/M2搭建记录.md)。当前Graph为null，尚无手搭节点或真实渲染光点；不把C#坐标测试当GPU管道打通。
+- 待后续完成：单点跟随验收 → 两光软雾与轻呼吸 → 整曲审阅 → 四锚点叠图截图 → 雾开/关与Bloom开/关同条件性能比较。当前没有雾层性能数字。
 
 ## 7. 如何运行和测试
 
@@ -114,8 +127,15 @@
 
 MCP：Coplay10.3.0嵌入包，仅监听127.0.0.1:8082；本机服务 `../.unity-tools/mcp-10.3.0/Scripts/mcp-for-unity.exe`。可用QINGTIAN_MCP_SERVER覆盖路径，QINGTIAN_UNITY覆盖编辑器路径。菜单 `QingTian/Connect MCP` 重连，CLI客户端Tools/mcp_client.py使用现有MCP Python环境。来源、工程范围修正与许可证见 [LOCAL-CHANGES](Packages/com.coplaydev.unity-mcp/LOCAL-CHANGES.md)、[MIT LICENSE](Packages/com.coplaydev.unity-mcp/LICENSE)。
 
+M2入口：菜单 `QingTian/M2/1 - Prepare or open M2 scene`，已有M2时只打开。用户创建图后由助手执行 `QingTian/M2/2 - Bind user-created M2 graph`；绑定工具只引用已有图，不创建节点。M2播放与截图证据输出`Docs/Evidence/M2`，不会覆盖M1实播证据。原根目录启动脚本仍默认M1。
+
 ## 8. 决定记录
 
+- 2026-11-16 / M2：按用户的新合作规则推进；使用独立M2场景，禁止重建手搭图。M1播放器仅增加可选RT预览、阶段文字和证据子目录；空值保留原M1行为。
+- 2026-11-16 / M2：使用C#完成标准相机投影，先以派生Vector3端口降低新手连线负担；原LightCenterA/B合同不改，复杂形态HLSL等单点管道通过后再加。
+- 2026-11-16 / M2：雾和亮芯合用64槽预算；优先基础Unlit Quad与普通透明混合，不引入HDRP体积输出、GPU事件或真DOF。17.3官方说明URP/移动VFX尚有支持边界，因此此处只限制功能路线，不能承诺未测iPhone已经兼容。依据：[官方系统要求](https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@17.3/manual/System-Requirements.html)。
+- 2026-11-16 / M2：当前工作区原有full-song-playback.json和live-audio-measurements.json变更，视为用户重新播放所得，保留且不混入本轮代码提交。
+- 2026-11-16 / M2：发现PC_RPAsset默认引用SampleSceneProfile，含Neutral色调映射与暗角；在M2局部Volume显式关闭，避免改变本轮颜色/尺寸比较。没有修改共享管线或M1配置。
 - 2026-11-16：采用已安装编辑器提供的URP官方模板建立新工程，依赖按6.3配套版本配置；不复制UnityMusicVisuals。
 - 2026-11-16：锚点精确匹配采用平滑调制权重归零，避免在单个时间点强制跳值；原始音频信号继续显示。
 - 2026-11-16：68 BPM相位用同源音频的节拍局部声学证据比较；“选出更可能的强拍相位”不等于证明拍号/小节第一拍。
@@ -133,6 +153,7 @@ MCP：Coplay10.3.0嵌入包，仅监听127.0.0.1:8082；本机服务 `../.unity-
 
 ## 9. 待用户确认
 
+- M2合作停点：用户创建`Assets/QingTian/VFX/M2_Mist.vfx`，使用内置Minimal System模板，打开后截图；尚未收到节点结构截图，下一步根据实际界面配置单粒子。
 - 睡醒后复听68 BPM核对音频，确认重拍感；自动声学判断不能替代主观节奏判断。
 - 时间骨架仍有21句低置信度；本轮保持既定时间线并显示置信度，不把它标为逐句听审通过。
 - 四个锚点暂按用户确定值执行，未来视觉审阅后可以修改。
@@ -141,6 +162,10 @@ MCP：Coplay10.3.0嵌入包，仅监听127.0.0.1:8082；本机服务 `../.unity-
 - 自有代码和风格帧暂未另行授权开源许可证；公开仓库不等于放弃素材权利。若希望统一MIT等许可证再决定，第三方许可证已保留。
 
 ## 10. 变更日志
+
+### 2026-11-16 — M2第0步，图外准备
+
+完整阅读本文件后核验MCP为QingTianVFX，原场景干净且未播放。新增独立M2场景、相机RT、Bloom与待绑定VisualEffect；扩展坐标桥和可选预览，保留M1原场景。新增6项坐标换算测试，EditMode20/20、PlayMode2/2通过；保存[实际M2空预览截图](Docs/Evidence/M2/M2_preparation.png)，RT已创建，面板和原叠图布局正常。用户手搭图尚未开始；第一步只创建并打开Minimal System资产，等待截图继续。
 
 ### 2026-11-16 — 新工程与M1验收
 

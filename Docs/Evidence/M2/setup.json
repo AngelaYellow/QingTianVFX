@@ -1,0 +1,33 @@
+{
+  "scene": "Assets/QingTian/Scenes/M2_MistAndLights.unity",
+  "graphCreatedByAssistant": false,
+  "graph": null,
+  "binding": "等待用户创建并绑定 VFX Graph",
+  "preview": {
+    "width": 1280,
+    "height": 720,
+    "hdr": true
+  },
+  "camera": {
+    "orthographic": true,
+    "size": 5.0,
+    "aspect": 1.77777779,
+    "planeDistance": 10.0
+  },
+  "bloom": {
+    "intensity": 0.35,
+    "threshold": 1.0,
+    "scatter": 0.65,
+    "highQuality": false
+  },
+  "inheritedTemplateEffects": "Neutral tonemapping and vignette explicitly overridden to off in the M2 volume",
+  "c1CenterAWorld": [
+    -4.262098,
+    1.6940099,
+    0.0
+  ],
+  "mistTotalCapacityBudget": 64,
+  "mistVisibleBudget": "24–48 total across A/B",
+  "actualRenderedParticlesVerified": false,
+  "iphone": "Basic unlit quad/compute path only; Metal device validation remains future work."
+}

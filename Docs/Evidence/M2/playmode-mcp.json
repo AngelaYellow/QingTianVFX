@@ -1,0 +1,11 @@
+{
+  "isError": false,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"success\":true,\"message\":\"Test job status retrieved.\",\"error\":null,\"data\":{\"job_id\":\"5798a4a315804114a6b2a9529cdfd064\",\"status\":\"succeeded\",\"mode\":\"PlayMode\",\"started_unix_ms\":1794798121470,\"finished_unix_ms\":1794798132924,\"last_update_unix_ms\":1794798132924,\"progress\":{\"completed\":2,\"total\":2,\"current_test_full_name\":null,\"current_test_started_unix_ms\":null,\"last_finished_test_full_name\":\"QingTian.Tests.PlaybackTests.RealAudioClockPauseResumeSeekAndReplay\",\"last_finished_unix_ms\":1794798132868,\"stuck_suspected\":false,\"editor_is_focused\":false,\"run_in_background\":true,\"focus_nudge_attempts\":null,\"focus_nudge_limit\":null,\"focus_nudge_status\":null,\"blocked_reason\":null,\"failures_so_far\":[],\"failures_capped\":false},\"error\":null,\"result\":{\"mode\":\"PlayMode\",\"summary\":{\"total\":2,\"passed\":2,\"failed\":0,\"skipped\":0,\"durationSeconds\":6.1034058,\"resultState\":\"Passed\"},\"results\":[{\"name\":\"AllOverlayFramesAndExactPreviewWork\",\"fullName\":\"QingTian.Tests.PlaybackTests.AllOverlayFramesAndExactPreviewWork\",\"state\":\"Passed\",\"durationSeconds\":1.6133023,\"message\":null,\"stackTrace\":null,\"output\":\"\"},{\"name\":\"RealAudioClockPauseResumeSeekAndReplay\",\"fullName\":\"QingTian.Tests.PlaybackTests.RealAudioClockPauseResumeSeekAndReplay\",\"state\":\"Passed\",\"durationSeconds\":4.3593464,\"message\":null,\"stackTrace\":null,\"output\":\"\"}]}},\"hint\":null}",
+      "annotations": null,
+      "meta": null
+    }
+  ]
+}

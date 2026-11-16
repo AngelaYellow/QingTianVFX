@@ -15,6 +15,10 @@ namespace QingTian
         public Texture2D[] referenceFrames;
         public bool autoPlay = true;
         public bool useCachedFeatures;
+        [Tooltip("M2 optional camera output. Leave empty to retain the original M1 preview.")]
+        public RenderTexture performancePreview;
+        public string stageLabel = "M1 参数演出";
+        public string evidenceSubfolder = "";
         public ScoreModel Model { get; private set; }
         public SongClock Clock { get; private set; }
         public ParameterFrame Frame { get; private set; }
@@ -41,7 +45,7 @@ namespace QingTian
         GUIStyle label, title, small, mono, button;
         Texture2D pixel;
         static readonly string[] ChapterNames = { "C1  聚 · 光的靠近", "C2  分 · 雨与黑隙", "C3  近 · 花形与呼吸", "C4  散 · 星尘远去" };
-        public string EvidenceRoot => Path.GetFullPath(Path.Combine(Application.dataPath, "../Docs/Evidence"));
+        public string EvidenceRoot => Path.GetFullPath(Path.Combine(Application.dataPath, "../Docs/Evidence", evidenceSubfolder));
 
         void Awake() { Initialize(); }
         public void Initialize()
@@ -200,8 +204,8 @@ namespace QingTian
             float scale = Mathf.Min(Screen.width / 1920f, Screen.height / 1080f);
             GUI.matrix = Matrix4x4.TRS(new Vector3((Screen.width - 1920 * scale) / 2, (Screen.height - 1080 * scale) / 2), Quaternion.identity, Vector3.one * scale);
             Box(new Rect(0, 0, 1920, 1080), new Color(.025f, .033f, .045f));
-            Text(38, 25, 900, "晴天 / QINGTIAN     M1 参数演出", title);
-            Text(1270, 35, 620, "UNITY 6.3 · URP · 30 FPS目标 · 无粒子", small);
+            Text(38, 25, 900, "晴天 / QINGTIAN     " + stageLabel, title);
+            Text(1270, 35, 620, "UNITY 6.3 · URP · 30 FPS目标 · " + (performancePreview == null ? "无粒子" : "VFX GRAPH"), small);
             Text(40, 80, 900, ChapterNames[Frame.ChapterIndex] + "     " + SongTime.ToString("F3") + " / 269.747 s");
             Text(1030, 80, 850, Status + (useCachedFeatures ? " [离线特征复核模式]" : " [LIVE]"), small);
             if (GUI.Button(new Rect(40, 124, 120, 38), Clock.State == PlaybackState.Playing ? "暂停" : "播放", button)) { if (Clock.State == PlaybackState.Playing) Pause(); else Play(); }
@@ -213,9 +217,10 @@ namespace QingTian
             Text(40, 176, 1840, Frame.LyricIndex < 0 ? "器乐 / 句间留白" : Model.Timeline.lyrics[Frame.LyricIndex].id + "  ·  " + Model.Timeline.lyrics[Frame.LyricIndex].imagery + "    | 成形：" + Model.Timeline.lyrics[Frame.LyricIndex].shape + "    | 置信度 " + Model.Timeline.lyrics[Frame.LyricIndex].confidence.ToString("F2"));
 
             Box(new Rect(40, 225, 800, 450), Color.black);
+            if (performancePreview != null) GUI.DrawTexture(new Rect(40, 225, 800, 450), performancePreview, ScaleMode.StretchToFill, false);
             if (OverlayOpacity > 0 && referenceFrames != null && referenceFrames.Length == 4)
             { GUI.color = new Color(1, 1, 1, OverlayOpacity); GUI.DrawTexture(new Rect(40, 225, 800, 450), referenceFrames[OverlayIndex], ScaleMode.ScaleToFit); GUI.color = Color.white; }
-            Text(58, 238, 760, OverlayOpacity > 0 ? "C" + (OverlayIndex + 1) + " 风格帧叠加 · 参考图片，不是实时粒子" : "纯黑演出窗口 · M1 尚无粒子", small);
+            Text(58, 238, 760, OverlayOpacity > 0 ? "C" + (OverlayIndex + 1) + " 风格帧叠加 · 参考图片，不是实时粒子" : (performancePreview == null ? "纯黑演出窗口 · M1 尚无粒子" : "M2 相机实时输出 · 雾层搭建中"), small);
             Text(40, 692, 300, "风格帧对照");
             for (int i = 0; i < 4; i++) if (GUI.Button(new Rect(190 + 74 * i, 690, 66, 32), "C" + (i + 1), button)) SetOverlay(i, OverlayOpacity == 0 ? .65f : OverlayOpacity);
             Text(510, 692, 150, "透明度 " + OverlayOpacity.ToString("F2"), small);

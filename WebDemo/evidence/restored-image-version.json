@@ -1,0 +1,185 @@
+{
+  "checkedAt": "2026-11-16T09:18:05.158Z",
+  "version": "image-sampled",
+  "errors": [],
+  "failedRequests": [],
+  "modules": [
+    "http://127.0.0.1:47841/src/app.mjs",
+    "http://127.0.0.1:47841/src/score.mjs",
+    "http://127.0.0.1:47841/src/audio.mjs",
+    "http://127.0.0.1:47841/src/shape-renderer.mjs",
+    "http://127.0.0.1:47841/src/motion.mjs"
+  ],
+  "noSoloControl": true,
+  "anchors": [
+    {
+      "time": 56.8,
+      "freedom": 0,
+      "particles": 1585352,
+      "matchesPreviousCapture": false
+    },
+    {
+      "time": 93.61,
+      "freedom": 0,
+      "particles": 1585472,
+      "matchesPreviousCapture": false
+    },
+    {
+      "time": 155.41,
+      "freedom": 0,
+      "particles": 1585352,
+      "matchesPreviousCapture": false
+    },
+    {
+      "time": 264.05,
+      "freedom": 0,
+      "particles": 1585352,
+      "matchesPreviousCapture": false
+    }
+  ],
+  "playback": {
+    "first": {
+      "time": 107.264,
+      "rms": 0.8188267375916676,
+      "energy": 0.7149443150004289
+    },
+    "second": {
+      "time": 109.008,
+      "rms": 0.811361196747172,
+      "energy": 0.7343988026906259
+    },
+    "stats": {
+      "gpu": "ANGLE (Intel, Intel(R) Arc(TM) Graphics (0x00007D55) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "quality": "high",
+      "resolution": [
+        1672,
+        941
+      ],
+      "particles": 1585460,
+      "frameCount": 243,
+      "meanFps": 60.15595989584921,
+      "p95ms": 16.800000000000182,
+      "p99ms": 17,
+      "over33ms": 0,
+      "audio": {
+        "duration": 269.74720833333333,
+        "time": 109.01599999999999,
+        "playing": true,
+        "sampleRate": 48000
+      },
+      "audit": [
+        {
+          "t": 105,
+          "rms": 0,
+          "low": 0,
+          "high": 0,
+          "onset": 0,
+          "raw": {
+            "rms": 0,
+            "low": 0,
+            "high": 0,
+            "onset": 0
+          },
+          "chapter": 1
+        },
+        {
+          "t": 106.00266666666666,
+          "rms": 0.9856401820062765,
+          "low": 0.4850128262486537,
+          "high": 0.5492554337346668,
+          "onset": 0.27160507537404444,
+          "raw": {
+            "rms": 0.27302823051743824,
+            "low": 0.017282276293907058,
+            "high": 0.0012950691145251897,
+            "onset": 0.008030154120130362
+          },
+          "chapter": 1
+        },
+        {
+          "t": 107.00533333333333,
+          "rms": 0.8296298495469476,
+          "low": 0.45181058193276413,
+          "high": 0.7238830187683432,
+          "onset": 0.237615886143384,
+          "raw": {
+            "rms": 0.18391575388105671,
+            "low": 0.012942098737437327,
+            "high": 0.0011252357553532427,
+            "onset": 0.0032865918275032935
+          },
+          "chapter": 1
+        },
+        {
+          "t": 108.008,
+          "rms": 0.8968942308783268,
+          "low": 0.3227478531209181,
+          "high": 0.4340216046235243,
+          "onset": 0.059666669753136746,
+          "raw": {
+            "rms": 0.20141697353994348,
+            "low": 0.016087114980391243,
+            "high": 0.0007839775879156124,
+            "onset": 0
+          },
+          "chapter": 1
+        },
+        {
+          "t": 109.008,
+          "rms": 0.811361196747172,
+          "low": 0.3442517513577484,
+          "high": 0.810023213278893,
+          "onset": 0.06967767315367242,
+          "raw": {
+            "rms": 0.17324408213893383,
+            "low": 0.01550601735161709,
+            "high": 0.0015352341761108088,
+            "onset": 0
+          },
+          "chapter": 1
+        }
+      ]
+    }
+  },
+  "pointsOff": true,
+  "pointsOn": true,
+  "anchorButton": true,
+  "overlay": true,
+  "review": {
+    "images": 6,
+    "videos": [
+      {
+        "src": "LocalOnly/验收/01_副歌_音频开.mp4",
+        "duration": 10
+      },
+      {
+        "src": "LocalOnly/验收/02_副歌_音频关.mp4",
+        "duration": 10
+      },
+      {
+        "src": "LocalOnly/验收/03_主歌_音频开.mp4",
+        "duration": 10
+      },
+      {
+        "src": "LocalOnly/验收/01_副歌_音频开.mp4",
+        "duration": 10
+      },
+      {
+        "src": "LocalOnly/验收/04_副歌_关闭小亮点.mp4",
+        "duration": 10
+      }
+    ]
+  },
+  "passed": true,
+  "unitTests": {
+    "command": "npm test",
+    "passed": 14,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "currentC1VsArchivedCapture": {
+    "maxChannelDifference_0_255": 1,
+    "meanChannelDifference_0_255": 0.0001904638419544175,
+    "note": "pixel comparison; PNG hashes differ"
+  }
+}

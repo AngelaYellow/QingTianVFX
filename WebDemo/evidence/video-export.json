@@ -1,0 +1,41 @@
+{
+  "requestedFrames": 16185,
+  "outputFrames": 16185,
+  "width": 1600,
+  "height": 900,
+  "fps": 60,
+  "duration": 269.747,
+  "start": 0,
+  "bytes": 446702276,
+  "codec": "avc1.64002a",
+  "featureMode": "Unity cached features for deterministic offline export; interactive player uses live Web Audio",
+  "gpu": "ANGLE (Intel, Intel(R) Arc(TM) Graphics (0x00007D55) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "wallSeconds": 203.409,
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1600,
+        "height": 900,
+        "r_frame_rate": "60/1",
+        "duration": "269.750000",
+        "nb_frames": "16185"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0",
+        "duration": "269.747000",
+        "nb_frames": "12646"
+      }
+    ],
+    "format": {
+      "duration": "269.750000",
+      "size": "455685401"
+    }
+  },
+  "file": "D:\\Works\\智能交互设计\\QingTianVFX\\WebDemo\\LocalOnly\\晴天_整曲备份.mp4"
+}

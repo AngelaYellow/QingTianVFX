@@ -1,0 +1,69 @@
+{
+  "source": "Assets/QingTian/Data/timeline-source.json form_sections only; no lyrics",
+  "status": "Original working labels, pending listening audit",
+  "sections": [
+    {
+      "id": "F1",
+      "label": "前奏",
+      "start": 0.0,
+      "end": 29.27,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    },
+    {
+      "id": "F2",
+      "label": "主歌",
+      "start": 29.27,
+      "end": 55.69,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    },
+    {
+      "id": "F3",
+      "label": "预副歌1",
+      "start": 55.69,
+      "end": 85.12,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    },
+    {
+      "id": "F4",
+      "label": "副歌1",
+      "start": 85.12,
+      "end": 141.827,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    },
+    {
+      "id": "F5",
+      "label": "间奏/吉他solo候选",
+      "start": 141.827,
+      "end": 154.2,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    },
+    {
+      "id": "F6",
+      "label": "预副歌2",
+      "start": 154.2,
+      "end": 182.7,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    },
+    {
+      "id": "F7",
+      "label": "副歌2",
+      "start": 182.7,
+      "end": 237.47,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    },
+    {
+      "id": "F8",
+      "label": "压缩副歌重述",
+      "start": 237.47,
+      "end": 265.69,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    },
+    {
+      "id": "F9",
+      "label": "尾奏",
+      "start": 265.69,
+      "end": 269.747,
+      "status": "歌词结构+v1边界的工作标签，待人耳确认"
+    }
+  ]
+}

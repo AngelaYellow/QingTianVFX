@@ -1,0 +1,10 @@
+/LocalOnly/
+/node_modules/
+*.wav
+*.flac
+*.mp3
+*.m4a
+*.ogg
+*.mp4
+*.webm
+*.mov

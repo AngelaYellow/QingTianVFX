@@ -1,0 +1,477 @@
+{
+  "duration": 269.747,
+  "chapters": [
+    {
+      "id": "C1",
+      "start": 0.0,
+      "end": 85.12
+    },
+    {
+      "id": "C2",
+      "start": 85.12,
+      "end": 141.827
+    },
+    {
+      "id": "C3",
+      "start": 141.827,
+      "end": 182.7
+    },
+    {
+      "id": "C4",
+      "start": 182.7,
+      "end": 269.747
+    }
+  ],
+  "lyrics": [
+    {
+      "id": "L01",
+      "start": 29.27,
+      "end": 31.07,
+      "chapter": "C1",
+      "shape": "成形",
+      "imagery": "童年花影",
+      "confidence": 0.35
+    },
+    {
+      "id": "L02",
+      "start": 31.69,
+      "end": 34.09,
+      "chapter": "C1",
+      "shape": "半成形",
+      "imagery": "记忆漂浮",
+      "confidence": 0.35
+    },
+    {
+      "id": "L03",
+      "start": 35.21,
+      "end": 37.01,
+      "chapter": "C1",
+      "shape": "半成形",
+      "imagery": "童年摇摆",
+      "confidence": 0.35
+    },
+    {
+      "id": "L04",
+      "start": 38.73,
+      "end": 41.43,
+      "chapter": "C1",
+      "shape": "半成形",
+      "imagery": "旧时延续",
+      "confidence": 0.35
+    },
+    {
+      "id": "L05",
+      "start": 41.89,
+      "end": 44.88999999999999,
+      "chapter": "C1",
+      "shape": "半成形",
+      "imagery": "旋律唱名一",
+      "confidence": 0.35
+    },
+    {
+      "id": "L06",
+      "start": 44.91,
+      "end": 48.83,
+      "chapter": "C1",
+      "shape": "半成形",
+      "imagery": "旋律唱名二",
+      "confidence": 0.35
+    },
+    {
+      "id": "L07",
+      "start": 48.85,
+      "end": 51.25,
+      "chapter": "C1",
+      "shape": "半成形",
+      "imagery": "回望天空",
+      "confidence": 0.35
+    },
+    {
+      "id": "L08",
+      "start": 52.17,
+      "end": 54.87,
+      "chapter": "C1",
+      "shape": "半成形",
+      "imagery": "花瓣试落",
+      "confidence": 0.35
+    },
+    {
+      "id": "L09",
+      "start": 55.69,
+      "end": 57.79,
+      "chapter": "C1",
+      "shape": "成形",
+      "imagery": "共同旧日",
+      "confidence": 0.35
+    },
+    {
+      "id": "L10",
+      "start": 57.81,
+      "end": 59.61,
+      "chapter": "C1",
+      "shape": "半成形",
+      "imagery": "落瓣记忆",
+      "confidence": 0.35
+    },
+    {
+      "id": "L11",
+      "start": 60.9,
+      "end": 61.86,
+      "chapter": "C1",
+      "shape": "半成形",
+      "imagery": "旧日空间",
+      "confidence": 0.691
+    },
+    {
+      "id": "L12",
+      "start": 62.06,
+      "end": 63.8,
+      "chapter": "C1",
+      "shape": "半成形",
+      "imagery": "视线缺席",
+      "confidence": 0.927
+    },
+    {
+      "id": "L13",
+      "start": 64.42,
+      "end": 64.77000000000001,
+      "chapter": "C1",
+      "shape": "半成形",
+      "imagery": "消逝雨天",
+      "confidence": 0.55
+    },
+    {
+      "id": "L14",
+      "start": 64.79,
+      "end": 66.89,
+      "chapter": "C1",
+      "shape": "半成形",
+      "imagery": "愿重历雨",
+      "confidence": 0.35
+    },
+    {
+      "id": "L15",
+      "start": 69.94,
+      "end": 73.8,
+      "chapter": "C1",
+      "shape": "半成形",
+      "imagery": "失去与勇气",
+      "confidence": 0.832
+    },
+    {
+      "id": "L16",
+      "start": 75.6,
+      "end": 77.72,
+      "chapter": "C1",
+      "shape": "半成形",
+      "imagery": "再次询问",
+      "confidence": 0.778
+    },
+    {
+      "id": "L17",
+      "start": 77.72,
+      "end": 81.78,
+      "chapter": "C1",
+      "shape": "半成形",
+      "imagery": "等待或离开",
+      "confidence": 0.821
+    },
+    {
+      "id": "L18",
+      "start": 85.12,
+      "end": 90.0,
+      "chapter": "C2",
+      "shape": "成形",
+      "imagery": "风中牵手",
+      "confidence": 0.785
+    },
+    {
+      "id": "L19",
+      "start": 90.0,
+      "end": 97.22,
+      "chapter": "C2",
+      "shape": "成形",
+      "imagery": "雨幕遮挡",
+      "confidence": 0.825
+    },
+    {
+      "id": "L20",
+      "start": 99.14,
+      "end": 104.0,
+      "chapter": "C2",
+      "shape": "成形",
+      "imagery": "盼望靠近",
+      "confidence": 0.907
+    },
+    {
+      "id": "L21",
+      "start": 104.64,
+      "end": 111.52,
+      "chapter": "C2",
+      "shape": "半成形",
+      "imagery": "等待天晴",
+      "confidence": 0.856
+    },
+    {
+      "id": "L22",
+      "start": 113.1,
+      "end": 118.02,
+      "chapter": "C2",
+      "shape": "成形",
+      "imagery": "长久相伴",
+      "confidence": 0.895
+    },
+    {
+      "id": "L23",
+      "start": 118.02,
+      "end": 125.42,
+      "chapter": "C2",
+      "shape": "成形",
+      "imagery": "风把距离拉远",
+      "confidence": 0.854
+    },
+    {
+      "id": "L24",
+      "start": 127.2,
+      "end": 131.64,
+      "chapter": "C2",
+      "shape": "半成形",
+      "imagery": "愿多相伴",
+      "confidence": 0.859
+    },
+    {
+      "id": "L25",
+      "start": 133.74,
+      "end": 140.5,
+      "chapter": "C2",
+      "shape": "成形",
+      "imagery": "最后分别",
+      "confidence": 0.821
+    },
+    {
+      "id": "L26",
+      "start": 154.2,
+      "end": 156.62,
+      "chapter": "C3",
+      "shape": "成形",
+      "imagery": "共同旧日",
+      "confidence": 0.793
+    },
+    {
+      "id": "L27",
+      "start": 157.04,
+      "end": 158.42,
+      "chapter": "C3",
+      "shape": "半成形",
+      "imagery": "落瓣记忆",
+      "confidence": 0.874
+    },
+    {
+      "id": "L28",
+      "start": 158.98,
+      "end": 159.94,
+      "chapter": "C3",
+      "shape": "半成形",
+      "imagery": "旧日空间",
+      "confidence": 0.725
+    },
+    {
+      "id": "L29",
+      "start": 160.1,
+      "end": 161.10999999999999,
+      "chapter": "C3",
+      "shape": "半成形",
+      "imagery": "视线缺席",
+      "confidence": 0.55
+    },
+    {
+      "id": "L30",
+      "start": 161.13,
+      "end": 162.82999999999998,
+      "chapter": "C3",
+      "shape": "半成形",
+      "imagery": "消逝雨天",
+      "confidence": 0.35
+    },
+    {
+      "id": "L31",
+      "start": 162.85,
+      "end": 164.95,
+      "chapter": "C3",
+      "shape": "半成形",
+      "imagery": "愿重历雨",
+      "confidence": 0.35
+    },
+    {
+      "id": "L32",
+      "start": 167.94,
+      "end": 171.88,
+      "chapter": "C3",
+      "shape": "半成形",
+      "imagery": "失去与勇气",
+      "confidence": 0.821
+    },
+    {
+      "id": "L33",
+      "start": 173.86,
+      "end": 175.29,
+      "chapter": "C3",
+      "shape": "半成形",
+      "imagery": "再次询问",
+      "confidence": 0.645
+    },
+    {
+      "id": "L34",
+      "start": 175.54,
+      "end": 180.36,
+      "chapter": "C3",
+      "shape": "半成形",
+      "imagery": "等待或离开",
+      "confidence": 0.942
+    },
+    {
+      "id": "L35",
+      "start": 182.7,
+      "end": 188.04,
+      "chapter": "C4",
+      "shape": "成形",
+      "imagery": "风中牵手",
+      "confidence": 0.752
+    },
+    {
+      "id": "L36",
+      "start": 190.68,
+      "end": 195.12,
+      "chapter": "C4",
+      "shape": "成形",
+      "imagery": "雨幕遮挡",
+      "confidence": 0.6
+    },
+    {
+      "id": "L37",
+      "start": 196.28,
+      "end": 202.78,
+      "chapter": "C4",
+      "shape": "成形",
+      "imagery": "盼望靠近",
+      "confidence": 0.938
+    },
+    {
+      "id": "L38",
+      "start": 202.78,
+      "end": 210.2,
+      "chapter": "C4",
+      "shape": "半成形",
+      "imagery": "等待天晴",
+      "confidence": 0.861
+    },
+    {
+      "id": "L39",
+      "start": 210.2,
+      "end": 216.09,
+      "chapter": "C4",
+      "shape": "成形",
+      "imagery": "长久相伴",
+      "confidence": 0.55
+    },
+    {
+      "id": "L40",
+      "start": 216.11,
+      "end": 219.71,
+      "chapter": "C4",
+      "shape": "成形",
+      "imagery": "距离拉远",
+      "confidence": 0.35
+    },
+    {
+      "id": "L41",
+      "start": 224.46,
+      "end": 229.76,
+      "chapter": "C4",
+      "shape": "半成形",
+      "imagery": "愿多相伴",
+      "confidence": 0.881
+    },
+    {
+      "id": "L42",
+      "start": 231.8,
+      "end": 237.45,
+      "chapter": "C4",
+      "shape": "成形",
+      "imagery": "最后分别",
+      "confidence": 0.55
+    },
+    {
+      "id": "L43",
+      "start": 237.47,
+      "end": 240.77,
+      "chapter": "C4",
+      "shape": "成形",
+      "imagery": "风中牵手重述",
+      "confidence": 0.35
+    },
+    {
+      "id": "L44",
+      "start": 241.6,
+      "end": 245.08,
+      "chapter": "C4",
+      "shape": "成形",
+      "imagery": "雨幕重述",
+      "confidence": 0.768
+    },
+    {
+      "id": "L45",
+      "start": 245.08,
+      "end": 248.56,
+      "chapter": "C4",
+      "shape": "半成形",
+      "imagery": "靠近重述",
+      "confidence": 0.945
+    },
+    {
+      "id": "L46",
+      "start": 248.56,
+      "end": 252.38,
+      "chapter": "C4",
+      "shape": "半成形",
+      "imagery": "晴天愿望重述",
+      "confidence": 0.911
+    },
+    {
+      "id": "L47",
+      "start": 252.38,
+      "end": 255.56,
+      "chapter": "C4",
+      "shape": "成形",
+      "imagery": "长久相伴重述",
+      "confidence": 0.929
+    },
+    {
+      "id": "L48",
+      "start": 255.56,
+      "end": 259.04,
+      "chapter": "C4",
+      "shape": "成形",
+      "imagery": "距离重述",
+      "confidence": 0.834
+    },
+    {
+      "id": "L49",
+      "start": 259.04,
+      "end": 262.56,
+      "chapter": "C4",
+      "shape": "半成形",
+      "imagery": "相伴重述",
+      "confidence": 0.901
+    },
+    {
+      "id": "L50",
+      "start": 262.56,
+      "end": 265.54,
+      "chapter": "C4",
+      "shape": "成形",
+      "imagery": "分别余音",
+      "confidence": 0.832
+    }
+  ]
+}

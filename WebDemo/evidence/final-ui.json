@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "pointsOff": true,
+  "pointsOn": true,
+  "videos": [
+    {
+      "file": "LocalOnly/验收/01_副歌_音频开.mp4",
+      "duration": 10,
+      "width": 1672,
+      "height": 942
+    },
+    {
+      "file": "LocalOnly/验收/02_副歌_音频关.mp4",
+      "duration": 10,
+      "width": 1672,
+      "height": 942
+    },
+    {
+      "file": "LocalOnly/验收/03_主歌_音频开.mp4",
+      "duration": 10,
+      "width": 1672,
+      "height": 942
+    },
+    {
+      "file": "LocalOnly/验收/01_副歌_音频开.mp4",
+      "duration": 10,
+      "width": 1672,
+      "height": 942
+    },
+    {
+      "file": "LocalOnly/验收/04_副歌_关闭小亮点.mp4",
+      "duration": 10,
+      "width": 1672,
+      "height": 942
+    }
+  ],
+  "pair": [
+    {
+      "time": 1.187502,
+      "playing": true,
+      "muted": false
+    },
+    {
+      "time": 1.203753,
+      "playing": true,
+      "muted": true
+    }
+  ],
+  "errors": [],
+  "nativeLauncher": {
+    "commandExitCode": 0,
+    "returnedWindowTitle": "晴天 · 光的四个瞬间",
+    "nativeScreenshot": "not obtained: computer-use app approval timed out; browser UI validated separately"
+  }
+}

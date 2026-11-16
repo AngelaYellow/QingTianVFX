@@ -1,0 +1,6 @@
+{
+  "name": "qingtian-web-performance",
+  "private": true,
+  "type": "module",
+  "scripts": {"start": "node server.mjs --open", "test": "node --test tools/score.test.mjs tools/motion.test.mjs"}
+}

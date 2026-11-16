@@ -1,0 +1,13 @@
+{
+  "sources": {
+    "timeline.json": "664dfe825319dd76029e61c5e1e0f4457352d27f6c8c7df51494a01384b83491",
+    "beats68.json": "9092dc08a445a6eb2e1cd4f764881600641f0fea0a49158bbe1210cf09638c0d",
+    "parameter-contract.json": "a29fd2095087cb41e9e4a375a98c28890c2cef6a753bef913cd3f7721079ade1",
+    "audio-features.json": "af014ee0820ce6cba93f6474da58d2516a948a12319b04693c7de25225b76d12",
+    "C1.png": "3e7f8d5c3ec81f8cc5f2c22f35e98e056d921e6ca84bf2dad72c92197a314375",
+    "C2.png": "02c58fb930698ca3bc3ae0b74a39b7f304141ff111682a814c0875ef0326557a",
+    "C3.png": "8326fb052e428bd3dfc446b5be629c2442d0417b4b0aced46ca9f313bd3bda71",
+    "C4.png": "ad32bdb03e8f8ed297038f47ea2cb37a0c52586ef1626651b3bfb7ba0507c39f"
+  },
+  "note": "Unity assets read only; timeline contains timing and imagery labels, no sung lyric text."
+}

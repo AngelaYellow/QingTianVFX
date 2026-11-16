@@ -1,0 +1,11 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
+import {MotionDirector} from '../src/motion.mjs';
+const data=n=>JSON.parse(fs.readFileSync(new URL(`../data/${n}.json`,import.meta.url)));
+const anchors=[56.8,93.61,155.41,264.05],sections=data('form-sections').sections,beats=data('beats68').times;
+const director=()=>new MotionDirector(anchors,sections,beats);
+const frame=(t,enabled=true)=>({SongTime:t,Signals:{rms:.8,low:.6,high:.5},AudioEnabled:enabled});
+test('all four anchors cross the reference composition with no camera offset',()=>{for(const t of anchors){const s=director().evaluate(frame(t));for(const v of [...s.wave,...s.camera])assert(Math.abs(v)<1e-12);}});
+test('anchors are crossed without an ease-to-rest interval',()=>{for(const t of anchors){const d=director();const a=d.evaluate(frame(t-.001)),b=d.evaluate(frame(t+.001));assert(Math.hypot(...a.wave.map((x,i)=>(b.wave[i]-x)/.002))>.05);}});
+test('chorus has larger displacement and faster phase than verse for identical audio',()=>{const v=director(),c=director();let a,b;for(let i=0;i<=120;i++){a=v.evaluate(frame(40+i/60));b=c.evaluate(frame(105+i/60));}assert(b.amplitude>a.amplitude*2);const v0=a.phase,c0=b.phase;a=v.evaluate(frame(42+1/60));b=c.evaluate(frame(107+1/60));assert((b.phase-c0)>(a.phase-v0)*2);});
+test('audio off removes impulses and greatly reduces body displacement',()=>{const on=director().evaluate(frame(105)),off=director().evaluate(frame(105,false));assert.equal(off.hit,0);assert.equal(off.energy,0);assert(on.amplitude>off.amplitude*10);});
+test('beat response rises quickly then releases with inertia',()=>{const d=director(),t=beats.find(t=>t>105);d.evaluate(frame(t-.01));const attack=d.evaluate(frame(t+.06)).hit,release=d.evaluate(frame(t+.35)).hit;assert(attack>release);assert(release>0);});

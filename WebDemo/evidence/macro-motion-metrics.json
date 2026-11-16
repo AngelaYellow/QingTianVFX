@@ -1,0 +1,43 @@
+{
+  "method": "Actual 10 Hz decoded live recordings, RGB mean absolute temporal change after 12px-equivalent blur. Not optical-flow speed; brightness also contributes.",
+  "clips": [
+    {
+      "name": "01_副歌_音频开",
+      "frames_10hz": 100,
+      "soft_image_change_per_100ms_255": 10.710101127624512,
+      "soft_image_change_p95_255": 24.198755264282227,
+      "phase_units_per_second": 2.4748580049882407,
+      "mean_macro_amplitude": 1.6912567133589034,
+      "small_point_draws": 12000
+    },
+    {
+      "name": "02_副歌_音频关",
+      "frames_10hz": 100,
+      "soft_image_change_per_100ms_255": 0.42296499013900757,
+      "soft_image_change_p95_255": 0.5416791439056396,
+      "phase_units_per_second": 0.41500000000001364,
+      "mean_macro_amplitude": 0.10999999999999999,
+      "small_point_draws": 12000
+    },
+    {
+      "name": "03_主歌_音频开",
+      "frames_10hz": 100,
+      "soft_image_change_per_100ms_255": 4.0559000968933105,
+      "soft_image_change_p95_255": 13.468242645263672,
+      "phase_units_per_second": 1.0283234702869226,
+      "mean_macro_amplitude": 0.6048308706217921,
+      "small_point_draws": 12000
+    },
+    {
+      "name": "04_副歌_关闭小亮点",
+      "frames_10hz": 100,
+      "soft_image_change_per_100ms_255": 12.260872840881348,
+      "soft_image_change_p95_255": 25.22366714477539,
+      "phase_units_per_second": 2.47875318175748,
+      "mean_macro_amplitude": 1.6942776832401714,
+      "small_point_draws": 0
+    }
+  ],
+  "audio_on_off_image_change_ratio": 25.32148375709449,
+  "chorus_verse_image_change_ratio": 2.6406225182489345
+}

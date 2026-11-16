@@ -110,6 +110,7 @@ M1基础阶段已完成：独立工程、工程规范、无粒子参数演出，
 - 测试：新增6项投影测试，EditMode 20/20通过（含原14项），PlayMode原2项全部通过，共22/22。均通过当前Unity MCP实际运行。首次PlayMode运行因播放器被停止而中断，未记录断言失败；保留[中断记录](Docs/Evidence/M2/playmode-interrupted.json)，随后完整重跑[2/2通过](Docs/Evidence/M2/playmode-mcp.json)。测试临时关闭域重载的设置已恢复。
 - [准备回读](Docs/Evidence/M2/setup.json)、[EditMode结果](Docs/Evidence/M2/editmode-mcp.json)、[合作搭建记录](Docs/M2搭建记录.md)。当前Graph为null，尚无手搭节点或真实渲染光点；不把C#坐标测试当GPU管道打通。
 - 待后续完成：单点跟随验收 → 两光软雾与轻呼吸 → 整曲审阅 → 四锚点叠图截图 → 雾开/关与Bloom开/关同条件性能比较。当前没有雾层性能数字。
+- 图外准备已保存本地Git检查点；最后一次编译完成，[控制台错误回读](Docs/Evidence/M2/final-console.json)为0条。编辑器停在M2、场景无未保存改动，Project已选中VFX目录，等待用户创建图。
 
 ## 7. 如何运行和测试
 

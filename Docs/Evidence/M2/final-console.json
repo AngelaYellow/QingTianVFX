@@ -3,7 +3,7 @@
   "content": [
     {
       "type": "text",
-      "text": "{\"success\":true,\"message\":\"Refresh requested.\",\"error\":null,\"data\":{\"refresh_triggered\":false,\"compile_requested\":true,\"compile_started\":null,\"resulting_state\":\"idle\",\"hint\":\"If Unity enters compilation/domain reload, poll the mcpforunity://editor/state resource until data.advice.ready_for_tools is true.\"},\"hint\":null}",
+      "text": "{\"success\":true,\"message\":\"Retrieved 0 log entries.\",\"data\":[]}",
       "annotations": null,
       "meta": null
     }

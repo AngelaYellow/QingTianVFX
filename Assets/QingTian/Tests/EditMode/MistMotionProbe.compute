@@ -1,0 +1,21 @@
+// Test the actual shared HLSL on the GPU without creating or editing a VFX graph.
+#pragma kernel Probe
+struct VFXAttributes
+{
+    uint particleId;
+    float3 position;
+    float scaleX, scaleY, scaleZ, angleZ, alpha;
+};
+#include "Assets/QingTian/Shaders/M2/MistMotion.hlsl"
+RWStructuredBuffer<float4> Results;
+float3 Center, Envelope;
+float CardSize, TotalCount, Opacity, Phase, PhaseOffset, Master;
+[numthreads(32, 1, 1)]
+void Probe(uint3 id : SV_DispatchThreadID)
+{
+    VFXAttributes a = (VFXAttributes)0;
+    a.particleId = id.x;
+    QingTianMist(a, Center, Envelope, CardSize, TotalCount, Opacity, Phase, PhaseOffset, Master);
+    Results[id.x * 2] = float4(a.position, a.alpha);
+    Results[id.x * 2 + 1] = float4(a.scaleX, a.scaleY, a.scaleZ, a.angleZ);
+}

@@ -1,0 +1,11 @@
+{
+  "isError": false,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"success\":true,\"message\":\"Code executed successfully.\",\"data\":{\"result\":{\"project\":\"D:/Works/智能交互设计/QingTianVFX/Assets\",\"playing\":false,\"rows\":[{\"name\":\"VFX_LightA\",\"instance\":\"A\",\"asset\":\"Assets/QingTian/VFX/M2_Mist.vfx\",\"center\":true,\"scale\":true,\"color\":true,\"gain\":true,\"master\":true,\"seed\":68},{\"name\":\"VFX_LightB\",\"instance\":\"B\",\"asset\":\"Assets/QingTian/VFX/M2_Mist.vfx\",\"center\":true,\"scale\":true,\"color\":true,\"gain\":true,\"master\":true,\"seed\":69}]},\"compiler\":\"codedom\"}}",
+      "annotations": null,
+      "meta": null
+    }
+  ]
+}

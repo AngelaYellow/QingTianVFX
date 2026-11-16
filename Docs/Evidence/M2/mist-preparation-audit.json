@@ -1,0 +1,7 @@
+{
+  "graphSha256": "5B8E51B9B2FFE3E0637260D4326992897DF80B3EBAC041EE0289979AE998A178",
+  "graphUnchangedByAssistant": true,
+  "status": "Outside-graph preparation only. User graph hookup, VFX rendering and visual/performance acceptance pending.",
+  "m1SceneSha256": "F4AD1B09254FE8ECBDF8D92926DAFB2E765A9123A96E558741CDEC16F7776090",
+  "hlslSha256": "12976E8914DA32B4B386612B14601F014EFAB36D11F4B23FE1FF0A90C80871F9"
+}

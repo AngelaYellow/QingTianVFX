@@ -1,0 +1,11 @@
+{
+  "isError": false,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"success\":true,\"message\":\"Code executed successfully.\",\"data\":{\"result\":{\"functions\":[{\"name\":\"QingTianMist\",\"inputs\":[\"attributes\",\"LightCenterWorld\",\"LightScaleWorld\",\"MistSizeWorld\",\"MistTargetCount\",\"MistOpacity\",\"FlowPhase\",\"MistPhaseOffset\",\"MasterGain\"],\"errors\":[]}],\"enterPlayModeOptions\":0,\"scene\":\"Assets/QingTian/Scenes/M2_MistAndLights.unity\",\"playing\":false},\"compiler\":\"codedom\"}}",
+      "annotations": null,
+      "meta": null
+    }
+  ]
+}

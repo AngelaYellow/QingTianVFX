@@ -1,0 +1,11 @@
+{
+  "isError": false,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"success\":true,\"message\":\"Code executed successfully.\",\"data\":{\"result\":{\"texture\":\"Assets/QingTian/Textures/M2/MistWisp.png\",\"mipmaps\":true,\"compression\":\"Uncompressed\",\"testKernel\":true,\"hlsl\":\"UnityEditor.ShaderInclude\"},\"compiler\":\"codedom\"}}",
+      "annotations": null,
+      "meta": null
+    }
+  ]
+}

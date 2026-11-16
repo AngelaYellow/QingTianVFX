@@ -44,6 +44,11 @@ namespace QingTian
             if (target.HasVector4("LightColor")) target.SetVector4("LightColor",
                 new Vector4(f[color], f[color + 1], f[color + 2], f[color + 3]));
             Set(target, "LightGain", model.Get(player.Frame, "LightGain" + suffix));
+            // MistSize is a fraction of frame width; the HLSL receives world units.
+            Set(target, "MistSizeWorld", ToWorldSize(projectionCamera,
+                new Vector2(model.Get(player.Frame, "MistSize"), 0), planeDistance).x);
+            // Same graph, different internal arrangement. Never a random value per frame.
+            Set(target, "MistPhaseOffset", lightInstance == LightInstance.A ? 0 : 2.17f);
         }
         void ApplyCenter(string contractName, string graphName)
         {

@@ -8,7 +8,7 @@
 
 M1基础阶段已完成：独立工程、工程规范、无粒子参数演出，16项命令行测试通过，校准后整曲实播及曲线/截图/录屏已归档。仓库：[AngelaYellow/QingTianVFX](https://github.com/AngelaYellow/QingTianVFX)。
 
-**当前阶段M2：柔光雾与两处光，正在合作搭建，尚未达到视觉验收。** 用户亲手搭VFX Graph；助手负责节点图以外的相机、黑背景、Bloom、坐标换算、贴图、HLSL、桥与场景。按用户最新要求，每次可以教3个明确步骤，收到截图再继续。首个关卡是一个光点跟随LightCenterA；通过后才扩展成粉/青两团雾。M1原场景必须保留；参考叠图不能算实时粒子还原。
+**当前阶段M2：柔光雾与两处光，正在合作搭建，尚未达到视觉验收。** 用户亲手搭VFX Graph；助手负责节点图以外的相机、黑背景、Bloom、坐标换算、贴图、HLSL、桥与场景。用户最新希望每轮看到更多成果，改为围绕一个可见成果给6–8步，仍保留原理讲解和完成后的截图确认。单点位置与A颜色已通过，当前扩展两光共用图。M1原场景必须保留；参考叠图不能算实时粒子还原。
 
 ## 2. 已确定决定
 
@@ -22,7 +22,7 @@ M1基础阶段已完成：独立工程、工程规范、无粒子参数演出，
 - 手套接口本轮不做。
 - 创建公开GitHub仓库并推送；原曲、衍生含原曲音频、含原曲录屏不进入公开仓库。无权限则完成本地仓库并写明用户操作。
 - M1曾授权独立完成；M2改为用户在场合作，节点图由用户搭、逐步截图确认。助手自主完成图外准备，常规实现决定记录依据。
-- M2教学方式：每轮最多3个步骤，每步讲清操作、设置含义、为什么取这个值、预期现象；区分临时验证值与最终雾层参数，帮助用户在搭建中学习原理。
+- M2教学方式：用户希望增加步骤、一次看到更多成果；每轮可围绕完整成果给6–8步，每步讲清操作、设置含义、为什么取这个值、预期现象；区分临时验证值与最终雾层参数，帮助用户在搭建中学习原理。
 
 ## 3. 架构与数据流
 
@@ -106,15 +106,18 @@ M1基础阶段已完成：独立工程、工程规范、无粒子参数演出，
 
 - 独立场景：[M2_MistAndLights.unity](Assets/QingTian/Scenes/M2_MistAndLights.unity)。M1场景文件未改，SHA-256仍为`f4ad1b09254fe8ecbdf8d92926dafb2e765a9123a96e558741cdec16f7776090`。
 - 图外准备完成：固定1280×720 HDR相机输出接入原调试面板；正交相机Size=5、z=-10，映射平面距相机10。纯黑背景，独立Volume启用Bloom，强度0.35/阈值1/Scatter0.65，关闭高质量过滤，并覆盖关闭管线模板继承的Neutral色调映射和暗角；亮度仍待光点和雾实际校准。
-- 总预算：雾固定64槽、可见24–48片，A/B共用，不能每团各64。管道阶段先只做1粒子。
+- 总预算：雾合计64槽、可见24–48片，A/B共用，不能每团各64。单点阶段1粒子；当前双实例阶段每团1粒子，合计2。后续同图扩雾时每实例最多32，合计64。
 - 桥输出：保留LightCenterA/B原始Vector2；图外将左上原点变为Unity视口的左下原点，再投影输出Vector3 `LightCenterAWorld` / `LightCenterBWorld`。图须采用World模拟空间。C1的A约(-4.2621,1.6940,0)。
 - 测试：新增6项投影测试，EditMode 20/20通过（含原14项），PlayMode原2项全部通过，共22/22。均通过当前Unity MCP实际运行。首次PlayMode运行因播放器被停止而中断，未记录断言失败；保留[中断记录](Docs/Evidence/M2/playmode-interrupted.json)，随后完整重跑[2/2通过](Docs/Evidence/M2/playmode-mcp.json)。测试临时关闭域重载的设置已恢复。
 - [准备回读](Docs/Evidence/M2/setup.json)、[EditMode结果](Docs/Evidence/M2/editmode-mcp.json)、[合作搭建记录](Docs/M2搭建记录.md)。用户从Minimal System创建`M2_Mist.vfx`，助手将其绑定到`VFX_Mist`，[引用回读](Docs/Evidence/M2/graph-binding.json)正确；这些早期准备记录不代表当时已经完成GPU验证，最新实际验证见下。
 - 用户第2张截图及保存的图文件确认：Single Burst Count=1、Delay=0；Capacity=1、World；Manual Bounds中心0、Size=(20,12,4)。[截图](Docs/Evidence/M2/user_02_spawn_bounds.png)。助手新增128×128白RGB/径向透明度软圆点贴图`Assets/QingTian/Textures/M2/SoftDisc.png`，已导入；[导入回读](Docs/Evidence/M2/soft-disc-import.json)。未替用户添加或修改节点。
-- 待后续完成：A颜色连接 → 两光软雾与轻呼吸 → 整曲审阅 → 四锚点叠图截图 → 雾开/关与Bloom开/关同条件性能比较。当前没有雾层性能数字。
+- 待后续完成：双光共用端口连接 → 软雾形态与轻呼吸 → 整曲审阅 → 四锚点叠图截图 → 雾开/关与Bloom开/关同条件性能比较。当前没有雾层性能数字。
 - 用户单点管道已通过：保存图有Exposed Vector3 `LightCenterAWorld`→Update Set Position、Initialize Set Size=0.3、SoftDisc/Alpha。用户实播反馈可以继续，并提供[单点截图](Docs/Evidence/M2/user_03_single_point_display_issue.png)。助手进一步读取真实1280×720渲染贴图，四锚点及70/80/90秒共7样本均1个存活粒子；位置桥误差0，亮度加权像素中心最大误差0.0024px。[实际渲染审计](Docs/Evidence/M2/single-point-render-audit.json)。这是暂停定位采样，不冒充完整连续演出或性能测试。
 - 显示修复：M2专用`M2_Display`相机只输出Display 1黑底，cullingMask=0，无阴影/后处理/额外AudioListener，消除RT相机没有直接输出屏幕时的“No cameras rendering”。`presentationView`默认在M2开启，按原16:9适配Game窗口，仅显示实时RT；F切调试面板，Esc也可返回。调试面板保留叠图和参数，纯画面不叠参考图。真实键盘已验证双向切换，[截图](Docs/Evidence/M2/M2_editor_clean_display_fixed.png)、[调试模式](Docs/Evidence/M2/M2_editor_debug_display_fixed.png)、[切换记录](Docs/Evidence/M2/display-toggle-check.json)。M1保持原行为。
 - 最新回归：EditMode20/20、PlayMode2/2均通过，[EditMode](Docs/Evidence/M2/display-editmode-tests.json)、[PlayMode](Docs/Evidence/M2/display-playmode-tests.json)。首次EditMode的2项投影测试受到当前Game窗口尺寸取整影响；保留[失败记录](Docs/Evidence/M2/display-editmode-initial-failure.json)，测试夹具改用与M2一致的1280×720 RenderTexture，未放宽断言容差，未改运行时投影算法。域重载设置恢复原值，M1场景SHA未变；本轮用户VFX图SHA前后相同。
+- A颜色关卡已完成：用户截图[C1淡紫](Docs/Evidence/M2/user_04_colored_A_C1.png)、[C2粉紫](Docs/Evidence/M2/user_05_colored_A_C2.png)与保存图确认LightColorA→Update Set Color、Initialize Size=1。助手已将原VFX_Mist命名为VFX_LightA，新增VFX_LightB，两者引用同一个用户M2_Mist资产，分别绑定A/B源参数，种子68/69；[场景回读](Docs/Evidence/M2/two-light-instances-prepared.json)。没有代替用户改图，通用端口尚待用户创建/改名，不能宣称双光已显示。
+- 本轮新桥输出：每实例`LightCenterWorld`/Vector3、`LightScaleWorld`/Vector3、`LightColor`/Color、`LightGain`/Float，按实例A/B路由；`MasterGain`沿用原合同。原52参数及A/B数据未改。ToWorldSize将画宽/画高比例分别变为世界尺寸，Z=1；当前把LightScale解释为第一版Quad完整宽高，SoftDisc实际可见范围更小，正式雾包络须再校准。C1 A约4.6222×2.0单位。端口表和用户8步见[M2搭建记录](Docs/M2搭建记录.md)。
+- 双实例准备的测试：新增2项尺寸转换测试，包含画宽/画高分别缩放、旋转相机和透视距离；[EditMode22/22](Docs/Evidence/M2/pair-editmode-tests.json)、[PlayMode2/2](Docs/Evidence/M2/pair-playmode-tests.json)，共24项通过。通用端口未由用户搭好，本轮未验证双实例GPU图输出。
 
 ## 7. 如何运行和测试
 
@@ -138,6 +141,8 @@ M2画面模式：Play默认纯画面，先点击Game黑色区域取得焦点，F
 
 ## 8. 决定记录
 
+- 2026-11-16 / 双光共用图：用户希望增加单轮成果，改为8步完成两光位置、颜色、范围和轻呼吸。用两个VisualEffect实例共享同一张用户图，各自接收A/B参数，避免重复维护两套节点；依据[VisualEffect组件与属性覆盖](https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@17.3/manual/VisualEffectComponent.html)。原合同A/B名称不变，新增通用图端口属于适配层。后续每实例容量32，总预算64。
+- 2026-11-16 / 双光初形：尺寸预设只写“包络尺寸”而未定义可见等亮线，本轮先将其解释为Quad完整宽高比例，明确为初形选择，不伪称从静态图测出sigma或半径。暂用SoftDisc和Additive建立两处发光关系；正式雾会另校准纹理/alpha/重叠，Additive不作为全层材质统一决定。LightGain已含RMS与Beat的平滑微扰，不再次叠Beat；MasterGain连接Alpha保证片头片尾渐隐。此阶段逻辑只需尺寸换算与乘法，HLSL留给后续多片雾的稳定分布/形变。
 - 2026-11-16 / M2显示：用户反馈预览小且中央提示遮挡。保留固定RT、相机投影和原调试布局，新增可切换纯画面与独立Display黑底相机，不修改VFX节点和M1场景。相机targetTexture非空时输出到贴图而非屏幕，依据[Unity Camera.targetTexture](https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Camera-targetTexture.html)；纯画面采用[ScaleToFit](https://docs.unity3d.com/6000.3/Documentation/ScriptReference/ScaleMode.ScaleToFit.html)保留宽高比。额外显示相机开销未来计入M2同条件性能测试，此处不宣称零开销。
 - 2026-11-16 / M2验证：浮动Game窗口会影响无目标贴图的测试相机投影，表现为边界偏差约0.01144世界单位；测试改用1280×720固定RT后20项通过。未改业务算法或放宽阈值。窗口事件注入在Unity未聚焦时未触发F，改为实际聚焦Game并发送原生按键，双向切换通过；屏幕坐标截图曾命中别的前台窗口，已删除该无效文件，最终证据使用选定Unity窗口的捕获。
 - 2026-11-16 / M2：按用户的新合作规则推进；使用独立M2场景，禁止重建手搭图。M1播放器仅增加可选RT预览、阶段文字和证据子目录；空值保留原M1行为。
@@ -162,7 +167,7 @@ M2画面模式：Play默认纯画面，先点击Game黑色区域取得焦点，F
 
 ## 9. 待用户确认
 
-- M2合作停点：单点显示/位置已核验，当前M2已退出播放并打开用户图。下一组由用户亲手做：创建Exposed Color `LightColorA`（默认白、alpha1）→连接Update内普通Set Color→Initialize现有Set Size从0.3改为1以便观察颜色。尺寸1仅为颜色检查临时值，正式雾尺寸后续按合同投影。等待用户连线截图及播放颜色反馈，尚未创建这些节点。接下来再扩展两处光与雾，不修改预算。
+- M2合作停点：A颜色与单点通过，图外双实例已准备，用户尚未修改为共用端口。下一组8步：将LightCenterAWorld/LightColorA改名LightCenterWorld/LightColor；新增LightScaleWorld、LightGain、MasterGain；Update Set Scale.XYZ连接世界尺寸；LightColor×LightGain连接Set Color；MasterGain连接Update Set Alpha；Output设Additive，Size=1、Count/Capacity=1不变；Play观察双光并检查四锚点、连续播放呼吸。图未改名时两实例会共用旧A端口而重叠，这是中间状态，不能当成双光失效。完成后发节点和C1/C2画面再继续扩雾。
 - 睡醒后复听68 BPM核对音频，确认重拍感；自动声学判断不能替代主观节奏判断。
 - 时间骨架仍有21句低置信度；本轮保持既定时间线并显示置信度，不把它标为逐句听审通过。
 - 四个锚点暂按用户确定值执行，未来视觉审阅后可以修改。
@@ -171,6 +176,10 @@ M2画面模式：Play默认纯画面，先点击Game黑色区域取得焦点，F
 - 自有代码和风格帧暂未另行授权开源许可证；公开仓库不等于放弃素材权利。若希望统一MIT等许可证再决定，第三方许可证已保留。
 
 ## 10. 变更日志
+
+### 2026-11-16 — A颜色通过，双光共用图准备
+
+保存用户C1/C2色彩截图及用户图检查点；按最新偏好把每轮教学扩为完整可见成果的6–8步。新增图外LightInstance路由、画幅尺寸投影、M2双实例准备菜单，MCP实际创建并回读两实例共享图且分别绑定A/B。原图内容由用户保留，助手只准备外部引用；通用端口等待用户手搭。新增2项有意义的尺寸测试，EditMode22/22、PlayMode2/2通过；保持M1场景及原参数不变，域重载选项恢复。下一轮验收两光显示、尺寸和轻呼吸，再进入多片雾形态。
 
 ### 2026-11-16 — M2单点实播核验与显示修复
 

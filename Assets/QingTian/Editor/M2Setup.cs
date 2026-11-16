@@ -120,6 +120,36 @@ namespace QingTian.Editor
             EditorUtility.SetDirty(player); EditorUtility.SetDirty(display); EditorUtility.SetDirty(additional);
         }
 
+        [MenuItem("QingTian/M2/4 - Prepare two instances of user graph")]
+        public static void PrepareLightInstances()
+        {
+            if (EditorApplication.isPlaying || SceneManager.GetActiveScene().path != ScenePath)
+                throw new InvalidOperationException("Open M2 in Edit Mode first.");
+            var graph = AssetDatabase.LoadAssetAtPath<VisualEffectAsset>(GraphPath);
+            if (graph == null) throw new InvalidOperationException("Create and save the graph first.");
+            var player = UnityEngine.Object.FindFirstObjectByType<QingTianPlayer>();
+            var camera = Camera.main;
+            for (int i = 0; i < 2; i++)
+            {
+                string name = i == 0 ? "VFX_LightA" : "VFX_LightB";
+                var root = GameObject.Find(name);
+                if (root == null && i == 0) root = GameObject.Find("VFX_Mist");
+                if (root == null) { root = new GameObject(name); Undo.RegisterCreatedObjectUndo(root, "Add second light instance"); }
+                Undo.RecordObject(root, "Name light instance"); root.name = name;
+                var vfx = root.GetComponent<VisualEffect>();
+                if (vfx == null) vfx = Undo.AddComponent<VisualEffect>(root);
+                var bridge = root.GetComponent<VfxParameterBridge>();
+                if (bridge == null) bridge = Undo.AddComponent<VfxParameterBridge>(root);
+                Undo.RecordObject(vfx, "Bind shared light graph"); Undo.RecordObject(bridge, "Bind light parameters");
+                vfx.visualEffectAsset = graph; vfx.resetSeedOnPlay = false; vfx.startSeed = (uint)(68 + i);
+                bridge.target = vfx; bridge.player = player; bridge.projectionCamera = camera;
+                bridge.planeDistance = 10; bridge.layerIndex = 0; bridge.lightInstance = i == 0 ? LightInstance.A : LightInstance.B;
+                EditorUtility.SetDirty(root); EditorUtility.SetDirty(vfx); EditorUtility.SetDirty(bridge);
+            }
+            EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
+            EditorSceneManager.SaveScene(SceneManager.GetActiveScene());
+        }
+
         public static void WriteSetupEvidence()
         {
             var bridge = UnityEngine.Object.FindFirstObjectByType<VfxParameterBridge>();

@@ -1,0 +1,23 @@
+{
+  "graphEditedByAssistant": false,
+  "instances": [
+    {
+      "name": "VFX_LightA",
+      "selectedLight": "A",
+      "graph": "Assets/QingTian/VFX/M2_Mist.vfx",
+      "genericPositionReady": false,
+      "genericScaleReady": false,
+      "seed": 68
+    },
+    {
+      "name": "VFX_LightB",
+      "selectedLight": "B",
+      "graph": "Assets/QingTian/VFX/M2_Mist.vfx",
+      "genericPositionReady": false,
+      "genericScaleReady": false,
+      "seed": 69
+    }
+  ],
+  "actualTwoLightRenderingVerified": false,
+  "totalCapacityBudget": 64
+}

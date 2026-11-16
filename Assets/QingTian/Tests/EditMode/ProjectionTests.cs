@@ -51,5 +51,22 @@ namespace QingTian.Tests
             var edge = VfxParameterBridge.ToWorld(camera, new Vector2(1, .5f), 10);
             Assert.That(Vector3.Distance(edge, center), Is.EqualTo(5).Within(.0001));
         }
+        [Test] public void EnvelopeSizeUsesFrameWidthAndHeightSeparately()
+        {
+            var size = VfxParameterBridge.ToWorldSize(camera, new Vector2(.26f, .2f), 10);
+            Assert.That(size.x, Is.EqualTo(160f / 9 * .26f).Within(.0001));
+            Assert.That(size.y, Is.EqualTo(2).Within(.0001));
+            Assert.That(size.z, Is.EqualTo(1));
+        }
+        [Test] public void EnvelopeSizeRespectsRotatedCameraAndPerspectivePlaneDistance()
+        {
+            camera.orthographic = false; camera.fieldOfView = 60; camera.aspect = 1;
+            owner.transform.rotation = Quaternion.Euler(12, 25, 10);
+            var near = VfxParameterBridge.ToWorldSize(camera, new Vector2(.3f, .2f), 10);
+            var far = VfxParameterBridge.ToWorldSize(camera, new Vector2(.3f, .2f), 20);
+            Assert.That(near.x / near.y, Is.EqualTo(1.5f).Within(.0001));
+            Assert.That(far.x, Is.EqualTo(near.x * 2).Within(.0001));
+            Assert.That(far.y, Is.EqualTo(near.y * 2).Within(.0001));
+        }
     }
 }

@@ -74,4 +74,4 @@ python Tools/restore_audio.py "你的原始FLAC绝对路径"
 
 打开菜单 **QingTian → M2 → 1 - Prepare or open M2 scene**，点击Unity顶部Play。M2默认显示纯黑背景上的实时粒子；点击Game黑色区域后按 **F** 切换参数面板，再按F回纯画面，Esc也可返回面板。参数面板保留播放/暂停、进度条、四锚点与风格帧对照；纯画面不显示参考叠图。当前只有一个测试光点，雾的范围和粉青双光尚待搭建。
 
-用户亲手搭节点，助手负责图外准备，每轮最多3步并解释原理。当前停点与下一步见[DEVELOPMENT.md](DEVELOPMENT.md)和[M2搭建记录](Docs/M2搭建记录.md)。不要用重建M1菜单覆盖合作成果。
+用户亲手搭节点，助手负责图外准备，现按用户偏好围绕完整成果每轮给6–8步并解释原理。A颜色已显示；两光将由VFX_LightA/B共享同一张图，场景引用已准备，通用端口仍待用户连接。当前停点与下一步见[DEVELOPMENT.md](DEVELOPMENT.md)和[M2搭建记录](Docs/M2搭建记录.md)。不要用重建M1菜单覆盖合作成果。

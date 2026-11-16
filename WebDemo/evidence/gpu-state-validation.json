@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "on": {
+    "finite": true,
+    "survivingSamples": 147,
+    "meanDistancePx": 223.203503559522,
+    "groups": [
+      {
+        "count": 79,
+        "dx": 188.19815190409935,
+        "dy": 73.31747897893568
+      },
+      {
+        "count": 68,
+        "dx": 215.98040141866488,
+        "dy": 0.8551143986953642
+      }
+    ]
+  },
+  "off": {
+    "finite": true,
+    "survivingSamples": 147,
+    "meanDistancePx": 64.12669512926631,
+    "groups": [
+      {
+        "count": 79,
+        "dx": 43.02551129455619,
+        "dy": 19.758284459008447
+      },
+      {
+        "count": 68,
+        "dx": 59.31971911823048,
+        "dy": 1.04598602576195
+      }
+    ]
+  },
+  "resizePreservesGpuState": true,
+  "pausePreservesGpuState": true,
+  "method": "Read actual RGBA32F GPU position/age buffers. Fixed acoustic inputs over 105-107 seconds; not a live musical velocity measurement. Excludes particles that respawned.",
+  "simulationStates": 262144,
+  "reconstructionSamples": 1573352
+}

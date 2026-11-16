@@ -1,94 +1,118 @@
 TAP version 13
-# Subtest: all four anchors cross the reference composition with no camera offset
-ok 1 - all four anchors cross the reference composition with no camera offset
+# Subtest: anchors constrain positions without zeroing the musical velocity or events
+ok 1 - anchors constrain positions without zeroing the musical velocity or events
   ---
-  duration_ms: 2.9351
+  duration_ms: 4.7083
   type: 'test'
   ...
-# Subtest: anchors are crossed without an ease-to-rest interval
-ok 2 - anchors are crossed without an ease-to-rest interval
+# Subtest: the anchor crossing has nonzero velocity, with no hold interval
+ok 2 - the anchor crossing has nonzero velocity, with no hold interval
   ---
-  duration_ms: 0.4972
+  duration_ms: 0.5227
   type: 'test'
   ...
-# Subtest: chorus has larger displacement and faster phase than verse for identical audio
-ok 3 - chorus has larger displacement and faster phase than verse for identical audio
+# Subtest: geometric morph weights cover the song, are continuous and hit exact presets
+ok 3 - geometric morph weights cover the song, are continuous and hit exact presets
   ---
-  duration_ms: 7.2951
+  duration_ms: 14.2157
   type: 'test'
   ...
-# Subtest: audio off removes impulses and greatly reduces body displacement
-ok 4 - audio off removes impulses and greatly reduces body displacement
+# Subtest: chorus transports material faster than verse for the same acoustic input
+ok 4 - chorus transports material faster than verse for the same acoustic input
   ---
-  duration_ms: 0.6295
+  duration_ms: 3.4929
   type: 'test'
   ...
-# Subtest: beat response rises quickly then releases with inertia
-ok 5 - beat response rises quickly then releases with inertia
+# Subtest: audio off removes forces while retaining continuous base flow
+ok 5 - audio off removes forces while retaining continuous base flow
   ---
-  duration_ms: 0.2471
+  duration_ms: 2.8001
+  type: 'test'
+  ...
+# Subtest: live onsets generate propagating impulses independently of the stored beat grid
+ok 6 - live onsets generate propagating impulses independently of the stored beat grid
+  ---
+  duration_ms: 0.3105
+  type: 'test'
+  ...
+# Subtest: rain distance integrates speed; changing speed does not teleport its phase
+ok 7 - rain distance integrates speed; changing speed does not teleport its phase
+  ---
+  duration_ms: 0.3051
+  type: 'test'
+  ...
+# Subtest: pause does not advance motion and seeking explicitly resets history
+ok 8 - pause does not advance motion and seeking explicitly resets history
+  ---
+  duration_ms: 0.2453
+  type: 'test'
+  ...
+# Subtest: whole-song input stays finite including silence, phrase boundaries and seeks
+ok 9 - whole-song input stays finite including silence, phrase boundaries and seeks
+  ---
+  duration_ms: 59.7773
   type: 'test'
   ...
 # Subtest: all 52 contract properties / 82 components are exact at all anchors under arbitrary audio
-ok 6 - all 52 contract properties / 82 components are exact at all anchors under arbitrary audio
+ok 10 - all 52 contract properties / 82 components are exact at all anchors under arbitrary audio
   ---
-  duration_ms: 2.5893
+  duration_ms: 5.626
   type: 'test'
   ...
 # Subtest: whole score finite and inside contract bounds
-ok 7 - whole score finite and inside contract bounds
+ok 11 - whole score finite and inside contract bounds
   ---
-  duration_ms: 190.2529
+  duration_ms: 412.0392
   type: 'test'
   ...
 # Subtest: chapter boundaries change label without changing layout abruptly
-ok 8 - chapter boundaries change label without changing layout abruptly
+ok 12 - chapter boundaries change label without changing layout abruptly
   ---
-  duration_ms: 0.4236
+  duration_ms: 0.7823
   type: 'test'
   ...
 # Subtest: anchor neighbourhood continuous; raw audio remains nonzero
-ok 9 - anchor neighbourhood continuous; raw audio remains nonzero
+ok 13 - anchor neighbourhood continuous; raw audio remains nonzero
   ---
-  duration_ms: 0.3199
+  duration_ms: 0.6878
   type: 'test'
   ...
 # Subtest: real input changes fast layer while slow layout stays fixed
-ok 10 - real input changes fast layer while slow layout stays fixed
+ok 14 - real input changes fast layer while slow layout stays fixed
   ---
-  duration_ms: 0.1989
+  duration_ms: 0.365
   type: 'test'
   ...
 # Subtest: phrase envelopes and beat pulse use original timing; intro and ending fade
-ok 11 - phrase envelopes and beat pulse use original timing; intro and ending fade
+ok 15 - phrase envelopes and beat pulse use original timing; intro and ending fade
   ---
-  duration_ms: 0.1961
+  duration_ms: 1.092
   type: 'test'
   ...
 # Subtest: flow is integrated, deterministic and monotonic over every seek
-ok 12 - flow is integrated, deterministic and monotonic over every seek
+ok 16 - flow is integrated, deterministic and monotonic over every seek
   ---
-  duration_ms: 82.1577
+  duration_ms: 138.6353
   type: 'test'
   ...
 # Subtest: sanitized timeline has no sung lyric text
-ok 13 - sanitized timeline has no sung lyric text
+ok 17 - sanitized timeline has no sung lyric text
   ---
-  duration_ms: 0.2852
+  duration_ms: 0.5368
   type: 'test'
   ...
 # Subtest: audio A/B disables fast inputs while preserving slow and phrase layers
-ok 14 - audio A/B disables fast inputs while preserving slow and phrase layers
+ok 18 - audio A/B disables fast inputs while preserving slow and phrase layers
   ---
-  duration_ms: 0.4482
+  duration_ms: 1.4062
   type: 'test'
   ...
-1..14
-# tests 14
+1..18
+# tests 18
 # suites 0
-# pass 14
+# pass 18
 # fail 0
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 464.9526
+# duration_ms 815.7808

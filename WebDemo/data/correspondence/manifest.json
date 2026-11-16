@@ -1,0 +1,57 @@
+{
+  "method": "region + equal-mass alternating-axis spatial correspondence; RGB8 packs the 24-bit source pixel index, opaque alpha; each anchor is a pixel permutation",
+  "frames": [
+    {
+      "frame": 1,
+      "width": 1672,
+      "height": 941,
+      "count": 1573352,
+      "groups": [
+        40907,
+        766222,
+        766223
+      ],
+      "bijection": true,
+      "sha256": "770bd9c273514a841cfa45303b9dc40bceba8c7e61cd3d50e23f0ecc2237d5fc"
+    },
+    {
+      "frame": 2,
+      "width": 1672,
+      "height": 941,
+      "count": 1573352,
+      "groups": [
+        40907,
+        766222,
+        766223
+      ],
+      "bijection": true,
+      "sha256": "e2b065620ba595088c5518f26233539350e87214ab630964ad1d33ed52e36739"
+    },
+    {
+      "frame": 3,
+      "width": 1672,
+      "height": 941,
+      "count": 1573352,
+      "groups": [
+        40907,
+        766222,
+        766223
+      ],
+      "bijection": true,
+      "sha256": "ac3187df6d2c17f239eb6e1eb832cf2c52b91c1406ba7f9705bc611ab3571c02"
+    },
+    {
+      "frame": 4,
+      "width": 1672,
+      "height": 941,
+      "count": 1573352,
+      "groups": [
+        40907,
+        766222,
+        766223
+      ],
+      "bijection": true,
+      "sha256": "2c242a23b9e642b2c7d831f6ab0c10863dc45c6cd8238b1b260fe9a3469b3ea3"
+    }
+  ]
+}

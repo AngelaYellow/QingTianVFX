@@ -13,6 +13,8 @@ try{
   const downloadPromise=page.waitForEvent('download',{timeout:0});
   const render=await page.evaluate(async({width,height,fps,duration,start})=>{
     __demo.setSize(width,height);__demo.renderAt(start);
+    const features=await(await fetch('data/performance-features.json')).json();
+    const signals=t=>{const q=t/features.step,i=Math.min(Math.floor(q),features.frames.length-1),j=Math.min(i+1,features.frames.length-1),u=q-Math.floor(q);return Object.fromEntries(['rms','low','high','onset'].map(k=>[k,features.frames[i][k]+(features.frames[j][k]-features.frames[i][k])*u]));};
     const config={codec:fps>30?'avc1.64002a':'avc1.640028',width,height,bitrate:14000000,framerate:fps,hardwareAcceleration:'prefer-hardware',latencyMode:'realtime',avc:{format:'annexb'}};
     const support=await VideoEncoder.isConfigSupported(config);if(!support.supported)throw Error('This Chrome cannot encode H264 at the requested size');
     const chunks=[];let encodeError=null,outputFrames=0;
@@ -20,14 +22,14 @@ try{
     const count=Math.ceil(duration*fps);
     for(let i=0;i<count;i++){
       while(encoder.encodeQueueSize>5){if(encodeError)throw encodeError;await new Promise(r=>setTimeout(r,2));}
-      __demo.renderAt(start+Math.min(i/fps,duration));
+      const time=start+Math.min(i/fps,duration);__demo.renderAt(time,signals(time));
       const frame=new VideoFrame(document.querySelector('#art'),{timestamp:Math.round(i*1000000/fps),duration:Math.round(1000000/fps)});
       encoder.encode(frame,{keyFrame:i%(fps*2)===0});frame.close();
       if(i%300===0){console.log(`EXPORT ${i}/${count} (${(i/fps).toFixed(0)} s)`);await new Promise(r=>setTimeout(r,0));}
     }
     await encoder.flush();encoder.close();if(encodeError)throw encodeError;
     const blob=new Blob(chunks,{type:'video/h264'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='qingtian-offline.h264';a.click();
-    return {requestedFrames:count,outputFrames,width,height,fps,duration,start,bytes:blob.size,codec:config.codec,featureMode:'Unity cached features for deterministic offline export; interactive player uses live Web Audio',gpu:__demo.renderer.gpu};
+    return {requestedFrames:count,outputFrames,width,height,fps,duration,start,bytes:blob.size,codec:config.codec,featureMode:'20Hz feature cache captured from actual full-song Web Audio playback; same GPU renderer; interactive player uses live Web Audio',gpu:__demo.renderer.gpu};
   },{width,height,fps,duration,start});
   const download=await downloadPromise;await download.saveAs(output+'qingtian-offline.h264');
   const video=output+(duration<269?'短片检查.mp4':'晴天_整曲备份.mp4');

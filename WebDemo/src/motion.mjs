@@ -1,84 +1,42 @@
 import {smooth,clamp} from './score.mjs';
 
-// Shape-level director. Anchor correction changes the PATH, not particle tethers.
-// Every anchor is crossed with generally nonzero velocity: no ease-to-zero gate.
+export function anchorState(t,anchors){
+  const key=anchors.reduce((a,b)=>Math.abs(t-b)<Math.abs(t-a)?b:a,anchors[0]);
+  const delta=t-key;
+  return {delta,freedom:1-Math.exp(-delta*delta/(2.8*2.8))};
+}
+export function morphWeights(t,anchors){
+  const w=[0,0,0,0];if(t<=anchors[0]){w[0]=1;return w;}if(t>=anchors[3]){w[3]=1;return w;}
+  let i=0;while(i<2&&t>=anchors[i+1])i++;const u=smooth((t-anchors[i])/(anchors[i+1]-anchors[i]));w[i]=1-u;w[i+1]=u;return w;
+}
+// The CPU sends musical forces; it never iterates over particle positions.
 export class MotionDirector {
-  constructor(anchors,sections,beats){
-    this.anchors=anchors;this.sections=sections;this.beats=beats;this.reset();
-    this.weights=[.48,.58,.88,1.50,.72,1.02,1.70,1.45,.5];
-  }
-  reset(){this.previous=undefined;this.phase=0;this.energy=0;this.drive=0;this.lastBeat=-1;this.impulses=[];}
-  section(t){let i=this.sections.findIndex(s=>t<s.end);if(i<0)i=this.sections.length-1;let level=this.weights[i];const s=this.sections[i];if(i>0&&t<s.start+2.4)level=this.weights[i-1]+(level-this.weights[i-1])*smooth((t-s.start)/2.4);return {index:i,label:s.label,level};}
-  baselinePhase(t){let p=0;for(let i=0;i<this.sections.length;i++){const s=this.sections[i];p+=Math.max(0,Math.min(t,s.end)-s.start)*(.44+this.weights[i]*.64);}return p;}
-  atAnchorCorrection(t,omega,offset=0){
-    const keys=this.anchors;const raw=x=>Math.sin(omega*x+offset);
-    if(t<=keys[0])return raw(t)-raw(keys[0]);if(t>=keys[3])return raw(t)-raw(keys[3]);
-    let a=0;while(a<2&&t>=keys[a+1])a++;const u=smooth((t-keys[a])/(keys[a+1]-keys[a]));
-    return raw(t)-((1-u)*raw(keys[a])+u*raw(keys[a+1]));
-  }
+  constructor(anchors,sections,beats){this.anchors=anchors;this.sections=sections;this.beats=beats;this.weights=[.42,.56,.85,1.35,.64,.95,1.55,1.30,.45];this.reset();}
+  reset(){this.previous=undefined;this.phase=0;this.energy=0;this.drive=0;this.audioMix=1;this.events=[];this.lastOnset=-10;this.previousOnset=0;this.rainPhase=0;}
+  section(t){let i=this.sections.findIndex(s=>t<s.end);if(i<0)i=this.sections.length-1;const s=this.sections[i];let level=this.weights[i];if(i>0&&t<s.start+2.4)level=this.weights[i-1]+(level-this.weights[i-1])*smooth((t-s.start)/2.4);return {index:i,label:s.label,level};}
   evaluate(frame,response=1){
     const t=frame.SongTime,s=frame.Signals,section=this.section(t),enabled=frame.AudioEnabled!==false;
-    const dt=this.previous===undefined?0:t-this.previous;
-    const target=enabled?clamp(.56*s.rms+.31*s.low+.13*s.high):0;
-    if(this.enabled!==enabled){this.energy=target;this.drive=target;if(!enabled)this.impulses=[];this.enabled=enabled;}
-    const sequential=dt>0&&dt<.25;
-    if(!sequential&&dt!==0||this.previous===undefined){
-      this.phase=this.baselinePhase(t);this.energy=target;this.drive=target;
-      this.impulses=this.beats.filter(b=>b<=t&&t-b<2).map(b=>({t:b,level:target}));
+    const elapsed=this.previous===undefined?0:t-this.previous,reset=this.previous===undefined||elapsed<0||elapsed>.5;
+    const dt=reset?0:Math.max(0,elapsed),target=enabled?clamp(.40*s.rms+.45*s.low+.15*s.high):0;
+    if(reset){this.phase=t*.5;this.energy=target;this.audioMix=enabled?1:0;this.events=[];this.lastOnset=t-.5;this.rainPhase=t*.18;}
+    this.audioMix+=(Number(enabled)-this.audioMix)*(1-Math.exp(-dt/.20));
+    this.energy+=(target-this.energy)*(1-Math.exp(-dt/(target>this.energy?.025:.15)));this.drive=this.energy;
+    if(enabled){
+      for(let i=0;i<this.beats.length;i++){const b=this.beats[i];if(b>t)break;if((reset?b>t-1.8:b>this.previous)&&b<=t){
+        this.events.push({t:b,strength:(.10+.70*s.low+.40*s.rms)*(i%4===0?1.2:1)*response,group:i%2,kind:0});
+      }}
+      if(!reset&&s.onset>.24&&s.onset>this.previousOnset+.025&&t-this.lastOnset>.24){
+        this.events.push({t,strength:(.25+s.onset*.95)*response,group:Math.floor(t*1.7)%2,kind:1});this.lastOnset=t;
+      }
     }
-    if(sequential){
-      this.energy+=(target-this.energy)*(1-Math.exp(-dt/(target>this.energy?.055:.32)));
-      this.drive+=(this.energy-this.drive)*(1-Math.exp(-dt/.18));
-      this.phase+=dt*(.22+section.level*(enabled?(.45+this.drive*1.4):.13));
-      for(const b of this.beats)if(b>this.previous&&b<=t)this.impulses.push({t:b,level:target});
-      this.impulses=this.impulses.filter(b=>t-b.t<2.4);
-    }
-    this.previous=t;
-    let hit=0;if(enabled)for(const b of this.impulses){const age=t-b.t;if(age>=0)hit+=(1-Math.exp(-age/.026))*Math.exp(-age/.43)*(.35+b.level*.9);}
-    // A signed crossing, with nonzero slope at the anchor. It never settles.
-    let crossing=1;for(const a of this.anchors)crossing*=Math.tanh((t-a)/1.6);
-    const strong=enabled?section.level*(.30+this.drive*1.10)*response:.11;
-    const q=(w,o=0)=>this.atAnchorCorrection(t,w,o);
-    const wave=[
-      q(.31,.2)*.32+crossing*Math.sin(this.phase*.72)*strong,
-      q(.23,1.7)*.25+crossing*Math.cos(this.phase*.57+1.1)*strong,
-      q(.41,2.4)*.18+crossing*Math.sin(this.phase*.86+2.1)*strong,
-      crossing*hit*section.level*response
-    ];
-    const camera=[q(.13,.9)*.10+crossing*Math.sin(this.phase*.22)*strong*.075,q(.17,2.3)*.07,crossing*strong*.18*Math.sin(this.phase*.31)+wave[3]*.10];
-    return {section,energy:this.energy,hit,phase:this.phase,wave,camera,crossing,amplitude:strong,enabled};
+    this.previousOnset=s.onset;this.events=this.events.filter(e=>t-e.t<2.6).slice(-6);
+    let hit=0;for(const e of this.events){const age=t-e.t;hit+=e.strength*(1-Math.exp(-age/.025))*Math.exp(-age/.38);}
+    const low=s.low*this.audioMix,high=s.high*this.audioMix,rms=s.rms*this.audioMix;
+    const flow=.18+section.level*this.audioMix*(.35+.72*low+.28*rms)*response;
+    this.phase+=dt*flow;this.rainPhase+=dt*(frame.parameters?.RainSpeed||.18)*(.65+low*1.4);
+    const {delta,freedom}=anchorState(t,this.anchors),morph=morphWeights(t,this.anchors),previousMorph=morphWeights(reset?t:this.previous,this.anchors);this.previous=t;
+    return {time:t,dt,reset,section,energy:this.energy,hit:hit*this.audioMix,phase:this.phase,flow,low,high,rms,onset:s.onset*this.audioMix,audioMix:this.audioMix,
+      anchorDelta:delta,freedom,morph,previousMorph,crossing:freedom,amplitude:flow,enabled,rainPhase:this.rainPhase,
+      events:this.events.map(e=>[t-e.t,e.strength*this.audioMix,e.group,e.kind]),wave:[flow,low,high,hit],camera:[0,0,0]};
   }
 }
-
-// Shared by the structural surface and subordinate particle layers.
-export const shapeFieldGLSL=`
-uniform vec4 wave;
-uniform vec3 cameraMove;
-uniform vec2 lightA,lightB,flower;
-uniform vec2 lightScaleA,lightScaleB;
-uniform float aspect,phrase,macroGain;
-vec2 rotate2(vec2 p,float a){float s=sin(a),c=cos(a);return mat2(c,-s,s,c)*p;}
-vec3 shapePoint(vec2 uv,float depth){
-  vec2 p=uv;
-  // Divergence-free large cells: a common river, not random particle jitter.
-  vec2 curl1=vec2(sin(uv.y*4.2+.6)*cos(uv.x*3.4),-cos(uv.y*4.2+.6)*sin(uv.x*3.4));
-  vec2 curl2=vec2(cos(uv.y*3.0-uv.x*1.5),sin(uv.x*3.7+uv.y*1.1));
-  p+=macroGain*(curl1*wave.x*.070+curl2*wave.y*.050+vec2(wave.z*.044,wave.x*.023));
-  vec2 da=(uv-lightA)/lightScaleA,db=(uv-lightB)/lightScaleB;
-  float wa=exp(-dot(da,da)*1.2),wb=exp(-dot(db,db)*1.2);
-  vec2 ra=uv-lightA,rb=uv-lightB;
-  p+=macroGain*(wa*(rotate2(ra,wave.y*.46)-ra)+wb*(rotate2(rb,-wave.y*.38)-rb));
-  p+=macroGain*(wa*vec2(-wave.z*.040,wave.x*.026)+wb*vec2(wave.z*.046,-wave.x*.022));
-  // Fast attack / inertial release moves complete lobes and the central channel.
-  vec2 outflow=vec2((uv.x-.5)*.9,(uv.y-.5)*.55);
-  p+=macroGain*wave.w*(outflow*.12+vec2(.010,-.035));
-  vec2 df=uv-flower;float flowerMask=exp(-dot(df,df)/.006);
-  p+=macroGain*flowerMask*(rotate2(df,wave.z*.7)-df+df*(1.0-phrase)*wave.x*.35);
-  // Actual perspective projection of the layered field, calibrated at camera 0.
-  float z=2.2+depth*1.5;
-  vec2 world=(p-.5)*z;
-  world-=cameraMove.xy*macroGain*(.8+depth*.25);
-  float projectedZ=max(.8,z-cameraMove.z*macroGain);
-  return vec3(world/projectedZ+.5,z);
-}
-`;

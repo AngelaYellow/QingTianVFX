@@ -16,7 +16,7 @@ export class ScoreModel {
     let envelope=0;for(const l of this.timeline.lyrics){if(t<l.start||t>=l.end)continue;const v=(t-l.start)/(l.end-l.start);envelope=Math.max(envelope,(l.shape==='半成形'?.65:1)*smooth(v/.2)*smooth((1-v)/.35));}
     let beat=0;if(options.beatEnabled!==false)for(const bt of this.beats.times){const d=t-bt;if(d>=-.04&&d<=.18)beat=Math.max(beat,d<0?smooth((d+.04)/.04):smooth(1-d/.18));if(bt>t+.04)break;}
     const distances=this.contract.anchorTimes.map(k=>Math.abs(t-k)),exact=distances.findIndex(d=>d<1e-8),freedom=smooth(Math.min(...distances)/.85);
-    const master=smooth(t/8)*smooth((this.timeline.duration-t)/(this.timeline.duration-265.54));
+    const master=smooth(t/1.2)*smooth((this.timeline.duration-t)/(this.timeline.duration-265.54));
     const parameters={},slow={},midDelta={},fastDelta={};
     for(const p of this.contract.parameters){
       const sv=[],mv=[],fv=[],v=[];

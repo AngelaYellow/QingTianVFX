@@ -28,10 +28,10 @@ function updateUI(){
   document.querySelectorAll('[data-anchor]').forEach(b=>{const selected=Math.abs(score.contract.anchorTimes[Number(b.dataset.anchor)]-frame.SongTime)<.01;b.classList.toggle('active',selected);});
   if(!$('debug').hidden){
     for(const k of ['rms','low','high'])$(k).value=audio.signals[k];$('beat').value=frame.BeatPulse;$('phrase').value=frame.LyricEnvelope;
-    $('performance').textContent=`${Math.round(fps)} fps · ${renderer.canvas.width} × ${renderer.canvas.height} · 形体流场 + ${renderer.particles} 随动粒子`;
+    $('performance').textContent=`${Math.round(fps)} fps · ${renderer.canvas.width} × ${renderer.canvas.height} · ${renderer.bodyParticles.toLocaleString()} 个 GPU 粒子状态`;
     const p=frame.parameters;$('parameter-readout').textContent=[`SongTime       ${frame.SongTime.toFixed(3)}`,`AnchorFreedom  ${frame.AnchorFreedom.toFixed(3)}`,`LyricEnvelope  ${frame.LyricEnvelope.toFixed(3)}`,`LightCenterA   ${p.LightCenterA.map(v=>v.toFixed(3)).join(', ')}`,`LightCenterB   ${p.LightCenterB.map(v=>v.toFixed(3)).join(', ')}`,`GapWidth       ${p.GapWidth.toFixed(5)}`,`FlowerForm     ${p.FlowerForm.toFixed(3)}`,`MasterGain     ${p.MasterGain.toFixed(3)}`,`FlowPhase      ${frame.FlowPhase.toFixed(3)}`,`输入：${offline?'离线特征（视频导出）':'实时 Web Audio'}`].join('\n');
     const applied=renderer.applied;
-    $('applied-readout').textContent=[`曲式          ${applied.Section}`,`段落运动等级  ${applied.SectionLevel.toFixed(2)}`,`整体流动幅度  ${applied.MacroAmplitude.toFixed(3)}`,`实时声学能量  ${applied.Energy.toFixed(3)}`,`惯性冲击      ${applied.InertialHit.toFixed(3)}`,`镜头推进      ${applied.CameraDolly.toFixed(3)}`,`锚点穿行相位  ${applied.AnchorCrossing.toFixed(3)}`,`小亮点        ${renderer.smallPoints?'显示':'关闭：只看形体与雨/丝带'}`,`音频：${audioEnabled?'正在驱动整个形体场':'关闭；保留微弱基础流动'}`].join('\n');
+    $('applied-readout').textContent=[`曲式          ${applied.Section}`,`段落运动等级  ${applied.SectionLevel.toFixed(2)}`,`整体流动幅度  ${applied.MacroAmplitude.toFixed(3)}`,`实时声学能量  ${applied.Energy.toFixed(3)}`,`惯性冲击      ${applied.InertialHit.toFixed(3)}`,`位置与速度    GPU 持续积分`,`构图自由度    ${applied.AnchorCrossing.toFixed(3)}`,`小亮点        ${renderer.smallPoints?'显示':'关闭：只看柔光雾与雨'}`,`音频：${audioEnabled?'正在驱动整个形体场':'关闭；保留微弱基础流动'}`].join('\n');
   }
   updateOverlay();
 }
@@ -40,7 +40,7 @@ function tick(now){
   raf=requestAnimationFrame(tick);const dt=(now-last)/1000;last=now;
   if(offline||document.hidden)return;
   if(dt>0){fps=fps*.95+.05/dt;if(audio.playing){intervals.push(dt*1000);if(intervals.length>30000)intervals.shift();}}
-  audio.measure(dt);draw();
+  audio.measure(dt);if(audio.playing||(!preview&&Math.abs(frame.SongTime-audio.time)>1e-6))draw();
   if(now-lastUI>150){updateUI();lastUI=now;}
   if(audio.playing&&(!audit.length||frame.SongTime-audit.at(-1).t>=1))audit.push({t:frame.SongTime,...audio.signals,raw:{...audio.raw},chapter:frame.ChapterIndex});
 }
@@ -53,7 +53,7 @@ async function init(){
   const [timeline,contract,beats,features]=await Promise.all(['timeline','parameter-contract','beats68','audio-features'].map(f=>getJSON(`data/${f}.json`)));
   score=new ScoreModel(timeline,contract,beats,features);audio=new AudioEngine(timeline.duration);renderer=new ParticleRenderer($('art'));renderer.beatTimes=beats.times;await renderer.load();renderer.resize();
   $('art').addEventListener('webglcontextlost',e=>{e.preventDefault();audio.pause();fail(Error('图形设备连接中断。刷新页面恢复，或打开 LocalOnly 中的整曲备份视频。'));});
-  window.addEventListener('resize',()=>renderer.resize());
+  window.addEventListener('resize',()=>{renderer.resize();draw();});
   $('play').onclick=toggle;$('begin').onclick=toggle;
   $('restart').onclick=async()=>{preview=false;$('welcome').hidden=true;await audio.seek(0,false);await toggle();};
   document.querySelectorAll('[data-anchor]').forEach(b=>b.onclick=()=>jump(Number(b.dataset.anchor)));
@@ -65,8 +65,8 @@ async function init(){
   $('overlay-toggle').onclick=()=>{overlay=!overlay;updateOverlay();};
   $('opacity').oninput=updateOverlay;$('reference-choice').onchange=updateOverlay;
   $('debug-toggle').onclick=()=>{$('debug').hidden=!$('debug').hidden;$('debug-toggle').setAttribute('aria-expanded',String(!$('debug').hidden));updateUI();};
-  $('quality').onchange=()=>{renderer.quality=$('quality').value;renderer.resize();};$('motion').oninput=()=>renderer.motion=Number($('motion').value);
-  $('response').oninput=()=>{renderer.responseGain=Number($('response').value);$('response-value').value=renderer.responseGain.toFixed(1)+'×';};
+  $('quality').onchange=()=>{renderer.quality=$('quality').value;renderer.resize();draw();};$('motion').oninput=()=>{renderer.motion=Number($('motion').value);draw();};
+  $('response').oninput=()=>{renderer.responseGain=Number($('response').value);$('response-value').value=renderer.responseGain.toFixed(1)+'×';draw();};
   const setAudioEnabled=enabled=>{audioEnabled=enabled;$('audio-reactive').checked=enabled;draw();updateUI();};
   $('audio-reactive').onchange=()=>setAudioEnabled($('audio-reactive').checked);
   const setSmallPoints=enabled=>{renderer.smallPoints=enabled;$('small-points').checked=enabled;draw();updateUI();};
